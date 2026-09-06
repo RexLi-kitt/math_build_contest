@@ -1,0 +1,50 @@
+name: 同步李培煜的分支
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sync-lipeiyu
+  cancel-in-progress: false
+
+jobs:
+  sync-from-main:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: 获取主分支
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: 将 main 合并到李培煜的分支
+        shell: bash
+        env:
+          TARGET_BRANCH: 李培煜的分支
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git fetch origin "+refs/heads/main:refs/remotes/origin/main"
+
+          target_ref=$(git ls-remote --heads origin "refs/heads/$TARGET_BRANCH")
+          if [[ -n "$target_ref" ]]; then
+            git fetch origin "+refs/heads/$TARGET_BRANCH:refs/remotes/origin/$TARGET_BRANCH"
+            git switch -C "$TARGET_BRANCH" "refs/remotes/origin/$TARGET_BRANCH"
+            if ! git merge --no-edit refs/remotes/origin/main; then
+              git merge --abort || true
+              echo "::error::自动合并失败，请在本地解决冲突并推送后重新运行。"
+              exit 1
+            fi
+          else
+            git switch -C "$TARGET_BRANCH" refs/remotes/origin/main
+          fi
+
+          git push origin "HEAD:refs/heads/$TARGET_BRANCH"
