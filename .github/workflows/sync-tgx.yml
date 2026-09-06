@@ -1,0 +1,49 @@
+name: 同步 TangEliauk 分支
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sync-tgx
+  cancel-in-progress: false
+
+jobs:
+  sync-from-main:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: 获取仓库
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: 将 main 同步到 TangEliauk
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git fetch origin "+refs/heads/main:refs/remotes/origin/main"
+
+          # A failed remote query must not be treated as a missing branch.
+          target_ref=$(git ls-remote --heads origin refs/heads/TangEliauk)
+          if [[ -n "$target_ref" ]]; then
+            git fetch origin "+refs/heads/TangEliauk:refs/remotes/origin/TangEliauk"
+            git switch -C TangEliauk origin/TangEliauk
+            if ! git merge --no-edit origin/main; then
+              git merge --abort || true
+              echo "::error::main could not be merged into TangEliauk. Resolve the conflict manually and rerun this workflow."
+              exit 1
+            fi
+          else
+            git switch -C TangEliauk origin/main
+          fi
+
+          git push origin HEAD:refs/heads/TangEliauk
