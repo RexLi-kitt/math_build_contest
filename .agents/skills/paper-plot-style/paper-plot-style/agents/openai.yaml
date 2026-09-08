@@ -1,0 +1,4 @@
+interface:
+  display_name: "论文绘图风格"
+  short_description: "基于已有计算结果绘制论文图表，统一中文字体、蓝橙配色与双格式导出"
+  default_prompt: "使用 $paper-plot-style 根据我的计算结果生成论文图表，输出 PNG、PDF 和绘图代码。"
