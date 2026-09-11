@@ -1,6 +1,8 @@
 # Q2 图件
 
-- `q2_q1_interface_score.png`：候选第二检测点的 Q1 接口联合评分图，适合论文插图；
-- `q2_q1_interface_score.pdf`：同图的矢量版本。
+全部图件由 `src/q2/solve_q2.py` 生成，并遵循“粗网格定位—局部加密重评分—高分区选执行点”口径。
 
-图由 `src/q2/solve_q2.py` 生成，候选点评分调用 `src/q2/q1_q2_bridge.py`，后者复用问题1几何定位模块。
+- `q2_a1_domain.png`：首测物理可行域 \(A_1\)、1800m目标圆、5--1500m距离条件与代表样本；
+- `q2_four_metric_score.png`：局部加密候选集的归一化评分，标出评分峰值、高分候选区 \(\mathcal R_{\rm good}\) 与执行点；
+- `q2_a2_prediction.png`：执行点二测后预测域 \(A_2\) 及 MEC；
+- `q2_strategy_compare.png`：四指标联合、仅几何、最近与随机策略的样本回放对比。
