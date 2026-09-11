@@ -1,5 +1,17 @@
 # Q1 等边三角形反例图
 
+## 随机样例直观图（MC035）
+
+- 文件：`random_case_geometry_MC035.png`（300 dpi）、同名 PDF；画布 19 × 12.5 cm，便于同时显示总览与局部几何。
+- 脚本：`src/q1/plot_random_geometry.py`；运行 `.venv/Scripts/python.exe -m src.q1.plot_random_geometry`。
+- 数据：`src/q1/results/experiment_data.json` 中已有的 MC035，选自 100 个随机样例，不使用确定性反例 EQ_LAST。仅为直观展示选例，不改变全部实验统计。
+- 选择原因：三个监测点距离分别为 771.819、630.415、717.659 m，尺度接近、布局清楚；定位四边形舒展，最远顶点连线容易辨识。直径为 32.64579665 m。
+- 两图均将原坐标减去真实源点 S=(-488.31190195, 539.63638451) m，保持方向和等比例，仅平移、不旋转或变形。右图放大显示已有顶点及已有直径端点，A、B 为直径端点，C、D 为其余顶点的显示名称。
+- 测向边界为已有示向度 ±1°，总览射线显示长度为 1300 m，只限制线条显示范围，不构成新的求解约束。角标表示从正东逆时针计量的 M1 示向度。距离标签为真实监测点到源点距离。
+- 使用项目绘图 skill 的字体、配色和导出函数，不重新抽样或求解。
+
+## 等边三角形反例
+
 源数据：`src/q1/results/experiment_data.json`，算例 `EQ_LAST`。
 绘图脚本：`src/q1/plot_equilateral.py`。
 风格与字体：`.agents/skills/paper-plot-style`，调用 `apply_style()` 和 `save_figure()`。
