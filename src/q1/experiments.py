@@ -195,6 +195,48 @@ def boundary_cases():
     return rows
 
 
+def region_subset(inner, outer_halfplanes):
+    """闭凸集 inner 是否包含于给定半平面交；空集视为被任意区域包含。"""
+    if inner.status == "empty":
+        return True
+    if inner.status == "unbounded":
+        witness, direction = inner.feasible_point, inner.recession_direction
+        return (all(h.contains(witness) for h in outer_halfplanes)
+                and all(h.a*direction[0] + h.b*direction[1] <= 0 for h in outer_halfplanes))
+    return all(h.contains(vertex) for h in outer_halfplanes for vertex in inner.vertices)
+
+
+def sensitivity_cases(cases, levels=(0.9, 1.0, 1.1)):
+    """固定观测、只改误差半角：区域应随误差界放宽而扩张，非空有界时直径不减。
+
+    模拟误差本身抽样于[-1°,1°]，故 0.9° 档可能把真值排除而出现空集，这是预期
+    结果，只记录状态；空集与无界档的直径单调性记为不适用。
+    """
+    rows = []
+    for case in cases:
+        stations = case["stations"]
+        measured = [o["measured_bearing_deg"] for o in case["observations"]]
+        results = {level: localize(stations, measured, level) for level in levels}
+        for index, level in enumerate(levels):
+            result = results[level]
+            region, diameter = result.region, result.diameter
+            if index == 0:
+                containment = diameter_monotone = None
+            else:
+                previous = results[levels[index-1]]
+                containment = region_subset(previous.region, result.halfplanes)
+                finite = (previous.diameter is not None and previous.diameter.squared_distance is not None
+                          and diameter is not None and diameter.squared_distance is not None)
+                diameter_monotone = (previous.diameter.squared_distance <= diameter.squared_distance) if finite else None
+            rows.append({
+                "case_id": case["case_id"], "error_deg": level, "status": region.status,
+                "diameter_m": "∞" if region.status == "unbounded" else (diameter.distance if diameter else None),
+                "containment": containment, "diameter_monotone": diameter_monotone,
+                "passed": containment is not False and diameter_monotone is not False,
+            })
+    return rows
+
+
 def write_csv(path, headers, rows):
     with path.open("w", encoding="utf-8-sig", newline="") as file:
         writer = csv.writer(file)
@@ -207,12 +249,14 @@ def run(count, seed, output):
     random_cases = generate_random_cases(count, seed)
     cases = random_cases + [equilateral_case()]
     edge = boundary_cases()
+    sensitivity = sensitivity_cases(random_cases)
     metadata = {
         "seed": seed, "random_case_count": count, "monitor_count": "离散均匀2~6",
         "source_sampling": "半径1800米圆盘内面积均匀",
         "monitor_sampling": "以S为圆心，半径50~900米环域内面积均匀；允许目标圆域外监测",
         "error_sampling": "各不同监测点独立均匀U(-1°,1°)，仅实验假设；误差界固定1°",
         "retention": "不按交会形状/结果筛选或重抽样；无界、失败均保留",
+        "sensitivity_levels": "0.9°,1.0°,1.1°；固定同一组观测，只改误差半角",
         "units": "坐标及距离：米；角度：度",
         "source_name": "本表S为真实干扰源，M_i为监测点；旧方案G与此处S同义",
         "rounding": "计算使用完整精度；Excel展示坐标/直径6位、角度9位小数",
@@ -222,8 +266,11 @@ def run(count, seed, output):
     summary = {"random_status_counts": dict(Counter(c["status"] for c in random_cases)),
                "random_passed": sum(c["passed"] for c in random_cases),
                "random_count": count, "edge_passed": sum(c["passed"] for c in edge),
-               "edge_count": len(edge), "counterexample_passed": cases[-1]["passed"]}
-    payload = {"metadata":metadata, "summary":summary, "cases":cases, "boundary_cases":edge}
+               "edge_count": len(edge), "counterexample_passed": cases[-1]["passed"],
+               "sensitivity_passed": sum(r["passed"] for r in sensitivity),
+               "sensitivity_count": len(sensitivity)}
+    payload = {"metadata":metadata, "summary":summary, "cases":cases,
+               "boundary_cases":edge, "sensitivity":sensitivity}
     (output/'experiment_data.json').write_text(json.dumps(payload, ensure_ascii=False, indent=2, allow_nan=False), encoding='utf-8')
     headers = ["组号","类型","S_x(m)","S_y(m)","监测点数","区域状态","直径(m)","同直径圆覆盖","检查结果"]
     for i in range(1,7):
@@ -240,8 +287,15 @@ def run(count, seed, output):
     write_csv(output/'观测明细.csv', ["组号","监测点","M_x(m)","M_y(m)","S_x(m)","S_y(m)","真实方位(°)","加入误差(°)","示向度(°)","源点距离(m)"], [[o[k] for k in keys] for o in observations])
     write_csv(output/'边界测试.csv', ["编号","情况","测试层","输入","预期状态","实际状态","直径(m)","检查结果","处理方式"],
               [[c['case_id'],c['case'],c['layer'],c['input'],c['expected_status'],c['actual_status'],c['diameter_m'],"通过" if c['passed'] else "失败",c['handling']] for c in edge])
+    write_csv(output/'误差界敏感性.csv', ["组号","误差半角(°)","区域状态","直径(m)","包含检查","直径不减检查","检查结果"],
+              [[r['case_id'],r['error_deg'],r['status'],r['diameter_m'],
+                "基准" if r['containment'] is None else "通过" if r['containment'] else "失败",
+                "不适用" if r['diameter_monotone'] is None else "通过" if r['diameter_monotone'] else "失败",
+                "通过" if r['passed'] else "失败"] for r in sensitivity])
     print(json.dumps(summary, ensure_ascii=False))
-    if summary['random_passed'] != count or summary['edge_passed'] != len(edge) or not summary['counterexample_passed']:
+    if (summary['random_passed'] != count or summary['edge_passed'] != len(edge)
+            or not summary['counterexample_passed']
+            or summary['sensitivity_passed'] != summary['sensitivity_count']):
         raise SystemExit("存在未通过算例，请检查已保留的输入和检查项。")
     return payload
 
