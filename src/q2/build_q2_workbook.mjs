@@ -42,12 +42,18 @@ for (let i = 0; i < sheets.length; i += 1) {
   if (rows.length < 2) throw new Error(`${file} has no data rows`);
   const sheet = workbook.worksheets.add(name);
   sheet.showGridLines = false;
-  sheet.tabColor = i === 0 ? "#17365D" : "#5B9BD5";
+  sheet.tabColor = i === 0 ? "#17365D" : (i === 1 ? "#1F5A94" : "#7F9DB9");
   const colCount = rows[0].length;
   const lastColumn = String.fromCharCode(64 + colCount);
 
   sheet.getRange("A1").values = [["问题2 第二检测点实验"]];
-  sheet.getRange("A1").format = { font: { name: "Arial", size: 15, bold: true, color: "#17365D" } };
+  sheet.getRange("A1").format = {
+    font: { name: "Arial", size: 15, bold: true, color: "#17365D" },
+    verticalAlignment: "center",
+  };
+  sheet.getRange(`A3:${lastColumn}3`).format.borders = {
+    preset: "insideHorizontal", style: "thin", color: "#1F5A94",
+  };
   sheet.getRange("A2").values = [[note]];
   sheet.getRange("A2").format = { font: { name: "Arial", size: 10, color: "#536579", italic: true } };
   sheet.getRange(`A4:${lastColumn}${rows.length + 3}`).values = rows;
@@ -67,6 +73,29 @@ for (let i = 0; i < sheets.length; i += 1) {
     numberFormat: "0.000",
   };
   body.format.borders = { preset: "insideHorizontal", style: "thin", color: "#D9E2F3" };
+  // 仅强调有解释意义的关键结果，不以整表颜色干扰论文阅读。
+  if (name === "候选区域") {
+    rows.slice(1).forEach((row, rowIndex) => {
+      if (row.includes("是")) {
+        sheet.getRangeByIndexes(rowIndex + 4, 0, 1, colCount).format = {
+          fill: "#FCE4D6",
+          font: { name: "Arial", size: 10, bold: true, color: "#9C4A0B" },
+        };
+      }
+    });
+  }
+  if (name === "候选点评分") {
+    const scoreColumn = rows[0].indexOf("score");
+    const maxScore = Math.max(...rows.slice(1).map(row => Number(row[scoreColumn])));
+    rows.slice(1).forEach((row, rowIndex) => {
+      if (Number(row[scoreColumn]) >= maxScore - 1e-12) {
+        sheet.getRangeByIndexes(rowIndex + 4, 0, 1, colCount).format = {
+          fill: "#EAF3FB",
+          font: { name: "Arial", size: 10, bold: true, color: "#17365D" },
+        };
+      }
+    });
+  }
   for (let c = 0; c < colCount; c += 1) {
     const column = sheet.getRangeByIndexes(0, c, rows.length + 3, 1);
     // Keep long scientific field names visible; body values are displayed to 3 decimals.
