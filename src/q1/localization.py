@@ -31,6 +31,26 @@ def _distance2(a: Point, b: Point) -> Fraction:
     return (a[0] - b[0]) ** 2 + (a[1] - b[1]) ** 2
 
 
+def _direction_degrees(angle: Fraction) -> Point:
+    """按八分圆计算方向，保持轴向/对角向精确以及反向、旋转对称。
+
+    向量不必归一化。普通角度仍受浮点三角函数精度限制；这里不放宽误差界。
+    """
+    quadrant, remainder = divmod(angle % 360, 90)
+    swap = remainder > 45
+    reduced = 90 - remainder if swap else remainder
+    if reduced == 0:
+        x, y = Fraction(1), Fraction(0)
+    elif reduced == 45:
+        x, y = Fraction(1), Fraction(1)
+    else:
+        radians = math.radians(float(reduced))
+        x, y = _number(math.cos(radians)), _number(math.sin(radians))
+    if swap:
+        x, y = y, x
+    return ((x, y), (-y, x), (-x, -y), (y, -x))[int(quadrant)]
+
+
 @dataclass(frozen=True)
 class HalfPlane:
     """闭半平面 a*x + b*y <= c；零法向量也能表达恒真/矛盾约束。"""
@@ -106,12 +126,13 @@ def bearing_halfplanes(
         raise ValueError("误差半角必须满足 0 < error_deg < 90")
     result = []
     for (x, y), angle in zip(points, angles):
-        # 先在有理数上取模，再进行浮点三角运算。
-        lower = math.radians(float((angle - epsilon) % 360))
-        upper = math.radians(float((angle + epsilon) % 360))
+        lower = _direction_degrees(angle - epsilon)
+        upper = _direction_degrees(angle + epsilon)
+        if lower[0]*upper[1] - lower[1]*upper[0] <= 0:
+            raise ValueError("误差半角接近浮点分辨率极限，边界方向无法可靠区分")
         for a, b in (
-            (math.sin(lower), -math.cos(lower)),
-            (-math.sin(upper), math.cos(upper)),
+            (lower[1], -lower[0]),
+            (-upper[1], upper[0]),
         ):
             a, b = _number(a), _number(b)
             result.append(HalfPlane(a, b, a * x + b * y))

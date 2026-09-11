@@ -29,6 +29,8 @@ def wrap(angle):
 
 def source_in_hull(source, vertices):
     """独立于半平面 contains 的顶点边叉积检查，保留 Fraction 精度。"""
+    if not vertices:
+        return False
     p = tuple(Fraction(x) for x in source)
     if len(vertices) == 1:
         return p == vertices[0]
