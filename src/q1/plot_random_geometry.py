@@ -10,8 +10,7 @@ import numpy as np
 import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
-from matplotlib.lines import Line2D
-from matplotlib.patches import Polygon, Rectangle, Arc, Patch
+from matplotlib.patches import Polygon, Rectangle, Arc
 
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / '.agents/skills/paper-plot-style'))
@@ -31,9 +30,9 @@ def main():
     blue, sky, yellow, orange, red = PALETTE
     apply_style()
     plt.rcParams['figure.constrained_layout.use'] = False
-    fig = plt.figure(figsize=(19/2.54, 12.5/2.54), layout='none')
-    ax = fig.add_axes([.09,.31,.36,.59])
-    detail = fig.add_axes([.60,.31,.36,.59])
+    fig = plt.figure(figsize=(19/2.54, 9.8/2.54), layout='none')
+    ax = fig.add_axes([.09,.18,.37,.72])
+    detail = fig.add_axes([.57,.18,.37,.72])
     for a in (ax, detail):
         a.set_aspect('equal', adjustable='box')
         a.set_xlabel(r'相对横坐标 $x-x_S$（m）')
@@ -42,7 +41,7 @@ def main():
     ax.set(xlim=(-830,770), ylim=(-670,930))
     ax.set_xticks([-600,0,600]); ax.set_yticks([-600,0,600])
     detail.set(xlim=(-24,24), ylim=(-23,25))
-    detail.set_xticks([-20,0,20]); detail.set_yticks([-20,0,20])
+    detail.set_axis_off()
     ax.set_title('(a) 监测点与测向交会', fontsize=10)
     detail.set_title('(b) 定位多边形与直径', fontsize=10)
     offsets = [(16,-20),(0,10),(-5,12)]
@@ -57,8 +56,8 @@ def main():
         end = p + 1300*np.array([np.cos(theta),np.sin(theta)])
         ax.plot([p[0],end[0]],[p[1],end[1]],'--',color=blue,lw=1.1,zorder=2)
         ax.plot(*p,'o',color=blue,ms=5,zorder=6)
-        ax.annotate(f'$M_{i+1}$\n'+f"距 S {obs['distance_to_source_m']:.1f} m",p,
-                    xytext=offsets[i],textcoords='offset points',fontsize=8,ha='center',zorder=7)
+        ax.annotate(f'$M_{i+1}$',p,
+                    xytext=offsets[i],textcoords='offset points',fontsize=10,ha='center',zorder=7)
     # The observed bearing at M1 is measured counterclockwise from east.
     p = stations[0]
     theta1 = case['observations'][0]['measured_bearing_deg']
@@ -86,22 +85,14 @@ def main():
         detail.annotate(name,v,xytext=offset,textcoords='offset points',fontsize=9)
     detail.annotate('S',(0,0),xytext=(3,-15),textcoords='offset points',color=red,fontsize=9)
     midpoint=endpoints.mean(axis=0)
-    detail.annotate(f"$D=|AB|={case['diameter_m']:.2f}$ m",midpoint,
+    detail.annotate(r'$D=|AB|$',midpoint,
                     xytext=(0,25),textcoords='offset points',ha='center',fontsize=9,
                     arrowprops=dict(arrowstyle='-',color=orange,lw=.8),
                     bbox=dict(facecolor='white',edgecolor='none',alpha=.9,pad=2),zorder=9)
-    handles=[Line2D([],[],marker='o',color=blue,ls='none',label='监测点'),
-             Line2D([],[],marker='*',color=red,ls='none',ms=8,label='真实源点'),
-             Line2D([],[],color=blue,ls='--',label='测得示向方向'),
-             Line2D([],[],color=sky,label='±1° 误差边界'),
-             Patch(facecolor=yellow,edgecolor=blue,alpha=.7,label='可行定位区域'),
-             Line2D([],[],color=orange,lw=2.4,label='直径（最远顶点连线）')]
-    fig.legend(handles=handles,loc='lower center',bbox_to_anchor=(.52,.13),ncol=3,
-               columnspacing=1.5,handlelength=2.2,fontsize=8)
-    fig.text(.52,.084,r'定位区域 $P=W_1\cap W_2\cap W_3$；$W_i$ 为示向方向两侧 ±1° 的测向楔形。',
-             ha='center',fontsize=8)
-    fig.text(.52,.040,f"随机算例 MC035；以真实源点为坐标原点，两幅子图均保持等比例。",ha='center',fontsize=8)
-    save_figure(fig,ROOT/'outputs/q1/figures/random_case_geometry_MC035')
+    save_figure(fig,ROOT/'outputs/q1/figures/modeling_geometry')
+    # Additional high-resolution raster for print; the skill also exports vector PDF.
+    fig.savefig(ROOT/'outputs/q1/figures/modeling_geometry_600dpi.png',dpi=600,
+                facecolor='white',bbox_inches=None)
     plt.close(fig)
     print('Saved MC035 PNG/PDF; diameter:',case['diameter_m'])
 
