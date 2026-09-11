@@ -92,6 +92,19 @@ edge.getRange(`G7:G${6+edgeRows.length}`).conditionalFormats.add('containsText',
 // 边界测试的定义较长，独立给这些行足够高度，避免输入与处理说明截断。
 edge.getRange(`H7:I${6+edgeRows.length}`).format.wrapText=true;
 edge.getRange(`A7:I${6+edgeRows.length}`).format.rowHeight=52;
+
+const sensitivityRows=data.sensitivity.map(r=>[r.case_id,r.error_deg,status[r.status],numeric(r.diameter_m),
+  r.containment==null?'基准':checked(r.containment),
+  r.diameter_monotone==null?'不适用':checked(r.diameter_monotone),checked(r.passed)]);
+const sensitivity=makeSheet('误差界敏感性','固定同一组观测、只放宽误差半角',
+  `误差半角依次取 ${data.metadata.sensitivity_levels}；抽样误差上界为 1°，故 0.9° 档出现空集属预期结果。`,
+  ['组号','误差半角 (°)','区域状态','直径 (m)','包含检查','直径不减检查','检查结果'],
+  sensitivityRows,[95,115,100,145,110,135,95],'SensitivityCases');
+sensitivity.getRange(`B7:B${6+sensitivityRows.length}`).setNumberFormat('0.0');
+sensitivity.getRange(`D7:D${6+sensitivityRows.length}`).setNumberFormat('0.000000');
+sensitivity.getRange(`G7:G${6+sensitivityRows.length}`).conditionalFormats.add('containsText',{text:'失败',format:{fill:'#FDE9E7',font:{color:'#A61B1B',bold:true}}});
+sensitivity.getRange('A4').values=[['包含检查为“基准”表示该档与上一档比较的起点；空集与无界档的直径单调性记为“不适用”。']];
+
 const start=6+edgeRows.length+3;
 const notes=[
   ['实验方法','取值或说明'],
@@ -106,12 +119,13 @@ const notes=[
   ['等边三角形理论边长 (m)',20],
   ['理论直径 (m)',20],
   ['同直径圆半径 (m)',null],
-  ['最小外接圆半径 (m)',null],
+  ['最小外接圆半径 (m，仅等边反例解析值)',null],
   ['反例含义','最小外接圆半径大于D/2，所以不存在同直径覆盖圆；主表最后一组是三次测向实际生成的近似等边三角形。'],
   ['三角形数值比较容差','1e-8米；浮点三角函数产生的近似不作为符号精确等边三角形。'],
   ['推断范围','随机样本通过说明这些样本未发现错误，不替代几何证明，也不代表所有输入都能成功定位。'],
   ['精度限制','几何谓词对输入系数使用有理数精确计算；测向角到方向向量仍有三角函数舍入。'],
   ['复算方式',data.metadata.recalculation],
+  ['误差界敏感性检查',`${data.summary.sensitivity_passed}/${data.summary.sensitivity_count} 项（组×误差档）通过：固定观测时区域随误差半角放宽而扩张，非空有界时直径不减。`],
 ];
 // 将说明放在A和B:I区域；不合并单元格，长说明使用独立宽列H。
 edge.getRangeByIndexes(start-1,0,notes.length,1).values=notes.map(r=>[r[0]]);
