@@ -1,5 +1,9 @@
 # Q1 等边三角形反例图
 
+## 建模阶段几何说明图（当前版本）
+
+`modeling_geometry.png`（300 dpi）、`modeling_geometry_600dpi.png`（600 dpi）及 `modeling_geometry.pdf`（矢量）为当前修订版，画布为 19 × 9.8 cm。保留左图坐标刻度；移除监测距离、右图坐标、直径数值、底部图例与说明，仅标记直径 D=|AB|。沿用下述 MC035 的原始几何，未重新求解或修改数据。当前 `src/q1/plot_random_geometry.py` 复现此版本，下述带数值旧图保留供参考。
+
 ## 随机样例直观图（MC035）
 
 - 文件：`random_case_geometry_MC035.png`（300 dpi）、同名 PDF；画布 19 × 12.5 cm，便于同时显示总览与局部几何。
