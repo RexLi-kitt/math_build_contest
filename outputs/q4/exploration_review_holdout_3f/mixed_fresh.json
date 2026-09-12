@@ -1,0 +1,58 @@
+{
+  "label": "mixed_fresh",
+  "seed": 2026091303,
+  "summaries": [
+    {
+      "strategy": "Cplus",
+      "cases": 200,
+      "all_clear": 200,
+      "mean_s_per_source": 707.6955200859766,
+      "p95_s_per_source": 909.3778181818183,
+      "cvar90_s_per_source": 933.2669863636363,
+      "mean_search_movement_s": 277.03892885241623,
+      "mean_post_search_movement_s": 218.01485839545575,
+      "mean_detection_s": 174.20182213619714,
+      "mean_switching_s": 33.43990894522145,
+      "mean_clearing_s": 5.0,
+      "mean_search_phase_s": 456.3974663149538,
+      "mean_post_search_phase_s": 251.29805377102272,
+      "mean_failed_clear_actions": 0,
+      "mean_program_time_s": 0.8342462619999423
+    },
+    {
+      "strategy": "Cplus3A",
+      "cases": 200,
+      "all_clear": 200,
+      "mean_s_per_source": 696.2478662100608,
+      "p95_s_per_source": 901.0361,
+      "cvar90_s_per_source": 914.3350846212121,
+      "mean_search_movement_s": 280.0663295995993,
+      "mean_post_search_movement_s": 176.07728643947564,
+      "mean_detection_s": 196.62449342324342,
+      "mean_switching_s": 38.47825632700633,
+      "mean_clearing_s": 5.0015,
+      "mean_search_phase_s": 481.1880881327329,
+      "mean_post_search_phase_s": 215.05977807732785,
+      "mean_failed_clear_actions": 0.005,
+      "mean_program_time_s": 0.5323514024991891
+    },
+    {
+      "strategy": "Cplus3F",
+      "cases": 200,
+      "all_clear": 200,
+      "mean_s_per_source": 647.8103289556485,
+      "p95_s_per_source": 848.3602999999999,
+      "cvar90_s_per_source": 867.8065586363637,
+      "mean_search_movement_s": 280.0663295995993,
+      "mean_post_search_movement_s": 176.07728643947564,
+      "mean_detection_s": 156.6064648892774,
+      "mean_switching_s": 30.058747606560107,
+      "mean_clearing_s": 5.0015,
+      "mean_search_phase_s": 448.3149180528128,
+      "mean_post_search_phase_s": 199.49541090283572,
+      "mean_failed_clear_actions": 0.005,
+      "mean_program_time_s": 0.5342290304999915
+    }
+  ],
+  "failures": []
+}

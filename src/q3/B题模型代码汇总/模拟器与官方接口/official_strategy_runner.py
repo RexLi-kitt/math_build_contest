@@ -38,7 +38,11 @@ def main() -> int:
     parser.add_argument("--verbose", action="store_true", help="打印搜索进度")
     args = parser.parse_args()
 
-    log_path = Path(args.log) if args.log else Path("official_logs") / f"{args.strategy}_actions.json"
+    # Keep the default log location independent of the shell's working directory.
+    # This also avoids a relative path being interpreted differently by a launcher.
+    log_path = (Path(args.log).expanduser() if args.log else
+                Path(__file__).resolve().parent / "official_logs" /
+                f"{args.strategy}_actions.json").resolve()
     client = OfficialSimulatorClient(args.base_url, args.robot_id, log_path, args.arena_id)
     agent = STRATEGIES[args.strategy](client, verbose=args.verbose)
     try:
