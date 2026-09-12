@@ -1,0 +1,73 @@
+{
+  "label": "min_radius",
+  "seed": 20261012,
+  "summaries": [
+    {
+      "strategy": "B",
+      "cases": 100,
+      "all_clear": 100,
+      "mean_s_per_source": 673.7755732241509,
+      "p95_s_per_source": 844.2422,
+      "mean_search_movement_s": 324.8182793634962,
+      "mean_post_search_movement_s": 158.46787844500244,
+      "mean_detection_s": 155.30837412587414,
+      "mean_program_time_s": 0.41267523999966216
+    },
+    {
+      "strategy": "C",
+      "cases": 100,
+      "all_clear": 100,
+      "mean_s_per_source": 638.4044934035547,
+      "p95_s_per_source": 820.3014545454546,
+      "mean_search_movement_s": 283.9087973417598,
+      "mean_post_search_movement_s": 166.60021410108715,
+      "mean_detection_s": 153.1300002081252,
+      "mean_program_time_s": 0.3997351880001952
+    },
+    {
+      "strategy": "T0",
+      "cases": 100,
+      "all_clear": 100,
+      "mean_s_per_source": 641.4397543441142,
+      "p95_s_per_source": 837.2343000000001,
+      "mean_search_movement_s": 286.09418804468845,
+      "mean_post_search_movement_s": 166.9424146614059,
+      "mean_detection_s": 153.58085685148185,
+      "mean_program_time_s": 0.41089712000102735
+    },
+    {
+      "strategy": "T1",
+      "cases": 100,
+      "all_clear": 100,
+      "mean_s_per_source": 645.9206414284465,
+      "p95_s_per_source": 830.8957,
+      "mean_search_movement_s": 294.28350093687266,
+      "mean_post_search_movement_s": 163.73102102078852,
+      "mean_detection_s": 153.168863011988,
+      "mean_program_time_s": 0.40173758900142276
+    },
+    {
+      "strategy": "T2",
+      "cases": 100,
+      "all_clear": 100,
+      "mean_s_per_source": 651.8939072804695,
+      "p95_s_per_source": 844.2422,
+      "mean_search_movement_s": 302.11538879063016,
+      "mean_post_search_movement_s": 162.9429716731167,
+      "mean_detection_s": 152.2682475857476,
+      "mean_program_time_s": 0.40449872399971354
+    },
+    {
+      "strategy": "T3",
+      "cases": 100,
+      "all_clear": 100,
+      "mean_s_per_source": 659.4160719261988,
+      "p95_s_per_source": 844.2422,
+      "mean_search_movement_s": 310.4307857888614,
+      "mean_post_search_movement_s": 160.95627753333923,
+      "mean_detection_s": 153.26641088078588,
+      "mean_program_time_s": 0.41141365400108043
+    }
+  ],
+  "failures": []
+}
