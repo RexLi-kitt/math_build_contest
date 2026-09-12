@@ -1,0 +1,39 @@
+  normal_fresh: 90/900
+  normal_fresh: 180/900
+  normal_fresh: 270/900
+  normal_fresh: 360/900
+  normal_fresh: 450/900
+  normal_fresh: 540/900
+  normal_fresh: 630/900
+  normal_fresh: 720/900
+  normal_fresh: 810/900
+  normal_fresh: 900/900
+   normal_fresh   Cplus: clear=300/300 mean=628.31 p95=824.40 cvar90=828.17
+   normal_fresh Cplus3A: clear=300/300 mean=613.22 p95=794.93 cvar90=800.08
+   normal_fresh Cplus3F: clear=300/300 mean=583.56 p95=766.13 cvar90=770.34
+  min_radius_fresh: 60/600
+  min_radius_fresh: 120/600
+  min_radius_fresh: 180/600
+  min_radius_fresh: 240/600
+  min_radius_fresh: 300/600
+  min_radius_fresh: 360/600
+  min_radius_fresh: 420/600
+  min_radius_fresh: 480/600
+  min_radius_fresh: 540/600
+  min_radius_fresh: 600/600
+min_radius_fresh   Cplus: clear=200/200 mean=642.62 p95=817.23 cvar90=826.16
+min_radius_fresh Cplus3A: clear=200/200 mean=643.70 p95=822.92 cvar90=834.19
+min_radius_fresh Cplus3F: clear=200/200 mean=599.52 p95=777.53 cvar90=788.84
+  mixed_fresh: 60/600
+  mixed_fresh: 120/600
+  mixed_fresh: 180/600
+  mixed_fresh: 240/600
+  mixed_fresh: 300/600
+  mixed_fresh: 360/600
+  mixed_fresh: 420/600
+  mixed_fresh: 480/600
+  mixed_fresh: 540/600
+  mixed_fresh: 600/600
+    mixed_fresh   Cplus: clear=200/200 mean=707.70 p95=909.38 cvar90=933.27
+    mixed_fresh Cplus3A: clear=200/200 mean=696.25 p95=901.04 cvar90=914.34
+    mixed_fresh Cplus3F: clear=200/200 mean=647.81 p95=848.36 cvar90=867.81

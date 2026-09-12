@@ -1,0 +1,33 @@
+{
+  "model": "D",
+  "class": "DAgent",
+  "frozen_from": "C+3FB",
+  "created": "2026-09-13",
+  "files": [
+    {
+      "path": "src/q4/d_agent.py",
+      "sha256": "e552c707890341dcaf1eb69966f8e623e77bb3651bdef04b2512cc226b71c32e",
+      "bytes": 6290
+    },
+    {
+      "path": "src/q4/assets/d_model/b_winner_design.json",
+      "sha256": "465825a873014578ebe1307abd4c295a1f0c78a50c11a8967ecedd6cba53cb3f",
+      "bytes": 2653
+    },
+    {
+      "path": "src/q4/assets/d_model/c_winner_design.json",
+      "sha256": "74a8079dd43388f9b7cfed827ba9dc9602abfcd43160bd7d05ce22b5f0dcf8ee",
+      "bytes": 3642
+    },
+    {
+      "path": "outputs/q4/results/d_model/d_b_filter_validation.json",
+      "sha256": "615a22f594d494b1320ef92babcf2b857d614ca9c5a22d8154be1cb6dd529dcb",
+      "bytes": 13398
+    },
+    {
+      "path": "outputs/q4/results/d_model/d_source_count_validation.json",
+      "sha256": "757531678352b8b3db7d486939bd3367c81091c377d7ac4d93d31cd88dbe5678",
+      "bytes": 7764
+    }
+  ]
+}

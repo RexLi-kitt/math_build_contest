@@ -1,0 +1,58 @@
+{
+  "label": "normal_fresh",
+  "seed": 2026091301,
+  "summaries": [
+    {
+      "strategy": "Cplus",
+      "cases": 300,
+      "all_clear": 300,
+      "mean_s_per_source": 628.3061675950994,
+      "p95_s_per_source": 824.4039,
+      "cvar90_s_per_source": 828.1710348484849,
+      "mean_search_movement_s": 278.75854153699294,
+      "mean_post_search_movement_s": 182.97128587398214,
+      "mean_detection_s": 135.51226114163615,
+      "mean_switching_s": 26.06408048895549,
+      "mean_clearing_s": 5.0,
+      "mean_search_phase_s": 428.46955811763456,
+      "mean_post_search_phase_s": 199.83660947746478,
+      "mean_failed_clear_actions": 0,
+      "mean_program_time_s": 0.6080190306677832
+    },
+    {
+      "strategy": "Cplus3A",
+      "cases": 300,
+      "all_clear": 300,
+      "mean_s_per_source": 613.2161337154928,
+      "p95_s_per_source": 794.9284,
+      "cvar90_s_per_source": 800.0786218181818,
+      "mean_search_movement_s": 282.1422287402775,
+      "mean_post_search_movement_s": 138.50402622742135,
+      "mean_detection_s": 156.78040584415584,
+      "mean_switching_s": 30.789473984348984,
+      "mean_clearing_s": 5.0,
+      "mean_search_phase_s": 460.3780094318083,
+      "mean_post_search_phase_s": 152.83812428368452,
+      "mean_failed_clear_actions": 0,
+      "mean_program_time_s": 0.32112939700096227
+    },
+    {
+      "strategy": "Cplus3F",
+      "cases": 300,
+      "all_clear": 300,
+      "mean_s_per_source": 583.5555854443196,
+      "p95_s_per_source": 766.1283999999999,
+      "cvar90_s_per_source": 770.3433578787879,
+      "mean_search_movement_s": 282.1422287402775,
+      "mean_post_search_movement_s": 138.50402622742135,
+      "mean_detection_s": 132.05812715062714,
+      "mean_switching_s": 25.851204406704408,
+      "mean_clearing_s": 5.0,
+      "mean_search_phase_s": 434.3373270308759,
+      "mean_post_search_phase_s": 149.2182584134437,
+      "mean_failed_clear_actions": 0,
+      "mean_program_time_s": 0.3238325186672349
+    }
+  ],
+  "failures": []
+}
