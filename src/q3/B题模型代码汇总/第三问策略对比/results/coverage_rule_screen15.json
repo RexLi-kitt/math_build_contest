@@ -1,0 +1,66 @@
+{
+  "seed": 70501,
+  "cases": 15,
+  "records": [
+    {
+      "insertion_budget_m": 140.0,
+      "max_insertions": 8,
+      "clear_rate": 1.0,
+      "mean_per_source_s": 302.64756586552335,
+      "cvar90_per_source_s": 355.90924999999993,
+      "mean_movement_s": 3398.7695221454,
+      "mean_measure_actions": 109.46666666666667,
+      "mean_insertions": 7.066666666666666,
+      "wall_time_s": 39.283540000003995,
+      "loss": 318.6260711058663
+    },
+    {
+      "insertion_budget_m": 180.0,
+      "max_insertions": 12,
+      "clear_rate": 1.0,
+      "mean_per_source_s": 299.21821703435455,
+      "cvar90_per_source_s": 370.50974999999994,
+      "mean_movement_s": 3341.5338860737934,
+      "mean_measure_actions": 109.46666666666667,
+      "mean_insertions": 10.533333333333333,
+      "wall_time_s": 52.83146869999473,
+      "loss": 320.60567692404817
+    },
+    {
+      "insertion_budget_m": 100.0,
+      "max_insertions": 6,
+      "clear_rate": 1.0,
+      "mean_per_source_s": 309.1466879098679,
+      "cvar90_per_source_s": 363.997907051282,
+      "mean_movement_s": 3490.4331924788744,
+      "mean_measure_actions": 109.6,
+      "mean_insertions": 5.333333333333333,
+      "wall_time_s": 37.42569020000519,
+      "loss": 325.6020536522921
+    },
+    {
+      "insertion_budget_m": 180.0,
+      "max_insertions": 8,
+      "clear_rate": 1.0,
+      "mean_per_source_s": 311.5607373396048,
+      "cvar90_per_source_s": 362.49312499999996,
+      "mean_movement_s": 3517.482018324887,
+      "mean_measure_actions": 110.13333333333334,
+      "mean_insertions": 7.733333333333333,
+      "wall_time_s": 38.305318600003375,
+      "loss": 326.8404536377234
+    },
+    {
+      "insertion_budget_m": 220.0,
+      "max_insertions": 10,
+      "clear_rate": 1.0,
+      "mean_per_source_s": 308.1111291355866,
+      "cvar90_per_source_s": 389.65628030303026,
+      "mean_movement_s": 3452.9013252276213,
+      "mean_measure_actions": 110.4,
+      "mean_insertions": 9.533333333333333,
+      "wall_time_s": 42.41763530000753,
+      "loss": 332.5746744858197
+    }
+  ]
+}

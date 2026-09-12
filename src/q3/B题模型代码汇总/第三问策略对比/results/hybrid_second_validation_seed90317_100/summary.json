@@ -1,0 +1,28 @@
+{
+  "config": {
+    "cases": 100,
+    "seed": 90317,
+    "sources": null,
+    "strategies": "D_hybrid_belief_rolling",
+    "output": ".q3_compare_staging\\results\\hybrid_second_validation_seed90317_100"
+  },
+  "elapsed_wall_time_s": 63.23671810000087,
+  "summaries": [
+    {
+      "strategy": "D_hybrid_belief_rolling",
+      "all_cleared_rate": 1.0,
+      "mean_virtual_time_s": 4322.03294,
+      "median_virtual_time_s": 4367.875,
+      "p90_virtual_time_s": 4666.844,
+      "p95_virtual_time_s": 4747.167,
+      "max_virtual_time_s": 5087.223,
+      "mean_time_per_source_s": 336.0010777746004,
+      "mean_movement_time_s": 3377.40295001,
+      "mean_measure_actions": 147.42,
+      "mean_active_measurements": 20.09,
+      "mean_co_measurements": 13.55,
+      "mean_failed_clear_actions": 0,
+      "wall_time_s": 63.230164
+    }
+  ]
+}

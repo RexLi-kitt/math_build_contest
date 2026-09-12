@@ -1,0 +1,49 @@
+{
+  "config": {
+    "cases": 100,
+    "seed": 982451653,
+    "sources": null,
+    "strategies": "A_current_ls_dopt,B_region_dopt",
+    "output": "diagnostics\\results\\ab_seed982451653_100",
+    "jobs": 12
+  },
+  "elapsed_wall_time_s": 1.7741489999898477,
+  "summaries": [
+    {
+      "strategy": "A_current_ls_dopt",
+      "all_cleared_rate": 1.0,
+      "mean_virtual_time_s": 4224.32367,
+      "median_virtual_time_s": 4249.645,
+      "p90_virtual_time_s": 4668.553,
+      "p95_virtual_time_s": 4769.963,
+      "max_virtual_time_s": 5185.086,
+      "mean_time_per_source_s": 324.72531122086247,
+      "mean_movement_time_s": 3385.86366963,
+      "mean_measure_actions": 127.33,
+      "mean_active_measurements": 4.1,
+      "mean_co_measurements": 0,
+      "mean_coverage_insertions": 0,
+      "mean_search_end_time_s": null,
+      "mean_failed_clear_actions": 3.47,
+      "wall_time_s": 1.880615
+    },
+    {
+      "strategy": "B_region_dopt",
+      "all_cleared_rate": 1.0,
+      "mean_virtual_time_s": 4469.01596,
+      "median_virtual_time_s": 4438.773999999999,
+      "p90_virtual_time_s": 4890.548,
+      "p95_virtual_time_s": 5027.389,
+      "max_virtual_time_s": 5485.18,
+      "mean_time_per_source_s": 343.4667605916583,
+      "mean_movement_time_s": 3568.68596988,
+      "mean_measure_actions": 139.73,
+      "mean_active_measurements": 14.43,
+      "mean_co_measurements": 0,
+      "mean_coverage_insertions": 0,
+      "mean_search_end_time_s": null,
+      "mean_failed_clear_actions": 0,
+      "wall_time_s": 15.138191
+    }
+  ]
+}

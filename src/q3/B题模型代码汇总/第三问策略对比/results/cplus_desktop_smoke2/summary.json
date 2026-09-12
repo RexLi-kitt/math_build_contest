@@ -1,0 +1,75 @@
+{
+  "config": {
+    "cases": 2,
+    "seed": 991,
+    "sources": null,
+    "output": "C:\\Users\\李\\Desktop\\B题第三问策略对比\\results\\cplus_desktop_smoke2"
+  },
+  "elapsed_wall_time_s": 4.17954660000396,
+  "summaries": [
+    {
+      "strategy": "A_current_ls_dopt",
+      "all_cleared_rate": 1.0,
+      "mean_virtual_time_s": 4267.880499999999,
+      "median_virtual_time_s": 4267.880499999999,
+      "p90_virtual_time_s": 4507.556,
+      "p95_virtual_time_s": 4507.556,
+      "max_virtual_time_s": 4507.556,
+      "mean_time_per_source_s": 323.96135227272725,
+      "mean_movement_time_s": 3407.880258,
+      "mean_measure_actions": 131,
+      "mean_active_measurements": 5.5,
+      "mean_co_measurements": 0,
+      "mean_failed_clear_actions": 3,
+      "wall_time_s": 0.025891
+    },
+    {
+      "strategy": "B_region_dopt",
+      "all_cleared_rate": 1.0,
+      "mean_virtual_time_s": 4325.2245,
+      "median_virtual_time_s": 4325.2245,
+      "p90_virtual_time_s": 4512.052,
+      "p95_virtual_time_s": 4512.052,
+      "max_virtual_time_s": 4512.052,
+      "mean_time_per_source_s": 329.1105795454545,
+      "mean_movement_time_s": 3410.2245705,
+      "mean_measure_actions": 142,
+      "mean_active_measurements": 14,
+      "mean_co_measurements": 0,
+      "mean_failed_clear_actions": 0,
+      "wall_time_s": 0.5229889999999999
+    },
+    {
+      "strategy": "C_region_q2",
+      "all_cleared_rate": 1.0,
+      "mean_virtual_time_s": 4599.6505,
+      "median_virtual_time_s": 4599.6505,
+      "p90_virtual_time_s": 4890.736,
+      "p95_virtual_time_s": 4890.736,
+      "max_virtual_time_s": 4890.736,
+      "mean_time_per_source_s": 348.67936363636363,
+      "mean_movement_time_s": 3694.65024,
+      "mean_measure_actions": 140,
+      "mean_active_measurements": 12,
+      "mean_co_measurements": 0,
+      "mean_failed_clear_actions": 0,
+      "wall_time_s": 1.9219
+    },
+    {
+      "strategy": "Cplus_completion_coobserve",
+      "all_cleared_rate": 1.0,
+      "mean_virtual_time_s": 4278.3475,
+      "median_virtual_time_s": 4278.3475,
+      "p90_virtual_time_s": 4495.104,
+      "p95_virtual_time_s": 4495.104,
+      "max_virtual_time_s": 4495.104,
+      "mean_time_per_source_s": 325.0897727272727,
+      "mean_movement_time_s": 3340.347445,
+      "mean_measure_actions": 145.5,
+      "mean_active_measurements": 17.5,
+      "mean_co_measurements": 8.5,
+      "mean_failed_clear_actions": 0,
+      "wall_time_s": 1.7066430000000001
+    }
+  ]
+}

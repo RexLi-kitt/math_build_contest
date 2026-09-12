@@ -1,0 +1,132 @@
+{
+  "config": {
+    "seeds": "112358,271828,314159",
+    "cases_per_seed": 200,
+    "jobs": 12,
+    "output": "diagnostics\\results\\c_to_cplus_metrics_600"
+  },
+  "summaries": [
+    {
+      "model": "C",
+      "cases": 600,
+      "mean_total_time_per_source_s": 380.5257486498779,
+      "p95_total_time_per_source_s": 465.8673636363637,
+      "mean_movement_time_per_source_s": 310.3708033721016,
+      "mean_detection_switch_time_per_source_s": 65.15494488844489,
+      "mean_clear_action_time_per_source_s": 5.0,
+      "mean_measure_actions_per_source": 10.886438117438118,
+      "mean_channel_switches_per_source": 10.722754301254302,
+      "mean_last_discovery_time_per_source_s": 148.1014929924408,
+      "mean_search_end_time_per_source_s": 176.24366121812423,
+      "mean_unfinished_after_search_rate": 0.9889124972249972,
+      "mean_not_clear_ready_after_search_rate": 0.8267541694416695,
+      "mean_active_measurements_per_source": 0.9070873223998224,
+      "mean_co_measurements_per_source": 0.0,
+      "all_cleared_rate": 1
+    },
+    {
+      "model": "C+",
+      "cases": 600,
+      "mean_total_time_per_source_s": 337.0073784654096,
+      "p95_total_time_per_source_s": 422.03860000000003,
+      "mean_movement_time_per_source_s": 265.2611783422542,
+      "mean_detection_switch_time_per_source_s": 66.7462017010767,
+      "mean_clear_action_time_per_source_s": 5.0,
+      "mean_measure_actions_per_source": 11.165523823398823,
+      "mean_channel_switches_per_source": 10.918582584082584,
+      "mean_last_discovery_time_per_source_s": 148.1014929924408,
+      "mean_search_end_time_per_source_s": 176.24366121812423,
+      "mean_unfinished_after_search_rate": 0.9889124972249972,
+      "mean_not_clear_ready_after_search_rate": 0.8267541694416695,
+      "mean_active_measurements_per_source": 1.1861730283605283,
+      "mean_co_measurements_per_source": 0.5040106906981907,
+      "all_cleared_rate": 1
+    }
+  ],
+  "paired": [
+    {
+      "metric": "total_time_per_source_s",
+      "mean_C_minus_Cplus": 43.51837018446831,
+      "Cplus_better_cases": 600,
+      "equal_cases": 0,
+      "C_better_cases": 0
+    },
+    {
+      "metric": "movement_time_per_source_s",
+      "mean_C_minus_Cplus": 45.10962502984737,
+      "Cplus_better_cases": 600,
+      "equal_cases": 0,
+      "C_better_cases": 0
+    },
+    {
+      "metric": "detection_switch_time_per_source_s",
+      "mean_C_minus_Cplus": -1.5912568126318123,
+      "Cplus_better_cases": 14,
+      "equal_cases": 25,
+      "C_better_cases": 561
+    },
+    {
+      "metric": "clear_action_time_per_source_s",
+      "mean_C_minus_Cplus": 0.0,
+      "Cplus_better_cases": 0,
+      "equal_cases": 600,
+      "C_better_cases": 0
+    },
+    {
+      "metric": "measure_actions_per_source",
+      "mean_C_minus_Cplus": -0.279085705960706,
+      "Cplus_better_cases": 14,
+      "equal_cases": 34,
+      "C_better_cases": 552
+    },
+    {
+      "metric": "channel_switches_per_source",
+      "mean_C_minus_Cplus": -0.19582828282828282,
+      "Cplus_better_cases": 0,
+      "equal_cases": 138,
+      "C_better_cases": 462
+    },
+    {
+      "metric": "last_discovery_time_per_source_s",
+      "mean_C_minus_Cplus": 0.0,
+      "Cplus_better_cases": 0,
+      "equal_cases": 600,
+      "C_better_cases": 0
+    },
+    {
+      "metric": "search_end_time_per_source_s",
+      "mean_C_minus_Cplus": 0.0,
+      "Cplus_better_cases": 0,
+      "equal_cases": 600,
+      "C_better_cases": 0
+    },
+    {
+      "metric": "unfinished_after_search_rate",
+      "mean_C_minus_Cplus": 0.0,
+      "Cplus_better_cases": 0,
+      "equal_cases": 600,
+      "C_better_cases": 0
+    },
+    {
+      "metric": "not_clear_ready_after_search_rate",
+      "mean_C_minus_Cplus": 0.0,
+      "Cplus_better_cases": 0,
+      "equal_cases": 600,
+      "C_better_cases": 0
+    },
+    {
+      "metric": "active_measurements_per_source",
+      "mean_C_minus_Cplus": -0.279085705960706,
+      "Cplus_better_cases": 14,
+      "equal_cases": 34,
+      "C_better_cases": 552
+    },
+    {
+      "metric": "co_measurements_per_source",
+      "mean_C_minus_Cplus": -0.5040106906981907,
+      "Cplus_better_cases": 0,
+      "equal_cases": 3,
+      "C_better_cases": 597
+    }
+  ]
+}

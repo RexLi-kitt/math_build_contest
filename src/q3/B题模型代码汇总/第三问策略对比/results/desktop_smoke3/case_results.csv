@@ -1,0 +1,10 @@
+﻿seed,case,strategy,source_count,detected_channels,cleared_channels,total_virtual_time_s,measure_actions,clear_actions,all_cleared,movement_time_s,active_measurements,no_signal_actions,failed_clear_actions,decision_wall_time_s
+24680,1,A_current_ls_dopt,15,15,15,4051.252,122,17,1,3239.251968,1,87,2,0.005211
+24680,1,B_region_dopt,15,15,15,4247.911,137,15,1,3352.910846,12,87,0,0.276006
+24680,1,C_region_q2,15,15,15,4430.717,137,15,1,3535.716809,12,87,0,1.255294
+24680,2,A_current_ls_dopt,12,12,12,4009.119,126,14,1,3188.119484,5,101,2,0.007746
+24680,2,B_region_dopt,12,12,12,4186.907,134,12,1,3324.906825,11,101,0,0.177612
+24680,2,C_region_q2,12,12,12,4501.422,134,12,1,3639.421541,11,101,0,0.811632
+24680,3,A_current_ls_dopt,12,12,12,3848.376,126,12,1,3033.376083,1,97,0,0.004491
+24680,3,B_region_dopt,12,12,12,4110.237,142,12,1,3202.236899,15,97,0,0.339957
+24680,3,C_region_q2,12,12,12,4293.248,141,12,1,3390.248462,14,97,0,3.489463

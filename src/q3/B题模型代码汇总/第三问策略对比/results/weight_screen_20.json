@@ -1,0 +1,85 @@
+{
+  "cases": 20,
+  "seed": 41001,
+  "objective": "0.7*mean+0.3*CVaR90+100000*(1-clear_rate)",
+  "records": [
+    {
+      "weights": [
+        0.25,
+        0.25,
+        0.35,
+        0.15
+      ],
+      "all_cleared_rate": 1.0,
+      "mean_time_per_source_s": 330.0018115661422,
+      "cvar90_time_per_source_s": 403.03764242424245,
+      "loss": 351.9125608235722,
+      "wall_time_s": 15.206189300006372
+    },
+    {
+      "weights": [
+        0.25,
+        0.3,
+        0.3,
+        0.15
+      ],
+      "all_cleared_rate": 1.0,
+      "mean_time_per_source_s": 330.33461440268064,
+      "cvar90_time_per_source_s": 402.45367575757575,
+      "loss": 351.97033280914917,
+      "wall_time_s": 15.796592899991083
+    },
+    {
+      "weights": [
+        0.3,
+        0.25,
+        0.3,
+        0.15
+      ],
+      "all_cleared_rate": 1.0,
+      "mean_time_per_source_s": 330.85470337703964,
+      "cvar90_time_per_source_s": 402.84104242424246,
+      "loss": 352.4506050912005,
+      "wall_time_s": 15.449873400008073
+    },
+    {
+      "weights": [
+        0.25,
+        0.35,
+        0.25,
+        0.15
+      ],
+      "all_cleared_rate": 1.0,
+      "mean_time_per_source_s": 330.9133750437063,
+      "cvar90_time_per_source_s": 402.84104242424246,
+      "loss": 352.49167525786714,
+      "wall_time_s": 15.567858900001738
+    },
+    {
+      "weights": [
+        0.3,
+        0.3,
+        0.25,
+        0.15
+      ],
+      "all_cleared_rate": 1.0,
+      "mean_time_per_source_s": 330.90295180506996,
+      "cvar90_time_per_source_s": 403.1895,
+      "loss": 352.588916263549,
+      "wall_time_s": 15.125986800005194
+    },
+    {
+      "weights": [
+        0.35,
+        0.3,
+        0.15,
+        0.2
+      ],
+      "all_cleared_rate": 1.0,
+      "mean_time_per_source_s": 332.8039198193473,
+      "cvar90_time_per_source_s": 405.5279212121212,
+      "loss": 354.62112023717947,
+      "wall_time_s": 14.660052999999607
+    }
+  ]
+}

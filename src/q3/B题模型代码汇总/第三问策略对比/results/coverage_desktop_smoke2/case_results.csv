@@ -1,0 +1,5 @@
+﻿seed,case,strategy,source_count,detected_channels,cleared_channels,total_virtual_time_s,measure_actions,clear_actions,all_cleared,movement_time_s,active_measurements,co_measurements,coverage_insertions,search_end_time_s,no_signal_actions,failed_clear_actions,decision_wall_time_s
+8201,1,C_region_q2,16,16,16,4886.012,128,16,1,4043.012462,17,0,0,nan,79,0,1.369168
+8201,1,F_coverage_integrated,16,16,16,4546.287,120,16,1,3749.286814,42,24,8,2167.2292476758544,62,0,2.228776
+8201,2,C_region_q2,14,14,14,4722.175,141,14,1,3808.175436,13,0,0,nan,97,0,1.40438
+8201,2,F_coverage_integrated,14,14,14,4199.941,100,14,1,3531.940657,28,13,8,2144.7533453000983,58,0,2.254917
