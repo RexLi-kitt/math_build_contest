@@ -14,6 +14,8 @@ from pathlib import Path
 EXP = Path(r"C:\Users\李\Desktop\第四问定向源实验")
 MODELS = Path(r"C:\Users\李\Desktop\Q4保底基线")
 HERE = Path(__file__).resolve().parent
+ROOT = HERE.parents[1]
+OUTPUT_DIR = ROOT / "outputs" / "q4"
 for path in (EXP, HERE):
     if str(path) not in sys.path:
         sys.path.insert(0, str(path))
@@ -128,7 +130,7 @@ def main():
     parser.add_argument("--jobs", type=int, default=10)
     parser.add_argument("--seed", type=int, default=20261011)
     parser.add_argument("--output", type=Path,
-                        default=HERE / "results" / "cplus_gate_screen")
+                        default=OUTPUT_DIR / "results" / "cplus_gate_screen")
     args = parser.parse_args()
     scenario_builders = (
         ("normal", _normal_cases),

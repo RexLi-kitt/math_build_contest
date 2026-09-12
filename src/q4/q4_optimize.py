@@ -19,6 +19,8 @@ from q4_routes import Route31Agent, ClippedRouteAgent, ShiftedAgent, ShiftB, Shi
 from q4_routes import ShiftBGreedy, ShiftBRolling
 from q4_better import Grid26A, Grid26B, Grid26C, Insert28, Insert26, ClearEarly28
 
+DEFAULT_OUTPUT = Path(__file__).resolve().parents[1] / "outputs" / "q4" / "results" / "optimization"
+
 
 class L1000C2(Q4TriangularCoverageAgent):
     lattice_side_m = 1000.0
@@ -223,7 +225,7 @@ def main():
     parser.add_argument("--strategies", help="逗号分隔；默认全部")
     parser.add_argument("--jobs", type=int, default=min(8, os.cpu_count() or 1),
                         help="并行进程数；默认最多使用8个CPU核心")
-    parser.add_argument("--output", default="results/optimization")
+    parser.add_argument("--output", default=str(DEFAULT_OUTPUT))
     args = parser.parse_args()
     selected = STRATEGIES
     if args.strategies:

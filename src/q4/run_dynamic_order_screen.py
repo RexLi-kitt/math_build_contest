@@ -13,6 +13,8 @@ from pathlib import Path
 EXP = Path(r"C:\Users\李\Desktop\第四问定向源实验")
 MODELS = Path(r"C:\Users\李\Desktop\Q4保底基线")
 HERE = Path(__file__).resolve().parent
+ROOT = HERE.parents[1]
+OUTPUT_DIR = ROOT / "outputs" / "q4"
 for path in (EXP, MODELS / "B模型", MODELS / "B+模型", HERE):
     if str(path) not in sys.path:
         sys.path.insert(0, str(path))
@@ -143,7 +145,7 @@ def main():
     parser.add_argument("--jobs", type=int, default=8)
     parser.add_argument("--seed", type=int, default=20261001)
     parser.add_argument("--output", type=Path,
-                        default=HERE / "results" / "dynamic_order_screen")
+                        default=OUTPUT_DIR / "results" / "dynamic_order_screen")
     args = parser.parse_args()
 
     rng = random.Random(args.seed)

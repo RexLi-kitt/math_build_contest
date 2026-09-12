@@ -10,6 +10,8 @@ from q4_experiment import random_mixed_sources
 from q4_optimize import run_case, L950C2
 from q4_routes import ShiftB, triangle_intersects_disk
 
+ROOT = Path(__file__).resolve().parents[1]
+
 
 def work(item):
     index, sources = item
@@ -44,7 +46,7 @@ def main():
                         'cases': len(group),
                         'mean_seconds_per_source': statistics.mean(r['total_virtual_time_s']/r['source_count'] for r in group)}
     assert all(v['all_clear'] == v['cases'] for v in result.values()), result
-    output = Path('results/route_boundary200')
+    output = ROOT / 'outputs' / 'q4' / 'results' / 'route_boundary200'
     output.mkdir(parents=True, exist_ok=True)
     (output / 'summary.json').write_text(json.dumps(result, indent=2), encoding='utf-8')
     (output / 'cases.json').write_text(json.dumps(rows, indent=2), encoding='utf-8')

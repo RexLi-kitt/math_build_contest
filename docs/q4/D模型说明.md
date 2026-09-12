@@ -40,7 +40,7 @@ D1 固定使用 B 的 27 个认证测站，只在原点完成第一轮频道扫�
 - `dynamic_order_agent.py`：推荐代理 `DynamicDiscoveryOrderAgent`；同时保留完整后验滚动
   版本 `FullPosteriorRollingAgent` 作为负消融。
 - `run_dynamic_order_screen.py`：B、B+、D1 的正常和压力配对验证脚本。
-- `results/dynamic_order_holdout/`：独立验证汇总。
+- `outputs/q4/results/dynamic_order_holdout/`：独立验证汇总。
 
 ## 接入
 
