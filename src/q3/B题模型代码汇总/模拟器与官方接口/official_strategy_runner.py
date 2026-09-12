@@ -27,7 +27,7 @@ from strategies import STRATEGIES  # noqa: E402
 def main() -> int:
     parser = argparse.ArgumentParser(description="B题官方问题3演练：正式策略运行器")
     parser.add_argument("--robot-id", required=True, help="当前登录模拟器的参赛队号")
-    parser.add_argument("--strategy", default="I_ring_optimized", choices=sorted(STRATEGIES),
+    parser.add_argument("--strategy", default="Jplus_final", choices=sorted(STRATEGIES),
                         help="第三问模型注册名，默认 I_ring_optimized")
     parser.add_argument("--base-url", default="http://127.0.0.1:2026",
                         help="官方模拟器接口地址")

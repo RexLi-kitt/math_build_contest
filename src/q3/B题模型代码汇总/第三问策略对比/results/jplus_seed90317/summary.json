@@ -1,0 +1,49 @@
+{
+  "config": {
+    "cases": 1000,
+    "seed": 90317,
+    "sources": null,
+    "strategies": "J_ring7_1000,Jplus_final",
+    "output": "results/jplus_seed90317",
+    "jobs": 16
+  },
+  "elapsed_wall_time_s": 82.81013669999084,
+  "summaries": [
+    {
+      "strategy": "J_ring7_1000",
+      "all_cleared_rate": 1.0,
+      "mean_virtual_time_s": 3801.991648,
+      "median_virtual_time_s": 3814.5635,
+      "p90_virtual_time_s": 4195.57,
+      "p95_virtual_time_s": 4292.598,
+      "max_virtual_time_s": 4804.933,
+      "mean_time_per_source_s": 298.44019598752084,
+      "mean_movement_time_s": 3002.237630554,
+      "mean_measure_actions": 123.25,
+      "mean_active_measurements": 33.929,
+      "mean_co_measurements": 21.506,
+      "mean_coverage_insertions": 7.377,
+      "mean_search_end_time_s": 2022.0671648866635,
+      "mean_failed_clear_actions": 0,
+      "wall_time_s": 1139.933373
+    },
+    {
+      "strategy": "Jplus_final",
+      "all_cleared_rate": 1.0,
+      "mean_virtual_time_s": 3744.006564,
+      "median_virtual_time_s": 3747.7394999999997,
+      "p90_virtual_time_s": 4096.878,
+      "p95_virtual_time_s": 4200.967,
+      "max_virtual_time_s": 4519.367,
+      "mean_time_per_source_s": 293.99165001665835,
+      "mean_movement_time_s": 2989.159556267,
+      "mean_measure_actions": 115.667,
+      "mean_active_measurements": 26.306,
+      "mean_co_measurements": 21.545,
+      "mean_coverage_insertions": 0,
+      "mean_search_end_time_s": 1880.6637861453974,
+      "mean_failed_clear_actions": 0,
+      "wall_time_s": 171.175163
+    }
+  ]
+}
