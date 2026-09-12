@@ -1,0 +1,73 @@
+{
+  "label": "normal",
+  "seed": 20261011,
+  "summaries": [
+    {
+      "strategy": "B",
+      "cases": 100,
+      "all_clear": 100,
+      "mean_s_per_source": 677.7042156147186,
+      "p95_s_per_source": 863.3280000000001,
+      "mean_search_movement_s": 318.73842117636656,
+      "mean_post_search_movement_s": 183.63324038494557,
+      "mean_detection_s": 142.93424783549784,
+      "mean_program_time_s": 0.6092154519996257
+    },
+    {
+      "strategy": "C",
+      "cases": 100,
+      "all_clear": 100,
+      "mean_s_per_source": 625.4473072091242,
+      "p95_s_per_source": 822.5342,
+      "mean_search_movement_s": 279.2466699073388,
+      "mean_post_search_movement_s": 180.80221828510605,
+      "mean_detection_s": 134.51762133699634,
+      "mean_program_time_s": 0.5790758179978002
+    },
+    {
+      "strategy": "T0",
+      "cases": 100,
+      "all_clear": 100,
+      "mean_s_per_source": 625.4473072091242,
+      "p95_s_per_source": 822.5342,
+      "mean_search_movement_s": 279.2466699073388,
+      "mean_post_search_movement_s": 180.80221828510605,
+      "mean_detection_s": 134.51762133699634,
+      "mean_program_time_s": 0.5892668130004313
+    },
+    {
+      "strategy": "T1",
+      "cases": 100,
+      "all_clear": 100,
+      "mean_s_per_source": 627.0701843519813,
+      "p95_s_per_source": 822.5342,
+      "mean_search_movement_s": 279.98092429057,
+      "mean_post_search_movement_s": 181.3961651369131,
+      "mean_detection_s": 134.77119276556778,
+      "mean_program_time_s": 0.5907410440032254
+    },
+    {
+      "strategy": "T2",
+      "cases": 100,
+      "all_clear": 100,
+      "mean_s_per_source": 629.6441955574426,
+      "p95_s_per_source": 839.8415000000001,
+      "mean_search_movement_s": 281.95589177269875,
+      "mean_post_search_movement_s": 181.4902058404923,
+      "mean_detection_s": 135.18106206293706,
+      "mean_program_time_s": 0.5879755690001184
+    },
+    {
+      "strategy": "T3",
+      "cases": 100,
+      "all_clear": 100,
+      "mean_s_per_source": 636.6553500685981,
+      "p95_s_per_source": 856.843,
+      "mean_search_movement_s": 288.1131059331844,
+      "mean_post_search_movement_s": 181.446316244294,
+      "mean_detection_s": 135.96581564269064,
+      "mean_program_time_s": 0.5854236730001867
+    }
+  ],
+  "failures": []
+}
