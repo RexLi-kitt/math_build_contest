@@ -1,0 +1,109 @@
+{
+  "models": {
+    "I": {
+      "class": "RingOptimizedAgent",
+      "search_ring_r": 1150.0,
+      "ring_points": 6
+    },
+    "J": {
+      "class": "JCompactRingAgent",
+      "search_ring_r": 1000.0,
+      "ring_points": 7
+    },
+    "J+": {
+      "class": "JPlusAgent",
+      "search_ring_r": 1000.0,
+      "ring_points": 7,
+      "weights": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "coverage_extra_measure_budget": 5,
+      "insertion_budget_m": 0.0
+    }
+  },
+  "seeds": [
+    104729,
+    130363,
+    155921
+  ],
+  "cases_per_seed": 200,
+  "scenarios": {
+    "S0_baseline": {
+      "cases_per_seed": 200,
+      "seeds": [
+        104729,
+        130363,
+        155921
+      ],
+      "description": "standard generator: uniform area, 10-16 sources, base radius/error"
+    },
+    "S1_boundary": {
+      "cases_per_seed": 200,
+      "seeds": [
+        104729,
+        130363,
+        155921
+      ],
+      "description": "sources on r=1799/1800 at worst-sector bisectors with 0/+-0.2/+-1 deg jitter"
+    },
+    "S2_min_radius": {
+      "cases_per_seed": 200,
+      "seeds": [
+        104729,
+        130363,
+        155921
+      ],
+      "description": "uniform positions, all receive radii fixed at 1000 m"
+    },
+    "S3_systematic_bias": {
+      "cases_per_seed": 200,
+      "seeds": [
+        104729,
+        130363,
+        155921
+      ],
+      "description": "uniform positions, common +1/-1 deg bias per case (100/100 split)"
+    },
+    "S4_clustered": {
+      "cases_per_seed": 200,
+      "seeds": [
+        104729,
+        130363,
+        155921
+      ],
+      "description": "2-3 clusters (>=700 m apart), sources within 150 m of centers"
+    },
+    "S5_max_load": {
+      "cases_per_seed": 200,
+      "seeds": [
+        104729,
+        130363,
+        155921
+      ],
+      "description": "16 sources per case, base distribution"
+    },
+    "S6_compound": {
+      "cases_per_seed": 200,
+      "seeds": [
+        104729,
+        130363,
+        155921
+      ],
+      "description": "16 boundary sources in 2-3 adjacent worst sectors, radius 1000 m, common bias"
+    }
+  },
+  "bias_rule": "S3/S6: cases 1-100 +1 deg, cases 101-200 -1 deg, all direction measurements share the same bias (no cancellations)",
+  "file_hashes": {
+    "strategies.py": "931f0506124288ad",
+    "baseline_core.py": "9076d3cee178f408",
+    "feasible_region.py": "c5d984e950066fc1",
+    "stress_robustness.py": "69fd904fa3b35dfd"
+  },
+  "python_version": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+  "started": "2026-09-12 15:55:52",
+  "finished": "2026-09-12 16:07:11",
+  "elapsed_s": 680.0
+}
