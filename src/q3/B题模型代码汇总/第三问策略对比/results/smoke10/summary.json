@@ -1,0 +1,56 @@
+{
+  "config": {
+    "cases": 10,
+    "seed": 2026,
+    "sources": null,
+    "output": ".q3_compare_staging\\results\\smoke10"
+  },
+  "elapsed_wall_time_s": 19.114970800001174,
+  "summaries": [
+    {
+      "strategy": "A_current_ls_dopt",
+      "all_cleared_rate": 1.0,
+      "mean_virtual_time_s": 4043.1862,
+      "median_virtual_time_s": 3901.2195,
+      "p90_virtual_time_s": 4526.83,
+      "p95_virtual_time_s": 4796.739,
+      "max_virtual_time_s": 4796.739,
+      "mean_time_per_source_s": 337.6178564789377,
+      "mean_movement_time_s": 3193.2861588,
+      "mean_measure_actions": 130,
+      "mean_active_measurements": 3,
+      "mean_failed_clear_actions": 3.5,
+      "wall_time_s": 0.178039
+    },
+    {
+      "strategy": "B_region_dopt",
+      "all_cleared_rate": 1.0,
+      "mean_virtual_time_s": 4316.132,
+      "median_virtual_time_s": 4166.397,
+      "p90_virtual_time_s": 4925.7,
+      "p95_virtual_time_s": 4992.531,
+      "max_virtual_time_s": 4992.531,
+      "mean_time_per_source_s": 359.7415440613553,
+      "mean_movement_time_s": 3411.5320397,
+      "mean_measure_actions": 141.2,
+      "mean_active_measurements": 11.8,
+      "mean_failed_clear_actions": 0,
+      "wall_time_s": 3.573312
+    },
+    {
+      "strategy": "C_region_q2",
+      "all_cleared_rate": 1.0,
+      "mean_virtual_time_s": 4480.0557,
+      "median_virtual_time_s": 4356.5465,
+      "p90_virtual_time_s": 5118.528,
+      "p95_virtual_time_s": 5132.382,
+      "max_virtual_time_s": 5132.382,
+      "mean_time_per_source_s": 373.7036668040293,
+      "mean_movement_time_s": 3583.9556906,
+      "mean_measure_actions": 139.5,
+      "mean_active_measurements": 10.1,
+      "mean_failed_clear_actions": 0,
+      "wall_time_s": 15.358613
+    }
+  ]
+}

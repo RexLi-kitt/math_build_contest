@@ -1,0 +1,75 @@
+{
+  "config": {
+    "cases": 100,
+    "seed": 90317,
+    "sources": null,
+    "output": ".q3_compare_staging\\results\\validation_seed90317_100"
+  },
+  "elapsed_wall_time_s": 205.55488309999055,
+  "summaries": [
+    {
+      "strategy": "A_current_ls_dopt",
+      "all_cleared_rate": 1.0,
+      "mean_virtual_time_s": 4242.28006,
+      "median_virtual_time_s": 4187.2515,
+      "p90_virtual_time_s": 4723.805,
+      "p95_virtual_time_s": 4884.1,
+      "max_virtual_time_s": 5263.841,
+      "mean_time_per_source_s": 329.31778656306193,
+      "mean_movement_time_s": 3397.55007608,
+      "mean_measure_actions": 128.59,
+      "mean_active_measurements": 3.62,
+      "mean_co_measurements": 0,
+      "mean_failed_clear_actions": 3.25,
+      "wall_time_s": 1.051769
+    },
+    {
+      "strategy": "B_region_dopt",
+      "all_cleared_rate": 1.0,
+      "mean_virtual_time_s": 4464.99982,
+      "median_virtual_time_s": 4466.6875,
+      "p90_virtual_time_s": 4878.977,
+      "p95_virtual_time_s": 5051.73,
+      "max_virtual_time_s": 5244.693,
+      "mean_time_per_source_s": 346.70053915900763,
+      "mean_movement_time_s": 3558.77976888,
+      "mean_measure_actions": 140.76,
+      "mean_active_measurements": 13.43,
+      "mean_co_measurements": 0,
+      "mean_failed_clear_actions": 0,
+      "wall_time_s": 22.786722
+    },
+    {
+      "strategy": "C_region_q2",
+      "all_cleared_rate": 1.0,
+      "mean_virtual_time_s": 4636.05175,
+      "median_virtual_time_s": 4653.304,
+      "p90_virtual_time_s": 5098.396,
+      "p95_virtual_time_s": 5232.004,
+      "max_virtual_time_s": 5535.532,
+      "mean_time_per_source_s": 359.94977696049784,
+      "mean_movement_time_s": 3736.5817411,
+      "mean_measure_actions": 139.41,
+      "mean_active_measurements": 12.08,
+      "mean_co_measurements": 0,
+      "mean_failed_clear_actions": 0,
+      "wall_time_s": 100.520601
+    },
+    {
+      "strategy": "Cplus_completion_coobserve",
+      "all_cleared_rate": 1.0,
+      "mean_virtual_time_s": 4349.07374,
+      "median_virtual_time_s": 4372.136,
+      "p90_virtual_time_s": 4685.406,
+      "p95_virtual_time_s": 4714.082,
+      "max_virtual_time_s": 4920.457,
+      "mean_time_per_source_s": 338.17626995766733,
+      "mean_movement_time_s": 3424.16378787,
+      "mean_measure_actions": 143.89,
+      "mean_active_measurements": 16.56,
+      "mean_co_measurements": 6.84,
+      "mean_failed_clear_actions": 0,
+      "wall_time_s": 81.185962
+    }
+  ]
+}

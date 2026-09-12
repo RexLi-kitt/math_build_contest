@@ -1,0 +1,56 @@
+{
+  "config": {
+    "cases": 100,
+    "seed": 2026,
+    "sources": null,
+    "output": "C:\\Users\\李\\Desktop\\B题第三问策略对比\\results\\seed2026_100"
+  },
+  "elapsed_wall_time_s": 141.45272630000545,
+  "summaries": [
+    {
+      "strategy": "A_current_ls_dopt",
+      "all_cleared_rate": 1.0,
+      "mean_virtual_time_s": 4120.08438,
+      "median_virtual_time_s": 4039.401,
+      "p90_virtual_time_s": 4762.151,
+      "p95_virtual_time_s": 4857.675,
+      "max_virtual_time_s": 6111.128,
+      "mean_time_per_source_s": 332.31680727901266,
+      "mean_movement_time_s": 3284.29438699,
+      "mean_measure_actions": 126.97,
+      "mean_active_measurements": 3.8,
+      "mean_failed_clear_actions": 4.27,
+      "wall_time_s": 1.085919
+    },
+    {
+      "strategy": "B_region_dopt",
+      "all_cleared_rate": 1.0,
+      "mean_virtual_time_s": 4375.11166,
+      "median_virtual_time_s": 4342.5779999999995,
+      "p90_virtual_time_s": 4908.199,
+      "p95_virtual_time_s": 4992.531,
+      "max_virtual_time_s": 5810.706,
+      "mean_time_per_source_s": 352.50688720816686,
+      "mean_movement_time_s": 3480.76164214,
+      "mean_measure_actions": 139.26,
+      "mean_active_measurements": 13.66,
+      "mean_failed_clear_actions": 0,
+      "wall_time_s": 27.534953
+    },
+    {
+      "strategy": "C_region_q2",
+      "all_cleared_rate": 1.0,
+      "mean_virtual_time_s": 4519.89899,
+      "median_virtual_time_s": 4484.719499999999,
+      "p90_virtual_time_s": 4981.821,
+      "p95_virtual_time_s": 5166.969,
+      "max_virtual_time_s": 5742.637,
+      "mean_time_per_source_s": 364.23646066878956,
+      "mean_movement_time_s": 3635.34898194,
+      "mean_measure_actions": 137.3,
+      "mean_active_measurements": 11.7,
+      "mean_failed_clear_actions": 0,
+      "wall_time_s": 112.823301
+    }
+  ]
+}

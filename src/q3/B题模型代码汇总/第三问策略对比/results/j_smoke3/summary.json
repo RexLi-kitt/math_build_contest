@@ -1,0 +1,49 @@
+{
+  "config": {
+    "cases": 3,
+    "seed": 999,
+    "sources": null,
+    "strategies": "I_ring_optimized,J_q2_fidelity",
+    "output": "results/j_smoke3",
+    "jobs": 3
+  },
+  "elapsed_wall_time_s": 1.1992174999904819,
+  "summaries": [
+    {
+      "strategy": "I_ring_optimized",
+      "all_cleared_rate": 1.0,
+      "mean_virtual_time_s": 4067.048333333333,
+      "median_virtual_time_s": 4087.629,
+      "p90_virtual_time_s": 4151.423,
+      "p95_virtual_time_s": 4151.423,
+      "max_virtual_time_s": 4151.423,
+      "mean_time_per_source_s": 306.0833083333333,
+      "mean_movement_time_s": 3357.048279,
+      "mean_measure_actions": 107.33333333333333,
+      "mean_active_measurements": 32.333333333333336,
+      "mean_co_measurements": 20.333333333333332,
+      "mean_coverage_insertions": 7.666666666666667,
+      "mean_search_end_time_s": 2029.1143335808272,
+      "mean_failed_clear_actions": 0,
+      "wall_time_s": 1.3742640000000002
+    },
+    {
+      "strategy": "J_q2_fidelity",
+      "all_cleared_rate": 1.0,
+      "mean_virtual_time_s": 3758.2073333333333,
+      "median_virtual_time_s": 3872.947,
+      "p90_virtual_time_s": 3916.247,
+      "p95_virtual_time_s": 3916.247,
+      "max_virtual_time_s": 3916.247,
+      "mean_time_per_source_s": 278.4558083333333,
+      "mean_movement_time_s": 3046.5405333333333,
+      "mean_measure_actions": 108,
+      "mean_active_measurements": 34.333333333333336,
+      "mean_co_measurements": 21,
+      "mean_coverage_insertions": 6.666666666666667,
+      "mean_search_end_time_s": 1878.4180313621355,
+      "mean_failed_clear_actions": 0,
+      "wall_time_s": 1.330314
+    }
+  ]
+}

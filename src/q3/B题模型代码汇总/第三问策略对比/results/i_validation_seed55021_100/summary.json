@@ -1,0 +1,66 @@
+{
+  "config": {
+    "cases": 100,
+    "seed": 55021,
+    "sources": null,
+    "strategies": "G_rolling_coverage,Ablation_ring_radius_only,I_ring_optimized",
+    "output": "results/i_validation_seed55021_100"
+  },
+  "elapsed_wall_time_s": 234.86488950000785,
+  "summaries": [
+    {
+      "strategy": "G_rolling_coverage",
+      "all_cleared_rate": 1.0,
+      "mean_virtual_time_s": 4093.25255,
+      "median_virtual_time_s": 4124.885,
+      "p90_virtual_time_s": 4538.437,
+      "p95_virtual_time_s": 4685.666,
+      "max_virtual_time_s": 4952.567,
+      "mean_time_per_source_s": 326.7870398801615,
+      "mean_movement_time_s": 3347.85249926,
+      "mean_measure_actions": 114.44,
+      "mean_active_measurements": 32.43,
+      "mean_co_measurements": 18.88,
+      "mean_coverage_insertions": 7.53,
+      "mean_search_end_time_s": 2182.604086185546,
+      "mean_failed_clear_actions": 0,
+      "wall_time_s": 80.38311
+    },
+    {
+      "strategy": "Ablation_ring_radius_only",
+      "all_cleared_rate": 1.0,
+      "mean_virtual_time_s": 3967.43481,
+      "median_virtual_time_s": 4009.1040000000003,
+      "p90_virtual_time_s": 4391.792,
+      "p95_virtual_time_s": 4461.336,
+      "max_virtual_time_s": 4698.466,
+      "mean_time_per_source_s": 316.7532707038378,
+      "mean_movement_time_s": 3224.13481322,
+      "mean_measure_actions": 114.1,
+      "mean_active_measurements": 32.33,
+      "mean_co_measurements": 18.9,
+      "mean_coverage_insertions": 7.52,
+      "mean_search_end_time_s": 2073.4189796535843,
+      "mean_failed_clear_actions": 0,
+      "wall_time_s": 82.136431
+    },
+    {
+      "strategy": "I_ring_optimized",
+      "all_cleared_rate": 1.0,
+      "mean_virtual_time_s": 4050.8435,
+      "median_virtual_time_s": 4069.978,
+      "p90_virtual_time_s": 4464.45,
+      "p95_virtual_time_s": 4588.167,
+      "max_virtual_time_s": 4911.584,
+      "mean_time_per_source_s": 323.73755773921914,
+      "mean_movement_time_s": 3305.69350688,
+      "mean_measure_actions": 114.43,
+      "mean_active_measurements": 32.54,
+      "mean_co_measurements": 18.67,
+      "mean_coverage_insertions": 7.65,
+      "mean_search_end_time_s": 2060.1523590428837,
+      "mean_failed_clear_actions": 0,
+      "wall_time_s": 72.332706
+    }
+  ]
+}
