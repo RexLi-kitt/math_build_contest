@@ -6,7 +6,7 @@
 
 ```
 B题模型代码汇总/
-├── 模型架构与改进_A到I.md      # 三层架构、A–I 演进、关键公式、负消融、性能总表
+├── 模型架构与改进_A到J+.md     # 三层架构、A–J+ 演进、关键公式、负消融、性能总表
 ├── 第二问/                     # Q1/Q2 求解、边界测试与输出
 │   ├── src/q1/localization.py
 │   ├── src/q2/{solve_q2.py, q1_q2_bridge.py, boundary_tests.py, README.md}
@@ -29,13 +29,14 @@ B题模型代码汇总/
 
 ## 模型主线
 
-第三问按 A–I 演进，完整说明见 `模型架构与改进_A到I.md`：
+第三问按 A–J+ 演进，完整说明见 `模型架构与改进_A到J+.md`：
 
 - A：最小二乘交点 + D-opt；B：第二问可行域 + 最小包围圆；C：四指标选点；
 - C+：预计完成时间 + 顺便测量；D：混合信念 + 风险约束滚动；F：覆盖协同；
-- G：逐动作滚动；I：覆盖环半径优化（当前最优，306.2 s/源，1000 局统一口径验证）。
+- G：逐动作滚动；I：覆盖环半径优化（1150 m）；J：七点紧凑环（k=7、R=1000，闭式保证）；
+- **J+：撤销扫描期插点、测量并入清除路径（最终模型，293.5 s/源，三种子 ×1000 验证）**。
 
-C 到 I 的选点内核统一为第二问正式口径（粗搜→前二加密→只在加密集重评分，预测半径取均值），详见 `第三问策略对比/reports/第八轮第二问口径统一.md`。H（动作点路由 + 近终态不抢占）与覆盖环旋转、边际插入均为负消融，保留在代码中供论文引用。
+C 到 J+ 的选点内核统一为第二问正式口径（粗搜→前二加密→只在加密集重评分，预测半径取均值），详见 `第三问策略对比/reports/第八轮第二问口径统一.md`。H（动作点路由 + 近终态不抢占）与覆盖环旋转、边际插入、8 点环、风险清除均为负消融，保留在代码中供论文引用。
 
 ## 运行
 
@@ -43,10 +44,13 @@ C 到 I 的选点内核统一为第二问正式口径（粗搜→前二加密→
 
 ```powershell
 # 整条链，1000 局并行
-python run_compare.py --cases 1000 --seed 55021 --strategies C_region_q2,Cplus_completion_coobserve,F_coverage_integrated,G_rolling_coverage,I_ring_optimized --output results/faithful_chain_1000 --jobs 16
+python run_compare.py --cases 1000 --seed 55021 --strategies C_region_q2,Cplus_completion_coobserve,F_coverage_integrated,G_rolling_coverage,I_ring_optimized,J_ring7_1000,Jplus_final --output results/jplus_chain_1000 --jobs 16
 
-# 单模型大样本
-python run_compare.py --cases 1000 --seed 55021 --strategies I_ring_optimized --output results/i_1000 --jobs 16
+# 单模型大样本（最终模型）
+python run_compare.py --cases 1000 --seed 55021 --strategies Jplus_final --output results/jplus_1000 --jobs 16
+
+# 七项指标机制回测（在 第三问策略对比/ 中，三种子 × 200 局）
+python diagnostics\i_to_jplus_metrics.py --seeds 112358,271828,314159 --cases-per-seed 200 --jobs 16
 ```
 
 第二问（在本文件夹根目录）：
