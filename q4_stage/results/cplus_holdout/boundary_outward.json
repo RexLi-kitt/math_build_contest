@@ -1,0 +1,51 @@
+{
+  "label": "boundary_outward",
+  "seed": 20261024,
+  "summaries": [
+    {
+      "strategy": "B",
+      "cases": 200,
+      "all_clear": 200,
+      "mean_s_per_source": 567.6215553125,
+      "p95_s_per_source": 681.56,
+      "mean_program_time_s": 0.6718762919992151
+    },
+    {
+      "strategy": "C",
+      "cases": 200,
+      "all_clear": 200,
+      "mean_s_per_source": 765.6207221875,
+      "p95_s_per_source": 960.5936875,
+      "mean_program_time_s": 0.9899553229991579
+    },
+    {
+      "strategy": "Cplus",
+      "cases": 200,
+      "all_clear": 200,
+      "mean_s_per_source": 567.6215553125,
+      "p95_s_per_source": 681.56,
+      "mean_program_time_s": 0.6684508699987782
+    }
+  ],
+  "paired_comparisons": [
+    {
+      "comparison": "Cplus-B",
+      "mean_paired_difference_s_per_source": 0.0,
+      "normal_approx_95ci": [
+        0.0,
+        0.0
+      ],
+      "cplus_win_rate": 0.0
+    },
+    {
+      "comparison": "Cplus-C",
+      "mean_paired_difference_s_per_source": -197.99916687500001,
+      "normal_approx_95ci": [
+        -212.99182884692596,
+        -183.00650490307407
+      ],
+      "cplus_win_rate": 0.985
+    }
+  ],
+  "failures": []
+}
