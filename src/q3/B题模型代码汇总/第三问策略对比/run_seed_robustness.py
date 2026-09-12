@@ -37,7 +37,7 @@ from strategies import STRATEGIES  # noqa: E402
 
 DEFAULT_STRATEGIES = (
     "C_region_q2,Cplus_completion_coobserve,F_coverage_integrated,"
-    "G_rolling_coverage,I_ring_optimized"
+    "G_rolling_coverage,I_ring_optimized,J_ring7_1000,Jplus_final"
 )
 
 FRIENDLY_NAMES = {
@@ -46,6 +46,8 @@ FRIENDLY_NAMES = {
     "F_coverage_integrated": "F 覆盖协同",
     "G_rolling_coverage": "G 滚动覆盖",
     "I_ring_optimized": "I 环半径优化",
+    "J_ring7_1000": "J 紧凑七点环",
+    "Jplus_final": "J+ 最终版",
 }
 
 
@@ -287,7 +289,11 @@ def build_conclusions(seeds: list[int], strategies: list[str], stats_by_seed: di
                          "排序结论对种子选择稳健。")
         else:
             lines.append(f"- 配对符号检验最大 p 为 {fmt_p(max_p)}，注意存在不显著的配对。")
-    if "I_ring_optimized" in strategies:
+    if "Jplus_final" in strategies:
+        value = cross["Jplus_final"]["mean"]
+        lines.append(f"- J+ 的跨种子平均/源均值为 {value:.1f} s，"
+                     f"距 300 s/源目标 {abs(value - 300.0) / 300.0 * 100:.1f}%。")
+    elif "I_ring_optimized" in strategies:
         value = cross["I_ring_optimized"]["mean"]
         lines.append(f"- I 的跨种子平均/源均值为 {value:.1f} s，"
                      f"距 300 s/源目标 {abs(value - 300.0) / 300.0 * 100:.1f}%。")

@@ -753,6 +753,78 @@ class RingOptimizedAgent(RollingCoverageAgent):
     search_ring_r = 1150.0
 
 
+class JCompactRingAgent(RingOptimizedAgent):
+    """Model J: compact seven-point coverage ring at R = 1000 m.
+
+    Only the discovery layer changes relative to I.  With the origin stop plus
+    k evenly spaced ring stops of radius R, the worst point of the task disk
+    lies on the boundary half-way between adjacent ring stops:
+
+        d_k(R) = sqrt(1800^2 + R^2 - 2 * 1800 * R * cos(pi / k)).
+
+    Detection only requires d_k(R) <= 1000 (every receive radius is >= 1000 m),
+    which gives the minimum feasible radius
+
+        R_min(k) = 1800 cos(pi/k) - sqrt(3240000 cos^2(pi/k) - 2240000):
+
+    R_min(6) = 1122.9 m, R_min(7) = 997.2 m, R_min(8) = 938.1 m.  The open
+    sweep path is R * (1 + 2(k-1) sin(pi/k)), so k=7 at R=1000 sweeps 6207 m
+    instead of 6900 m for I.  Each extra stop costs one more scan of the
+    still-undiscovered channels (~60 s per episode): k=6 -> 7 saves 106 s of
+    movement and pays ~61 s of scanning, while k=7 -> 8 saves only 49 s and
+    still pays ~60 s, so the joint (k, R) optimum is k=7 at R ~= 1000 (worst
+    coverage 998.25 m, 1.75 m margin; the centre is covered by the origin
+    stop).  Three paired 1000-case seeds: 298.2 s/source vs 306.0 for I, all
+    clears 100%.
+    """
+
+    search_ring_r = 1000.0
+    ring_count = 7
+
+    def __init__(self, sim, verbose: bool = False):
+        super().__init__(sim, verbose)
+        step = 360.0 / self.ring_count
+        self.search_points = [(0.0, 0.0)] + [
+            add((0.0, 0.0), self.search_ring_r, step * k)
+            for k in range(self.ring_count)
+        ]
+
+
+class JPlusAgent(JCompactRingAgent):
+    """Model J+ (final): J with the measurement-scheduling correction.
+
+    Two changes, both confined to where measurements are taken:
+
+    1. No measurement detours during the coverage sweep: the Q2 recommended
+       points are taken later, on the way, inside the rolling clearing route.
+       Under the compact ring the sweep is already close to the sources, so a
+       mid-sweep detour costs more than it saves; the insertion mechanism came
+       from the old R = 1250 geometry, where the trade-off was the opposite.
+    2. The Q2 four-metric weights are re-calibrated to equal weights and the
+       per-stop co-observation budget is raised from 3 to 5.
+
+    Three paired 1000-case seeds against J: 293.5 vs 298.2 s/source (-4.7,
+    95% CI [3.7, 5.8]), P95 367.8 vs 375.3, all clears 100% (3000/3000).
+    """
+
+    def _insertion_before(self, next_coverage):
+        return None
+
+    weights = (0.25, 0.25, 0.25, 0.25)
+    coverage_extra_measure_budget = 5
+
+
+class AblationRing8Agent(JCompactRingAgent):
+    """Negative ablation: eight-point ring at R = 950 m.
+
+    Saves a further 49 s of movement per episode but adds one more full scan
+    round of the undiscovered channels (~60 s), so it is slower than k=7.
+    """
+
+    search_ring_r = 950.0
+    ring_count = 8
+
+
 class RotatedRingAblationAgent(RollingCoverageAgent):
     """Negative ablation: bearing-aligned ring rotation at the original radius.
 
@@ -791,10 +863,13 @@ STRATEGIES = {
     "G_rolling_coverage": RollingCoverageAgent,
     "H_task_scheduling": TaskSchedulingAgent,
     "I_ring_optimized": RingOptimizedAgent,
+    "J_ring7_1000": JCompactRingAgent,
+    "Jplus_final": JPlusAgent,
     "D_hybrid_belief_rolling": HybridBeliefRollingAgent,
     "Ablation_action_nodes_only": ActionNodeOnlyAgent,
     "Ablation_non_preemption_only": NonPreemptionOnlyAgent,
     "Ablation_ring_rotation": RotatedRingAblationAgent,
+    "Ablation_ring8_950": AblationRing8Agent,
     "Ablation_marginal_insertion": MarginalInsertionAgent,
     "Ablation_marginal_rolling": MarginalRollingAgent,
 }
