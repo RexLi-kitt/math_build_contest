@@ -13,8 +13,8 @@
     "rounding": "计算使用完整精度；Excel展示坐标/直径6位、角度9位小数",
     "recalculation": "表格为已运行结果快照；更改数据后需重跑Python，不会在Excel中自动调用定位函数",
     "code_sha256": {
-      "experiments.py": "d9af80ccddae5b4dae42d04193bd611dcaa8915bebc350691a6833e0fc65c777",
-      "localization.py": "aba757e88ac30ec39b9de602439ca5f867665aa1060c74c85e0d9237f59e6493"
+      "experiments.py": "7258caf69f0d9fe3c4c8b37bf5e87676349eb3afb23d0e3f54da28f13e489f9a",
+      "localization.py": "0aa142e83698aedb1206c0cd6898dce9eb7e028a86e2e9b7bb11a8819c9704cc"
     }
   },
   "summary": {
