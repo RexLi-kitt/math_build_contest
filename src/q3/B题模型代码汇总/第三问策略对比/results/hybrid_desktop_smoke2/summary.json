@@ -1,0 +1,28 @@
+{
+  "config": {
+    "cases": 2,
+    "seed": 1901,
+    "sources": null,
+    "strategies": "D_hybrid_belief_rolling",
+    "output": "C:\\Users\\李\\Desktop\\B题第三问策略对比\\results\\hybrid_desktop_smoke2"
+  },
+  "elapsed_wall_time_s": 1.1123794000013731,
+  "summaries": [
+    {
+      "strategy": "D_hybrid_belief_rolling",
+      "all_cleared_rate": 1.0,
+      "mean_virtual_time_s": 4380.337,
+      "median_virtual_time_s": 4380.337,
+      "p90_virtual_time_s": 4693.685,
+      "p95_virtual_time_s": 4693.685,
+      "max_virtual_time_s": 4693.685,
+      "mean_time_per_source_s": 291.9272633928572,
+      "mean_movement_time_s": 3419.336957,
+      "mean_measure_actions": 148.5,
+      "mean_active_measurements": 20.5,
+      "mean_co_measurements": 16.5,
+      "mean_failed_clear_actions": 0,
+      "wall_time_s": 1.110175
+    }
+  ]
+}

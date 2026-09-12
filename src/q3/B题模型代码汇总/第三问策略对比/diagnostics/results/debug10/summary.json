@@ -1,0 +1,106 @@
+{
+  "config": {
+    "cases": 10,
+    "seed": 982451653,
+    "jobs": 1,
+    "output": "diagnostics\\results\\debug10"
+  },
+  "summaries": [
+    {
+      "group": "C",
+      "cases": 10,
+      "mean_time_per_source_s": 363.0755790567766,
+      "median_time_per_source_s": 367.5689642857143,
+      "p95_time_per_source_s": 387.2319230769231,
+      "all_cleared_rate": 1.0
+    },
+    {
+      "group": "C_completion_only",
+      "cases": 10,
+      "mean_time_per_source_s": 326.41937651556776,
+      "median_time_per_source_s": 328.4726452380952,
+      "p95_time_per_source_s": 362.15446153846153,
+      "all_cleared_rate": 1.0
+    },
+    {
+      "group": "C_coobserve_only",
+      "cases": 10,
+      "mean_time_per_source_s": 342.27991411630035,
+      "median_time_per_source_s": 352.46423076923077,
+      "p95_time_per_source_s": 373.9159230769231,
+      "all_cleared_rate": 1.0
+    },
+    {
+      "group": "C_reweighted",
+      "cases": 10,
+      "mean_time_per_source_s": 353.40167827838826,
+      "median_time_per_source_s": 356.1428237179487,
+      "p95_time_per_source_s": 384.0336923076923,
+      "all_cleared_rate": 0.9
+    },
+    {
+      "group": "Cplus",
+      "cases": 10,
+      "mean_time_per_source_s": 311.9787583195971,
+      "median_time_per_source_s": 318.5764093406593,
+      "p95_time_per_source_s": 360.42346153846154,
+      "all_cleared_rate": 1.0
+    },
+    {
+      "group": "F",
+      "cases": 10,
+      "mean_time_per_source_s": 301.16090579212454,
+      "median_time_per_source_s": 298.4584010989011,
+      "p95_time_per_source_s": 329.7910714285714,
+      "all_cleared_rate": 1.0
+    },
+    {
+      "group": "F_no_insertion",
+      "cases": 10,
+      "mean_time_per_source_s": 310.16228243131866,
+      "median_time_per_source_s": 309.49906666666664,
+      "p95_time_per_source_s": 363.9357692307692,
+      "all_cleared_rate": 1.0
+    },
+    {
+      "group": "I_discovery_truth",
+      "cases": 10,
+      "mean_time_per_source_s": 268.47493545787546,
+      "median_time_per_source_s": 269.49653571428576,
+      "p95_time_per_source_s": 324.4055,
+      "all_cleared_rate": 1.0
+    },
+    {
+      "group": "I_normal",
+      "cases": 10,
+      "mean_time_per_source_s": 291.5173735393773,
+      "median_time_per_source_s": 291.0995467032967,
+      "p95_time_per_source_s": 329.54741666666666,
+      "all_cleared_rate": 1.0
+    },
+    {
+      "group": "truth_after_search",
+      "cases": 10,
+      "mean_time_per_source_s": 279.76198623033747,
+      "median_time_per_source_s": 281.421710884249,
+      "p95_time_per_source_s": 325.3412698392946,
+      "all_cleared_rate": 1.0
+    },
+    {
+      "group": "truth_direct_centres",
+      "cases": 10,
+      "mean_time_per_source_s": 134.5473436103297,
+      "median_time_per_source_s": 137.3255525768076,
+      "p95_time_per_source_s": 156.96369713634365,
+      "all_cleared_rate": 1.0
+    },
+    {
+      "group": "truth_disk_lower_bound",
+      "cases": 10,
+      "mean_time_per_source_s": 126.86792667737514,
+      "median_time_per_source_s": 129.6127320639871,
+      "p95_time_per_source_s": 149.29703046967703,
+      "all_cleared_rate": 1.0
+    }
+  ]
+}
