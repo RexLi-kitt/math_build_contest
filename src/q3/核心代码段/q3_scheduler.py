@@ -1,0 +1,106 @@
+# 功能：逐动作滚动清除调度，配合覆盖点顺序枚举与最近邻+2-opt/Or-opt 开放路径重排实现全清除。
+from __future__ import annotations
+
+import math
+from itertools import permutations
+
+
+def two_opt_route(start, anchors):
+    """从当前位置 start 出发的开放路径：最近邻初解，再用 2-opt 与 Or-opt 交替局部优化。
+
+    2-opt 只反转连续段，表达不了"把被甩到路线末尾的点搬回其所在簇"的纯插入移动；
+    Or-opt 补足该邻域：把长度 1-3 的段正向或反向插入其它位置。
+    """
+    if len(anchors) < 2:
+        return list(anchors)
+    remaining, route, current = set(anchors), [], start
+    while remaining:
+        nxt = min(remaining, key=lambda c: math.dist(current, anchors[c]))
+        route.append(nxt)
+        current = anchors[nxt]
+        remaining.remove(nxt)
+
+    def route_cost(order):
+        points = [start] + [anchors[c] for c in order]
+        return sum(math.dist(a, b) for a, b in zip(points, points[1:]))
+
+    improved = True
+    while improved:
+        improved = False
+        old_cost = route_cost(route)
+        for i in range(len(route) - 1):
+            for j in range(i + 2, len(route) + 1):
+                candidate = route[:i] + list(reversed(route[i:j])) + route[j:]
+                if route_cost(candidate) + 1e-6 < old_cost:
+                    route, improved = candidate, True
+                    break
+            if improved:
+                break
+        if improved:
+            continue
+        old_cost, n = route_cost(route), len(route)
+        for seg_len in (1, 2, 3):
+            for i in range(n - seg_len + 1):
+                segment = route[i:i + seg_len]
+                rest = route[:i] + route[i + seg_len:]
+                for j in range(len(rest) + 1):
+                    for seg in (segment, segment[::-1]):
+                        candidate = rest[:j] + seg + rest[j:]
+                        if route_cost(candidate) + 1e-6 < old_cost:
+                            route, improved = candidate, True
+                            break
+                    if improved:
+                        break
+                if improved:
+                    break
+            if improved:
+                break
+    return route
+
+
+def coverage_order(position, unvisited, anchors):
+    """覆盖点访问顺序枚举（点数很少）：路程 + 终点到最近已发现目标锚点的衔接距离。"""
+    if len(unvisited) <= 1:
+        return list(unvisited)
+    best_order, best_cost = None, math.inf
+    for order in permutations(unvisited):
+        path = [position, *order]
+        cost = sum(math.dist(a, b) for a, b in zip(path, path[1:]))
+        # 在保证覆盖路线短的同时，选一个对已发现目标更有用的收尾侧。
+        if anchors:
+            cost += min(math.dist(order[-1], anchor) for anchor in anchors)
+        if cost < best_cost - 1e-6:
+            best_order, best_cost = order, cost
+    return list(best_order) if best_order is not None else list(unvisited)
+
+
+def rolling_clear(agent, max_steps: int = 240):
+    """模型 G/J+ 的清除阶段主循环：每一步只执行路线上首个目标的一次动作，随后重规划。
+
+    每步用最近邻 + 2-opt/Or-opt 重排全部未清除源，只执行首个目标的一次清除或一次测量，
+    更新信念后立即重规划；词序目标先保证全清除，再压缩平均与 P95 每源耗时。
+    """
+    for _ in range(max_steps):
+        unresolved = [channel for channel, st in agent.state.items()
+                      if st.discovered and not st.cleared and not st.exhausted]
+        if not unresolved:
+            break
+        channel = agent._two_opt_route(unresolved)[0]
+        st = agent.state[channel]
+        center = agent._clear_decision(st)
+        if center is not None:
+            if agent._try_clear(center, channel):
+                st.cleared = True
+                agent._coobserve(center, channel)
+            continue
+        if st.attempts >= 10:
+            st.exhausted = True
+            continue
+        point = agent._next_measurement_point(st)
+        if point is None:
+            st.exhausted = True
+            continue
+        agent.observe(point, channel)
+        st.attempts += 1
+        agent._coobserve(point, channel)
+    return agent.summary()
