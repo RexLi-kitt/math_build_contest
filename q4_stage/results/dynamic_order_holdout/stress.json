@@ -1,0 +1,62 @@
+{
+  "label": "stress",
+  "seed": 20261008,
+  "summaries": [
+    {
+      "strategy": "B",
+      "cases": 200,
+      "all_clear": 200,
+      "mean_s_per_source": 562.361035625,
+      "p95_s_per_source": 670.973875,
+      "mean_search_movement_s": 232.71806704656,
+      "mean_post_search_movement_s": 164.39546812846257,
+      "mean_detection_s": 134.3015625,
+      "mean_program_time_s": 0.38937722399874475
+    },
+    {
+      "strategy": "Bplus",
+      "cases": 200,
+      "all_clear": 200,
+      "mean_s_per_source": 596.490136875,
+      "p95_s_per_source": 702.5724375,
+      "mean_search_movement_s": 238.78023129007937,
+      "mean_post_search_movement_s": 172.29146959777307,
+      "mean_detection_s": 151.1453125,
+      "mean_program_time_s": 0.4115809930000978
+    },
+    {
+      "strategy": "D1",
+      "cases": 200,
+      "all_clear": 200,
+      "mean_s_per_source": 562.361035625,
+      "p95_s_per_source": 670.973875,
+      "mean_search_movement_s": 232.71806704656,
+      "mean_post_search_movement_s": 164.39546812846257,
+      "mean_detection_s": 134.3015625,
+      "mean_program_time_s": 0.3874513425005716
+    }
+  ],
+  "paired_comparisons": [
+    {
+      "comparison": "D1-B",
+      "cases": 200,
+      "mean_paired_difference_s_per_source": 0.0,
+      "normal_approx_95ci": [
+        0.0,
+        0.0
+      ],
+      "d1_win_rate": 0.0
+    },
+    {
+      "comparison": "D1-Bplus",
+      "cases": 200,
+      "mean_paired_difference_s_per_source": -34.12910125,
+      "normal_approx_95ci": [
+        -42.86842985243712,
+        -25.38977264756288
+      ],
+      "d1_win_rate": 0.7
+    }
+  ],
+  "failures": []
+}
