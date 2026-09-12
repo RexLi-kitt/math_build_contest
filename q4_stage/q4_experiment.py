@@ -5,9 +5,11 @@ import argparse
 import csv
 import json
 import math
+import os
 import random
 import statistics
 import time
+from concurrent.futures import ProcessPoolExecutor
 from dataclasses import dataclass
 from pathlib import Path
 
@@ -62,9 +64,10 @@ class Q3DirectAgent(JPlusAgent):
 
 
 class Q4TriangularCoverageAgent(Q3DirectAgent):
-    """边长900米三角网格：每个源由一个近邻三角形从三个方位包围。"""
+    """最终全清除版：950米三角网格，覆盖期补到2条有效方位。"""
 
-    lattice_side_m = 900.0
+    lattice_side_m = 950.0
+    coverage_observation_target = 2
 
     def __init__(self, sim, verbose: bool = False):
         super().__init__(sim, verbose)
@@ -96,7 +99,8 @@ class Q4TriangularCoverageAgent(Q3DirectAgent):
         """在网格停靠点主动复测已发现频道，积累定向源的可见侧方位。"""
         for channel, st in self.state.items():
             if (channel == primary_channel or st.cleared or st.exhausted
-                    or not st.discovered or len(st.observations) >= 5):
+                    or not st.discovered
+                    or len(st.observations) >= self.coverage_observation_target):
                 continue
             if any(dist(point, old) <= 1.0 for old in st.probed_points):
                 continue
@@ -105,6 +109,30 @@ class Q4TriangularCoverageAgent(Q3DirectAgent):
             if result in ("direction", "near"):
                 st.attempts += 1
             self.co_measurements += 1
+
+    def _corridor_clear(self, channel: int, st) -> bool:
+        """用20米清除圆覆盖最后一次示向度对应的完整误差走廊。
+
+        对距离不超过1500米、角误差不超过1度的源，其相对示向中轴的横向
+        偏差不超过1500*sin(1度)=26.18米。纵向30米、横向20米的交错点阵
+        最大覆盖空隙为sqrt(15^2+10^2)<20米，因此必有一个清除点命中。
+        """
+        if not st.observations:
+            return False
+        station, angle = st.observations[-1]
+        radians = math.radians(angle)
+        ux, uy = math.cos(radians), math.sin(radians)
+        nx, ny = -uy, ux
+        offsets = (-30.0, -10.0, 10.0, 30.0)
+        for index, longitudinal in enumerate(range(0, 1501, 30)):
+            row = offsets if index % 2 == 0 else tuple(reversed(offsets))
+            for lateral in row:
+                point = (station[0] + longitudinal * ux + lateral * nx,
+                         station[1] + longitudinal * uy + lateral * ny)
+                if self._try_clear(point, channel):
+                    st.cleared = True
+                    return True
+        return False
 
     def run(self) -> dict:
         """滚动定位时给定向源更充足的背面试探预算。"""
@@ -124,11 +152,13 @@ class Q4TriangularCoverageAgent(Q3DirectAgent):
                     self._coobserve(center, channel)
                 continue
             if st.attempts >= 30:
-                st.exhausted = True
+                if not self._corridor_clear(channel, st):
+                    st.exhausted = True
                 continue
             point = self._next_measurement_point(st)
             if point is None:
-                st.exhausted = True
+                if not self._corridor_clear(channel, st):
+                    st.exhausted = True
                 continue
             self.observe(point, channel)
             st.attempts += 1
@@ -139,7 +169,7 @@ class Q4TriangularCoverageAgent(Q3DirectAgent):
 
 STRATEGIES = {
     "Q3_Jplus_direct": Q3DirectAgent,
-    "Q4_triangular_900": Q4TriangularCoverageAgent,
+    "Q4_full_clear_950_C2": Q4TriangularCoverageAgent,
 }
 
 
@@ -196,6 +226,11 @@ def run_one(case_index: int, sources: list[DirectionalSource], seed: int,
     return row, sim.actions
 
 
+def _run_work(item):
+    """供Windows多进程安全调用的顶层包装函数。"""
+    return run_one(*item)
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description="问题4定向源策略离线配对实验")
     parser.add_argument("--cases", type=int, default=30)
@@ -203,6 +238,7 @@ def main() -> None:
     parser.add_argument("--sources", type=int, choices=range(10, 17))
     parser.add_argument("--directional-fraction", type=float, default=0.5)
     parser.add_argument("--output", default="results/latest")
+    parser.add_argument("--jobs", type=int, default=min(8, os.cpu_count() or 1))
     args = parser.parse_args()
     if not 0.0 < args.directional_fraction < 1.0:
         raise ValueError("--directional-fraction 必须在0和1之间")
@@ -215,13 +251,27 @@ def main() -> None:
     rows: list[dict] = []
     first_actions: dict[str, list[dict]] = {}
     started = time.perf_counter()
-    for index, sources in enumerate(cases, 1):
-        for name, agent_class in STRATEGIES.items():
-            row, actions = run_one(index, sources, args.seed, name, agent_class)
+    work = [(index, sources, args.seed, name, agent_class)
+            for index, sources in enumerate(cases, 1)
+            for name, agent_class in STRATEGIES.items()]
+    progress_step = max(1, len(work) // 20)
+    if args.jobs > 1:
+        with ProcessPoolExecutor(max_workers=args.jobs) as pool:
+            completed = pool.map(_run_work, work)
+            for done, (row, actions) in enumerate(completed, 1):
+                rows.append(row)
+                if row["case"] == 1:
+                    first_actions[row["strategy"]] = [a.__dict__ for a in actions]
+                if done % progress_step == 0 or done == len(work):
+                    print(f"run {done:04d}/{len(work)} complete", flush=True)
+    else:
+        for done, item in enumerate(work, 1):
+            row, actions = _run_work(item)
             rows.append(row)
-            if index == 1:
-                first_actions[name] = [a.__dict__ for a in actions]
-        print(f"case {index:04d}/{args.cases} complete", flush=True)
+            if row["case"] == 1:
+                first_actions[row["strategy"]] = [a.__dict__ for a in actions]
+            if done % progress_step == 0 or done == len(work):
+                print(f"run {done:04d}/{len(work)} complete", flush=True)
 
     with (output / "case_results.csv").open("w", newline="", encoding="utf-8-sig") as file:
         writer = csv.DictWriter(file, fieldnames=list(rows[0]))
