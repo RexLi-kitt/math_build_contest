@@ -31,6 +31,7 @@ class OfficialSimulatorClient:
         self.time_s = 0.0
         self.actions: list[Action] = []
         self.records: list[dict] = []
+        self.log_error: str | None = None
         self._request_no = 0
         self.entered = False
         self.real_deadline = 0.0
@@ -86,11 +87,19 @@ class OfficialSimulatorClient:
             "virtual_time_s": self.time_s,
             "response": self._mask(response),
         })
-        self.log_path.parent.mkdir(parents=True, exist_ok=True)
-        self.log_path.write_text(
-            json.dumps(self.records, ensure_ascii=False, indent=2),
-            encoding="utf-8",
-        )
+        # A local log failure must never abandon an already-running official
+        # test.  Keep recording in memory and report the issue once; /exit and
+        # the remaining strategy actions can still be sent normally.
+        try:
+            self.log_path.parent.mkdir(parents=True, exist_ok=True)
+            self.log_path.write_text(
+                json.dumps(self.records, ensure_ascii=False, indent=2),
+                encoding="utf-8",
+            )
+        except OSError as exc:
+            if self.log_error is None:
+                self.log_error = str(exc)
+                print(f"警告：动作日志暂时无法写入（测试将继续）：{exc}", file=sys.stderr)
 
     def _ensure_time(self) -> None:
         # 为主动 /exit 留出余量；届时由外层记录为未完成，不假装任务已完成。
