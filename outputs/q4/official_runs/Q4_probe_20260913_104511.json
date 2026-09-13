@@ -1,0 +1,26 @@
+{
+  "run_id": "q4d-1789267511",
+  "base_url": "http://127.0.0.1:2026",
+  "arena_id": "default",
+  "records": [
+    {
+      "path": "/enter",
+      "request_id": "q4d-1789267511-enter-1",
+      "payload": {
+        "arena_id": "default",
+        "robot_id": "TEAM_ID",
+        "request_id": "q4d-1789267511-enter-1"
+      },
+      "accepted": null,
+      "response": null,
+      "error": "URLError: <urlopen error [WinError 10061] 由于目标计算机积极拒绝，无法连接。>",
+      "recorded_at": "2026-09-13 10:45:15"
+    }
+  ],
+  "final": {
+    "status": "failed",
+    "error_type": "RuntimeError",
+    "error": "URLError: <urlopen error [WinError 10061] 由于目标计算机积极拒绝，无法连接。>",
+    "probe_results": []
+  }
+}
