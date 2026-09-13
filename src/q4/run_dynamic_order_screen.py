@@ -1,4 +1,7 @@
-"""Paired screen for B, B+ and D1 dynamic discovery ordering."""
+"""Paired screen for B, B+ and the historical DO dynamic-order experiment.
+
+The emitted strategy key remains ``D1`` for compatibility with frozen results.
+"""
 from __future__ import annotations
 
 import argparse

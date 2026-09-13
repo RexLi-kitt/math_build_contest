@@ -1,4 +1,7 @@
-"""Q4 D1: fixed certified sites with observation-conditioned rolling order.
+"""Q4 historical DO experiment: observation-conditioned route ordering.
+
+Earlier result files use the legacy strategy label ``D1``.  The experiment is
+called DO in current documentation so the D production-model name is unique.
 
 The station set and all localisation/clearing behaviour are inherited from the
 B model.  Only the order of the unvisited search stations changes.  After each
@@ -322,7 +325,7 @@ class GatedT3Agent(ObservationGatedOrderAgent):
 
 
 class DynamicDiscoveryOrderAgent(GatedT0Agent):
-    """Recommended D1: use B iff the origin scan discovers no source."""
+    """Historical DO agent: use B iff the origin scan discovers no source."""
 
     _bplus_indices = None
 
