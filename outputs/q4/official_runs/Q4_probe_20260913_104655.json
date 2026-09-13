@@ -1,0 +1,85 @@
+{
+  "run_id": "q4d-1789267615",
+  "base_url": "http://127.0.0.1:2026",
+  "arena_id": "default",
+  "records": [
+    {
+      "path": "/enter",
+      "request_id": "q4d-1789267615-enter-1",
+      "payload": {
+        "arena_id": "default",
+        "robot_id": "TEAM_ID",
+        "request_id": "q4d-1789267615-enter-1"
+      },
+      "accepted": true,
+      "response": {
+        "accepted": true,
+        "real_timestamp_ms": 1789267615762,
+        "virtual_time_s": 0,
+        "max_virtual_duration_s": 360000,
+        "max_real_duration_s": 1200,
+        "remaining_real_duration_s": 1200
+      },
+      "error": null,
+      "recorded_at": "2026-09-13 10:46:55"
+    },
+    {
+      "path": "/measure",
+      "request_id": "q4d-1789267615-probe-2",
+      "payload": {
+        "arena_id": "default",
+        "robot_id": "TEAM_ID",
+        "request_id": "q4d-1789267615-probe-2",
+        "position": {
+          "x": 0.0,
+          "y": 0.0
+        },
+        "channel": 1
+      },
+      "accepted": true,
+      "response": {
+        "accepted": true,
+        "real_timestamp_ms": 1789267615788,
+        "virtual_time_s": 5,
+        "measure_result": "no_signal"
+      },
+      "error": null,
+      "recorded_at": "2026-09-13 10:46:55"
+    },
+    {
+      "path": "/exit",
+      "request_id": "q4d-1789267615-exit-3",
+      "payload": {
+        "arena_id": "default",
+        "robot_id": "TEAM_ID",
+        "request_id": "q4d-1789267615-exit-3"
+      },
+      "accepted": true,
+      "response": {
+        "accepted": true,
+        "real_timestamp_ms": 1789267615791,
+        "virtual_time_s": 5,
+        "exit_reason": "user_exit"
+      },
+      "error": null,
+      "recorded_at": "2026-09-13 10:46:55"
+    }
+  ],
+  "final": {
+    "status": "completed",
+    "probe_results": [
+      {
+        "radius_m": 0.0,
+        "accepted": true,
+        "measure_result": "no_signal",
+        "virtual_time_s": 5,
+        "response": {
+          "accepted": true,
+          "real_timestamp_ms": 1789267615788,
+          "virtual_time_s": 5,
+          "measure_result": "no_signal"
+        }
+      }
+    ]
+  }
+}

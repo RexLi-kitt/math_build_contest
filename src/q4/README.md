@@ -10,6 +10,8 @@
 - `run_d_robustness.py`：D 的10—16源回归、mixed分层、空间对抗、90°边界、
   多模式示向误差与逐次剪枝真值审计；
 - `summarize_d_robustness.py`：把鲁棒性 JSON 汇总为可引用的 Markdown 报告；
+- `official_q4_probe.py`：问题4接口通路与1799—1966米测站接受性探针；
+- `official_d_runner.py`：把仓库正式 `DAgent` 接到官方问题4演练接口并保存脱敏动作日志；
 - `dynamic_order_agent.py` 与 `run_dynamic_order_screen.py`：历史 DO 动态顺序消融；旧结果键 `D1` 仅作兼容；
 - 其余 `q4_*.py`、`run_route28.py`、`validate_routes.py`：原始离线实验与路线优化工具。
 
