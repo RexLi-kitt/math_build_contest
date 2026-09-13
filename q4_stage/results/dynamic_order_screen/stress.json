@@ -1,0 +1,40 @@
+{
+  "label": "stress",
+  "seed": 20261002,
+  "summaries": [
+    {
+      "strategy": "B",
+      "cases": 100,
+      "all_clear": 100,
+      "mean_s_per_source": 574.917704375,
+      "p95_s_per_source": 669.4319375,
+      "mean_search_movement_s": 233.66556278998814,
+      "mean_post_search_movement_s": 168.4546405342949,
+      "mean_detection_s": 140.615625,
+      "mean_program_time_s": 0.38798512500186916
+    },
+    {
+      "strategy": "Bplus",
+      "cases": 100,
+      "all_clear": 100,
+      "mean_s_per_source": 600.45972375,
+      "p95_s_per_source": 677.5944375,
+      "mean_search_movement_s": 238.73098598439236,
+      "mean_post_search_movement_s": 174.20998725934354,
+      "mean_detection_s": 152.859375,
+      "mean_program_time_s": 0.41281447500165086
+    },
+    {
+      "strategy": "D1",
+      "cases": 100,
+      "all_clear": 100,
+      "mean_s_per_source": 600.17983,
+      "p95_s_per_source": 680.8208125,
+      "mean_search_movement_s": 237.6948647497356,
+      "mean_post_search_movement_s": 174.44684054338623,
+      "mean_detection_s": 153.278125,
+      "mean_program_time_s": 0.47816849000257206
+    }
+  ],
+  "failures": []
+}

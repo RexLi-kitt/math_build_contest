@@ -25,12 +25,13 @@ def post(base_url: str, path: str, payload: dict) -> dict:
         return json.loads(response.read().decode("utf-8"))
 
 
-def base(robot_id: str, request_id: str) -> dict:
-    return {"arena_id": "default", "robot_id": robot_id, "request_id": request_id}
+def base(robot_id: str, request_id: str, arena_id: str) -> dict:
+    return {"arena_id": arena_id, "robot_id": robot_id, "request_id": request_id}
 
 
-def action(robot_id: str, request_id: str, x: float, y: float, channel: int) -> dict:
-    payload = base(robot_id, request_id)
+def action(robot_id: str, request_id: str, x: float, y: float, channel: int,
+           arena_id: str) -> dict:
+    payload = base(robot_id, request_id, arena_id)
     payload["position"] = {"x": x, "y": y}
     payload["channel"] = channel
     return payload
@@ -46,21 +47,23 @@ def main() -> int:
     parser = argparse.ArgumentParser(description="B题官方模拟器接口通路测试")
     parser.add_argument("--robot-id", required=True, help="当前登录模拟器的参赛队号")
     parser.add_argument("--base-url", default="http://127.0.0.1:2026", help="模拟器接口地址")
+    parser.add_argument("--arena-id", default="default", help="接口 arena_id，如不同在此覆盖")
     parser.add_argument("--channel", type=int, default=1, choices=range(1, 21), help="测试检测频道")
     args = parser.parse_args()
     base_url = args.base_url.rstrip("/")
     try:
-        entered = post(base_url, "/enter", base(args.robot_id, "smoke-enter-1"))
+        entered = post(base_url, "/enter", base(args.robot_id, "smoke-enter-1", args.arena_id))
         require_accepted(entered, "enter")
         print("本局现实剩余时间:", entered["remaining_real_duration_s"], "秒")
 
-        measured = post(base_url, "/measure", action(args.robot_id, "smoke-measure-1", 0, 0, args.channel))
+        measured = post(base_url, "/measure", action(
+            args.robot_id, "smoke-measure-1", 0, 0, args.channel, args.arena_id))
         require_accepted(measured, "measure")
         print("检测结果:", measured["measure_result"])
         if measured["measure_result"] == "direction":
             print("示向度:", measured["svd_deg"], "度")
 
-        exited = post(base_url, "/exit", base(args.robot_id, "smoke-exit-1"))
+        exited = post(base_url, "/exit", base(args.robot_id, "smoke-exit-1", args.arena_id))
         require_accepted(exited, "exit")
         return 0
     except (HTTPError, URLError, TimeoutError, RuntimeError) as exc:
