@@ -6,7 +6,7 @@ import math
 import statistics
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parents[1]
+ROOT = Path(__file__).resolve().parents[2]
 HERE = Path(__file__).resolve().parent
 
 
@@ -24,7 +24,8 @@ def main():
               float(groups['ShiftB'][i]['total_virtual_time_s'])) /
              int(groups['L950_C2'][i]['source_count']) for i in groups['L950_C2']]
     mean = statistics.mean(delta)
-    half = 1.96 * statistics.stdev(delta) / math.sqrt(len(delta))
+    half = (1.96 * statistics.stdev(delta) / math.sqrt(len(delta))
+            if len(delta) > 1 else 0.0)
     checks = {'paired_mean_saved_s_per_source': mean, 'normal_95_ci': [mean-half, mean+half],
               'improved_cases': sum(d > 0 for d in delta), 'cases': len(delta),
               'hashes': {name: hashlib.sha256((HERE / name).read_bytes()).hexdigest()
