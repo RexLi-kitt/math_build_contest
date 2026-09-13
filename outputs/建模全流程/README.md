@@ -11,11 +11,13 @@ PNG 为 300 dpi 快速预览，论文插图优先使用同名 PDF 或 SVG（矢�
 ## 复现
 
 ```powershell
-python scripts\plot_b_lineage_architecture_polished.py
+python "scripts\plot_b_lineage_architecture_polished.py"
 ```
 
-脚本：`scripts/plot_b_lineage_architecture_polished.py`；样式与字体：`.agents/skills/paper-plot-style/`。
-版面栅格（流程区左右边界、箭头长度、标签间距、卡片内边距）在脚本顶部以常量给出，可整体调整。
+- 生成脚本：`scripts/plot_b_lineage_architecture_polished.py`（本目录内的全部图都由它产出，脚本默认输出到 `outputs/overall/figures/`；本目录存放正式交付版本）。
+- 依赖：`.agents/skills/paper-plot-style/`（`paper_style.py` 与 `assets/NotoSansSC.ttf`，字体约 10 MB，故不在本目录重复存放）＋ `matplotlib`。
+- 脚本内不写死绝对路径：样式与字体按项目根定位，换电脑后保持同样的目录结构即可复现。
+- 版面栅格（`FLOW_L/FLOW_R`、`FLOW_GAP_A/FLOW_GAP_B`、`TAG_GAP`、`CELL_PAD` 等）在脚本顶部以常量给出，改一个数即可整体调整。
 
 ## 说明
 
