@@ -21,11 +21,9 @@ from collections import defaultdict
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
-EXP = Path(r"C:\Users\李\Desktop\第四问定向源实验")
-MODEL_ROOT = (HERE.parent if (HERE.parent / "B模型").exists()
-              else Path(r"C:\Users\李\Desktop\Q4保底基线"))
-if str(EXP) not in sys.path:
-    sys.path.insert(0, str(EXP))
+MODEL_ROOT = HERE / "models"
+if str(HERE) not in sys.path:
+    sys.path.insert(0, str(HERE))
 
 from baseline_core import dist  # noqa: E402
 
