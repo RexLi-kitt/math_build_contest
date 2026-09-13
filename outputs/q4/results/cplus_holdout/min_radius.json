@@ -1,0 +1,51 @@
+{
+  "label": "min_radius",
+  "seed": 20261022,
+  "summaries": [
+    {
+      "strategy": "B",
+      "cases": 200,
+      "all_clear": 200,
+      "mean_s_per_source": 658.1610231806111,
+      "p95_s_per_source": 841.067,
+      "mean_program_time_s": 0.5491166039995733
+    },
+    {
+      "strategy": "C",
+      "cases": 200,
+      "all_clear": 200,
+      "mean_s_per_source": 613.3012758947928,
+      "p95_s_per_source": 811.0455,
+      "mean_program_time_s": 0.4862058289996639
+    },
+    {
+      "strategy": "Cplus",
+      "cases": 200,
+      "all_clear": 200,
+      "mean_s_per_source": 612.9913475569431,
+      "p95_s_per_source": 811.0455,
+      "mean_program_time_s": 0.4825054799990903
+    }
+  ],
+  "paired_comparisons": [
+    {
+      "comparison": "Cplus-B",
+      "mean_paired_difference_s_per_source": -45.169675623668,
+      "normal_approx_95ci": [
+        -52.584168788205716,
+        -37.75518245913028
+      ],
+      "cplus_win_rate": 0.81
+    },
+    {
+      "comparison": "Cplus-C",
+      "mean_paired_difference_s_per_source": -0.3099283378496503,
+      "normal_approx_95ci": [
+        -1.5789820442289213,
+        0.9591253685296208
+      ],
+      "cplus_win_rate": 0.015
+    }
+  ],
+  "failures": []
+}
