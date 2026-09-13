@@ -1,0 +1,31 @@
+{
+  "config": {
+    "cases": 30,
+    "seed": 2026,
+    "sources": null,
+    "strategies": "Jplus_final",
+    "output": "src/q3/B题模型代码汇总/第三问策略对比/results/jplus_quick_check",
+    "jobs": 4
+  },
+  "elapsed_wall_time_s": 0.8014940999855753,
+  "summaries": [
+    {
+      "strategy": "Jplus_final",
+      "all_cleared_rate": 1.0,
+      "mean_virtual_time_s": 3715.7798,
+      "median_virtual_time_s": 3686.4445,
+      "p90_virtual_time_s": 4097.433,
+      "p95_virtual_time_s": 4160.832,
+      "max_virtual_time_s": 4319.972,
+      "mean_time_per_source_s": 298.46125798701297,
+      "mean_movement_time_s": 2960.6465058666668,
+      "mean_measure_actions": 115.8,
+      "mean_active_measurements": 26.266666666666666,
+      "mean_co_measurements": 21.466666666666665,
+      "mean_coverage_insertions": 0,
+      "mean_search_end_time_s": 1835.3712654368887,
+      "mean_failed_clear_actions": 0,
+      "wall_time_s": 2.445692
+    }
+  ]
+}
