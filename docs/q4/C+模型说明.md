@@ -56,8 +56,8 @@ C+ 在原点完成第一次全频道扫描后，根据实际发现数量选择�
 - `cplus_gate_agent.py`：出货代理 `CPlusAgent`，并保留阈值 0—3 的筛选类；
 - `run_cplus_gate_screen.py`：四个阈值的场景筛选；
 - `run_cplus_validation.py`：B、C、C+ 的独立配对验证；
-- `results/cplus_gate_screen/`：阈值筛选结果；
-- `results/cplus_holdout/`：全新种子 1100 局验证结果。
+- `outputs/q4/results/cplus_gate_screen/`：阈值筛选结果；
+- `outputs/q4/results/cplus_holdout/`：全新种子 1100 局验证结果。
 
 ## 接入
 
