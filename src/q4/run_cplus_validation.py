@@ -10,12 +10,11 @@ import sys
 from concurrent.futures import ProcessPoolExecutor
 from pathlib import Path
 
-EXP = Path(r"C:\Users\李\Desktop\第四问定向源实验")
-MODELS = Path(r"C:\Users\李\Desktop\Q4保底基线")
 HERE = Path(__file__).resolve().parent
+MODELS = HERE / "models"
 ROOT = HERE.parents[1]
 OUTPUT_DIR = ROOT / "outputs" / "q4"
-for path in (EXP, HERE):
+for path in (HERE,):
     if str(path) not in sys.path:
         sys.path.insert(0, str(path))
 
@@ -71,7 +70,8 @@ def _evaluate(label, cases, seed, jobs, output):
         diff = [values["Cplus"][case] - values[baseline][case]
                 for case in sorted(values["Cplus"])]
         mean = statistics.mean(diff)
-        half = 1.96 * statistics.stdev(diff) / math.sqrt(len(diff))
+        half = (1.96 * statistics.stdev(diff) / math.sqrt(len(diff))
+                if len(diff) > 1 else 0.0)
         comparisons.append({
             "comparison": f"Cplus-{baseline}",
             "mean_paired_difference_s_per_source": mean,
