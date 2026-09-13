@@ -6,4 +6,4 @@
 - `results/d_model/`：当前 D 模型从 C+3A、C+3F 到 C+3FB 的冻结证据和负消融；
 - `cplus_gate_screen/` 与 `cplus_gate_screen100/`：C+ 阈值 0—3 的筛选结果；
 - `cplus_holdout/`：C+ 的全新种子独立验证；
-- `dynamic_*`：D1 动态顺序的筛选、回归和消融结果。
+- `dynamic_*`：DO 动态顺序实验的筛选、回归和消融结果；文件内旧策略键为 `D1`。

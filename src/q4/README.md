@@ -7,7 +7,7 @@
 - `cplus_gate_agent.py`：历史 C+ 门控模型；
 - `run_cplus_gate_screen.py`：C/B 原点门控阈值筛选；
 - `run_cplus_validation.py`：C+ 独立配对验证；
-- `dynamic_order_agent.py` 与 `run_dynamic_order_screen.py`：历史 D1 动态顺序消融；
+- `dynamic_order_agent.py` 与 `run_dynamic_order_screen.py`：历史 DO 动态顺序消融；旧结果键 `D1` 仅作兼容；
 - 其余 `q4_*.py`、`run_route28.py`、`validate_routes.py`：原始离线实验与路线优化工具。
 
 脚本默认将新结果写入 `outputs/q4/results/`。模型结论和使用说明见 `docs/q4/`。
