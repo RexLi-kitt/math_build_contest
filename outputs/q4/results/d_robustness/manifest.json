@@ -1,0 +1,47 @@
+{
+  "model": "D",
+  "suite": "corrected robustness",
+  "generated_at": "2026-09-13",
+  "files": [
+    {
+      "path": "src/q4/d_agent.py",
+      "sha256": "e552c707890341dcaf1eb69966f8e623e77bb3651bdef04b2512cc226b71c32e",
+      "bytes": 6290
+    },
+    {
+      "path": "src/q4/run_d_robustness.py",
+      "sha256": "de32d4b5e1027cc2cf9ba6b0d06fdbbb5a9789a0db0e82b12792076efe72c205",
+      "bytes": 22773
+    },
+    {
+      "path": "src/q4/summarize_d_robustness.py",
+      "sha256": "561c5db2fa1727387e1e2fed495ebc4067b2737d22544e01a5d6a7edd84492c1",
+      "bytes": 6126
+    },
+    {
+      "path": "src/q4/assets/d_model/b_winner_design.json",
+      "sha256": "465825a873014578ebe1307abd4c295a1f0c78a50c11a8967ecedd6cba53cb3f",
+      "bytes": 2653
+    },
+    {
+      "path": "src/q4/assets/d_model/c_winner_design.json",
+      "sha256": "74a8079dd43388f9b7cfed827ba9dc9602abfcd43160bd7d05ce22b5f0dcf8ee",
+      "bytes": 3642
+    },
+    {
+      "path": "outputs/q4/results/d_robustness/robustness_report.json",
+      "sha256": "406035ee5762e9b42d4da10b92d3e81985331554d52c047acea7f195e3e3f99d",
+      "bytes": 65939
+    },
+    {
+      "path": "outputs/q4/results/d_robustness/cases.csv",
+      "sha256": "7d412966d50eb2fe1c9810a866a9e8fa425fab16f41fdabcf815d756a12f3955",
+      "bytes": 888322
+    },
+    {
+      "path": "outputs/q4/results/d_robustness/README.md",
+      "sha256": "8d806c78b878e67298f2aa07f48f9aa696c84556622449490c7911bffa3b61dd",
+      "bytes": 4326
+    }
+  ]
+}
