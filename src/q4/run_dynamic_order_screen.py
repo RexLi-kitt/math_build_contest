@@ -13,12 +13,11 @@ import sys
 from concurrent.futures import ProcessPoolExecutor
 from pathlib import Path
 
-EXP = Path(r"C:\Users\李\Desktop\第四问定向源实验")
-MODELS = Path(r"C:\Users\李\Desktop\Q4保底基线")
 HERE = Path(__file__).resolve().parent
+MODELS = HERE / "models"
 ROOT = HERE.parents[1]
 OUTPUT_DIR = ROOT / "outputs" / "q4"
-for path in (EXP, MODELS / "B模型", MODELS / "B+模型", HERE):
+for path in (HERE, MODELS / "B模型", MODELS / "B+模型"):
     if str(path) not in sys.path:
         sys.path.insert(0, str(path))
 
