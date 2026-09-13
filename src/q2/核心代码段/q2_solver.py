@@ -22,10 +22,8 @@ def normalize_and_score(rows: list[dict], weights: tuple[float, float, float, fl
         if row not in valid:
             row["J"] = -math.inf
         else:
-            # +w3+w4 是不改变排序的常数平移，使 J>=0 后可直接采用 90% 阈值。
             row["J"] = (weights[0] * row["q_n"] + weights[1] * row["p_n"]
-                        - weights[2] * row["t_n"] - weights[3] * row["r_n"]
-                        + weights[2] + weights[3])
+                        - weights[2] * row["t_n"] - weights[3] * row["r_n"])
     return rows
 
 
@@ -54,7 +52,9 @@ def choose_second_point(bearing_deg: float, weights: tuple[float, float, float, 
     normalize_and_score(refined, weights)
 
     peak = max(refined, key=lambda r: r["J"])
-    good = [r for r in refined if r["J"] >= (1.0 - ETA) * peak["J"]]
-    # 高分区内优先短移动；若相同，再选预测 MEC 更小的点。
+    threshold = (1.0 - ETA) * peak["J"]
+    good = [r for r in refined if r["J"] >= threshold]
+    if not good:
+        raise RuntimeError("方案卡 R_good 为空：峰值 J*<=0")
     execute = min(good, key=lambda r: (round(r["travel_s"], 6), r["r_pred_m"], -r["J"]))
     return execute, good
