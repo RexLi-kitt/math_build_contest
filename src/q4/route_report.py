@@ -6,9 +6,12 @@ import math
 import statistics
 from pathlib import Path
 
+ROOT = Path(__file__).resolve().parents[1]
+HERE = Path(__file__).resolve().parent
+
 
 def main():
-    folder = Path('results/route_holdout500')
+    folder = ROOT / 'outputs' / 'q4' / 'results' / 'route_holdout500'
     rows = list(csv.DictReader((folder / 'case_results.csv').open(encoding='utf-8-sig')))
     for row in rows:
         total = sum(float(row[key]) for key in ('movement_time_s', 'detection_time_s',
@@ -24,7 +27,7 @@ def main():
     half = 1.96 * statistics.stdev(delta) / math.sqrt(len(delta))
     checks = {'paired_mean_saved_s_per_source': mean, 'normal_95_ci': [mean-half, mean+half],
               'improved_cases': sum(d > 0 for d in delta), 'cases': len(delta),
-              'hashes': {name: hashlib.sha256(Path(name).read_bytes()).hexdigest()
+              'hashes': {name: hashlib.sha256((HERE / name).read_bytes()).hexdigest()
                          for name in ('q4_routes.py','q4_experiment.py','q4_optimize.py')}}
     (folder / 'paired_effect.json').write_text(json.dumps(checks, indent=2), encoding='utf-8')
     print(json.dumps(checks, indent=2))

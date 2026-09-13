@@ -18,6 +18,8 @@ from baseline_core import (AREA_R, ERROR_DEG, MAX_R, MIN_R, SPEED, Action,
 from feasible_region import build_region_cached
 from strategies import JPlusAgent
 
+DEFAULT_OUTPUT = Path(__file__).resolve().parents[1] / "outputs" / "q4" / "results" / "latest"
+
 
 @dataclass
 class DirectionalSource(Source):
@@ -237,7 +239,7 @@ def main() -> None:
     parser.add_argument("--seed", type=int, default=20260912)
     parser.add_argument("--sources", type=int, choices=range(10, 17))
     parser.add_argument("--directional-fraction", type=float, default=0.5)
-    parser.add_argument("--output", default="results/latest")
+    parser.add_argument("--output", default=str(DEFAULT_OUTPUT))
     parser.add_argument("--jobs", type=int, default=min(8, os.cpu_count() or 1))
     args = parser.parse_args()
     if not 0.0 < args.directional_fraction < 1.0:

@@ -31,13 +31,19 @@ def main() -> int:
                         help="第三问模型注册名，默认 I_ring_optimized")
     parser.add_argument("--base-url", default="http://127.0.0.1:2026",
                         help="官方模拟器接口地址")
+    parser.add_argument("--arena-id", default="default",
+                        help="接口 arena_id，正式测试如不同在此覆盖")
     parser.add_argument("--log", default=None,
                         help="动作日志路径，默认 official_logs/<策略名>_actions.json")
     parser.add_argument("--verbose", action="store_true", help="打印搜索进度")
     args = parser.parse_args()
 
-    log_path = Path(args.log) if args.log else Path("official_logs") / f"{args.strategy}_actions.json"
-    client = OfficialSimulatorClient(args.base_url, args.robot_id, log_path)
+    # Keep the default log location independent of the shell's working directory.
+    # This also avoids a relative path being interpreted differently by a launcher.
+    log_path = (Path(args.log).expanduser() if args.log else
+                Path(__file__).resolve().parent / "official_logs" /
+                f"{args.strategy}_actions.json").resolve()
+    client = OfficialSimulatorClient(args.base_url, args.robot_id, log_path, args.arena_id)
     agent = STRATEGIES[args.strategy](client, verbose=args.verbose)
     try:
         summary = agent.run()
