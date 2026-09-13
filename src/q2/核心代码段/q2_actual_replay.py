@@ -5,7 +5,7 @@ import math
 import sys
 from pathlib import Path
 
-Q2_DIR = Path(__file__).resolve().parents[1] / "q2"
+Q2_DIR = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(Q2_DIR))
 from q1_q2_bridge import bearing, evaluate_a2  # noqa: E402
 
@@ -23,12 +23,14 @@ def replay_second_measurement(g_true: tuple[float, float], receive_radius_m: flo
     """未接收时不能假装定位成功；接收时才以 A2 的实际 MEC 评价清除条件。"""
     distance = math.dist(s2, g_true)
     if distance > receive_radius_m:
-        return {"return_type": "no_signal", "received": False, "mec_m": FAILURE_MEC,
-                "can_clear": False}
+        return {"return_type": "no_signal", "received": False,
+                "mec_m": None, "mec_penalty_m": FAILURE_MEC, "can_clear": False}
     if distance <= 5.0:
-        return {"return_type": "near", "received": True, "mec_m": 0.0, "can_clear": True}
+        return {"return_type": "near", "received": True,
+                "mec_m": 0.0, "mec_penalty_m": 0.0, "can_clear": True}
     second_bearing = wrap(bearing(s2, g_true) + second_error_deg)
     region = evaluate_a2(S1, first_bearing_deg, s2, second_bearing)
     mec = region.mec_radius_m
-    return {"return_type": "direction", "received": True, "mec_m": mec,
+    return {"return_type": "direction", "received": True,
+            "mec_m": mec, "mec_penalty_m": mec if math.isfinite(mec) else FAILURE_MEC,
             "can_clear": math.isfinite(mec) and mec <= 20.0}
