@@ -1,0 +1,91 @@
+{
+  "config": {
+    "cases": 100,
+    "seed": 81407,
+    "sources": null,
+    "output": ".q3_compare_staging\\results\\hybrid_validation_seed81407_100"
+  },
+  "elapsed_wall_time_s": 305.2872270999942,
+  "summaries": [
+    {
+      "strategy": "A_current_ls_dopt",
+      "all_cleared_rate": 1.0,
+      "mean_virtual_time_s": 4147.8702299999995,
+      "median_virtual_time_s": 4103.566,
+      "p90_virtual_time_s": 4595.542,
+      "p95_virtual_time_s": 4830.207,
+      "max_virtual_time_s": 5941.42,
+      "mean_time_per_source_s": 328.3944426783633,
+      "mean_movement_time_s": 3314.0701908300002,
+      "mean_measure_actions": 126.97,
+      "mean_active_measurements": 3.52,
+      "mean_co_measurements": 0,
+      "mean_failed_clear_actions": 3.27,
+      "wall_time_s": 1.148188
+    },
+    {
+      "strategy": "B_region_dopt",
+      "all_cleared_rate": 1.0,
+      "mean_virtual_time_s": 4377.85737,
+      "median_virtual_time_s": 4365.984,
+      "p90_virtual_time_s": 4827.266,
+      "p95_virtual_time_s": 4957.539,
+      "max_virtual_time_s": 5464.876,
+      "mean_time_per_source_s": 346.49746869222446,
+      "mean_movement_time_s": 3484.04738159,
+      "mean_measure_actions": 138.94,
+      "mean_active_measurements": 13.18,
+      "mean_co_measurements": 0,
+      "mean_failed_clear_actions": 0,
+      "wall_time_s": 27.136768
+    },
+    {
+      "strategy": "C_region_q2",
+      "all_cleared_rate": 1.0,
+      "mean_virtual_time_s": 4508.85794,
+      "median_virtual_time_s": 4520.9805,
+      "p90_virtual_time_s": 4910.952,
+      "p95_virtual_time_s": 4989.419,
+      "max_virtual_time_s": 5260.609,
+      "mean_time_per_source_s": 356.94699350919916,
+      "mean_movement_time_s": 3622.897912,
+      "mean_measure_actions": 137.37,
+      "mean_active_measurements": 11.61,
+      "mean_co_measurements": 0,
+      "mean_failed_clear_actions": 0,
+      "wall_time_s": 113.812487
+    },
+    {
+      "strategy": "Cplus_completion_coobserve",
+      "all_cleared_rate": 1.0,
+      "mean_virtual_time_s": 4251.66019,
+      "median_virtual_time_s": 4254.9605,
+      "p90_virtual_time_s": 4558.202,
+      "p95_virtual_time_s": 4699.955,
+      "max_virtual_time_s": 4878.377,
+      "mean_time_per_source_s": 337.16075182958707,
+      "mean_movement_time_s": 3341.20019436,
+      "mean_measure_actions": 141.64,
+      "mean_active_measurements": 15.88,
+      "mean_co_measurements": 6.6,
+      "mean_failed_clear_actions": 0,
+      "wall_time_s": 90.190022
+    },
+    {
+      "strategy": "D_hybrid_belief_rolling",
+      "all_cleared_rate": 1.0,
+      "mean_virtual_time_s": 4231.49395,
+      "median_virtual_time_s": 4254.8005,
+      "p90_virtual_time_s": 4545.359,
+      "p95_virtual_time_s": 4711.28,
+      "max_virtual_time_s": 4869.087,
+      "mean_time_per_source_s": 335.5273434040959,
+      "mean_movement_time_s": 3300.97400939,
+      "mean_measure_actions": 145.22,
+      "mean_active_measurements": 19.46,
+      "mean_co_measurements": 13.03,
+      "mean_failed_clear_actions": 0,
+      "wall_time_s": 72.979973
+    }
+  ]
+}

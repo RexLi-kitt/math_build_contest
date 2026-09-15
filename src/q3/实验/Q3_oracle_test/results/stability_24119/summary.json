@@ -1,0 +1,71 @@
+{
+  "variants": [
+    "I_ring_optimized",
+    "I_ring7_1000"
+  ],
+  "seed": 24119,
+  "cases": 1000,
+  "elapsed_s": 144.9236240000173,
+  "summaries": {
+    "I_ring_optimized": {
+      "cases": 1000,
+      "seed": 24119,
+      "all_cleared_rate": 1,
+      "mean_per_source_s": 305.0377020660614,
+      "sd_per_source_s": 44.4818404247299,
+      "median_per_source_s": 301.2302253760445,
+      "p90_per_source_s": 363.1764801177451,
+      "p95_per_source_s": 384.9053579493708,
+      "max_per_source_s": 469.5279319326552,
+      "mean_total_s": 3889.9048905515647,
+      "mean_n": 12.997,
+      "mean_search_end_s": 2082.978475394183,
+      "mean_move_per_source_s": 246.4965639957983,
+      "mean_move_search_per_source_s": 114.94195958390644,
+      "mean_move_clear_per_source_s": 131.55460441189186,
+      "mean_meas_switch_per_source_s": 53.541138070263074,
+      "mean_meas_search_per_source": 8.15763113969364,
+      "mean_meas_co_per_source": 1.5277217282717284,
+      "mean_nosig_search_per_source": 5.521383270895771,
+      "mean_meas_active_clear_per_source": 0.39474179986679986,
+      "mean_last_detect_s": 1766.036551048,
+      "mean_last_detect_per_source_s": 138.82948642314327,
+      "mean_post_share_pct": 46.09039833532468
+    },
+    "I_ring7_1000": {
+      "cases": 1000,
+      "seed": 24119,
+      "all_cleared_rate": 1,
+      "mean_per_source_s": 297.52592098646386,
+      "sd_per_source_s": 43.572058708988536,
+      "median_per_source_s": 292.31958690721865,
+      "p90_per_source_s": 361.93407382437175,
+      "p95_per_source_s": 374.23290584426445,
+      "max_per_source_s": 430.7417371083317,
+      "mean_total_s": 3792.6385581222185,
+      "mean_n": 12.997,
+      "mean_search_end_s": 2028.0796685204693,
+      "mean_move_per_source_s": 234.0370805185984,
+      "mean_move_search_per_source_s": 105.04410478149087,
+      "mean_move_clear_per_source_s": 128.99297573710754,
+      "mean_meas_switch_per_source_s": 58.488840467865465,
+      "mean_meas_search_per_source": 9.042583241758242,
+      "mean_meas_co_per_source": 1.6633699425574426,
+      "mean_nosig_search_per_source": 6.215435606060606,
+      "mean_meas_active_clear_per_source": 0.3827007867132867,
+      "mean_last_detect_s": 1672.794870083,
+      "mean_last_detect_per_source_s": 131.6674517990567,
+      "mean_post_share_pct": 46.1758497917675
+    }
+  },
+  "pairing": {
+    "I_ring_optimized vs I_ring7_1000": {
+      "wins": 683,
+      "losses": 317,
+      "ties": 0,
+      "mean_delta_s_per_source": 7.511781079597505,
+      "ci95_low": 6.367367481309644,
+      "ci95_high": 8.656194677885365
+    }
+  }
+}

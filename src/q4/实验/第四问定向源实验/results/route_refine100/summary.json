@@ -1,0 +1,54 @@
+{
+  "config": {
+    "cases": 100,
+    "seed": 20260922,
+    "sources": null,
+    "directional_fraction": 0.5,
+    "min_success": 1.0,
+    "strategies": "ShiftBGreedy,ShiftBRolling",
+    "jobs": 8,
+    "output": "results\\route_refine100"
+  },
+  "elapsed_wall_time_s": 10.375156099995365,
+  "best_feasible": "ShiftBRolling",
+  "summaries": [
+    {
+      "strategy": "ShiftBRolling",
+      "search_sites": 28,
+      "success_rate": 1.0,
+      "feasible": true,
+      "mean_time_per_source_s": 745.6287770663503,
+      "p95_time_per_source_s": 971.3813,
+      "mean_measure_actions": 328.72,
+      "mean_cleared": 13.26,
+      "mean_movement_per_source_s": 586.783887578185,
+      "mean_search_movement_per_source_s": 387.4794718125323,
+      "mean_post_search_movement_per_source_s": 199.3044157656528,
+      "mean_detection_per_source_s": 129.14557151182152,
+      "mean_switching_per_source_s": 24.69932017982018,
+      "mean_clearing_per_source_s": 5.0,
+      "mean_failed_clear_actions": 0,
+      "mean_search_phase_per_source_s": 528.1803626300481,
+      "mean_post_search_per_source_s": 217.4484144363022
+    },
+    {
+      "strategy": "ShiftBGreedy",
+      "search_sites": 28,
+      "success_rate": 1.0,
+      "feasible": true,
+      "mean_time_per_source_s": 830.2732151994672,
+      "p95_time_per_source_s": 1096.8954545454546,
+      "mean_measure_actions": 336.19,
+      "mean_cleared": 13.26,
+      "mean_movement_per_source_s": 668.5579026181784,
+      "mean_search_movement_per_source_s": 478.4143451145452,
+      "mean_post_search_movement_per_source_s": 190.1435575036332,
+      "mean_detection_per_source_s": 131.48266046453546,
+      "mean_switching_per_source_s": 25.232651931401932,
+      "mean_clearing_per_source_s": 5.0,
+      "mean_failed_clear_actions": 0,
+      "mean_search_phase_per_source_s": 622.0636051461803,
+      "mean_post_search_per_source_s": 208.20961005328695
+    }
+  ]
+}

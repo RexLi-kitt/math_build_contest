@@ -1,0 +1,3 @@
+﻿seed,case,strategy,source_count,detected_channels,cleared_channels,total_virtual_time_s,measure_actions,clear_actions,all_cleared,movement_time_s,active_measurements,co_measurements,no_signal_actions,failed_clear_actions,decision_wall_time_s
+1901,1,D_hybrid_belief_rolling,14,14,14,4066.989,142,14,1,3148.989046,18,15,90,0,0.444024
+1901,2,D_hybrid_belief_rolling,16,16,16,4693.685,155,16,1,3689.684868,23,18,98,0,0.666151

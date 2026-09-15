@@ -1,0 +1,183 @@
+"""Build the focused C -> C+ mechanism report from saved paired results."""
+from __future__ import annotations
+
+import csv
+import json
+import math
+import statistics
+from collections import defaultdict
+from pathlib import Path
+
+
+ROOT = Path(__file__).resolve().parents[1]
+METRICS = ROOT / "diagnostics" / "results" / "c_to_cplus_metrics_600"
+FACTORIAL = ROOT / "diagnostics" / "results" / "diagnostic_factorial_seed982451653_100" / "summary.json"
+OUT = ROOT / "diagnostics" / "C到C加机制回测报告.md"
+
+
+def load_rows():
+    with (METRICS / "case_results.csv").open(encoding="utf-8-sig", newline="") as handle:
+        return list(csv.DictReader(handle))
+
+
+def number(row, field):
+    return float(row[field])
+
+
+def mean(rows, model, field):
+    return statistics.mean(number(row, field) for row in rows if row["model"] == model)
+
+
+def paired(rows, field, seed=None):
+    selected = [row for row in rows if seed is None or int(row["seed"]) == seed]
+    cases = defaultdict(dict)
+    for row in selected:
+        cases[(row["seed"], row["case"])][row["model"]] = number(row, field)
+    differences = [models["C"] - models["C+"] for models in cases.values()]
+    average = statistics.mean(differences)
+    standard_error = statistics.stdev(differences) / math.sqrt(len(differences))
+    return average, average - 1.96 * standard_error, average + 1.96 * standard_error, sum(value > 0 for value in differences)
+
+
+def pct(value):
+    return f"{100 * value:.1f}%"
+
+
+def main():
+    rows = load_rows()
+    saved = json.loads((METRICS / "summary.json").read_text(encoding="utf-8"))
+    summaries = {item["model"]: item for item in saved["summaries"]}
+    factorial = {
+        item["group"]: item for item in
+        json.loads(FACTORIAL.read_text(encoding="utf-8"))["summaries"]
+    }
+    c_total = mean(rows, "C", "total_time_per_source_s")
+    cp_total = mean(rows, "C+", "total_time_per_source_s")
+    c_move = mean(rows, "C", "movement_time_per_source_s")
+    cp_move = mean(rows, "C+", "movement_time_per_source_s")
+    c_detect = mean(rows, "C", "detection_switch_time_per_source_s")
+    cp_detect = mean(rows, "C+", "detection_switch_time_per_source_s")
+    total_delta = c_total - cp_total
+    move_delta = c_move - cp_move
+    detect_delta = c_detect - cp_detect
+    total_ci = paired(rows, "total_time_per_source_s")
+    move_ci = paired(rows, "movement_time_per_source_s")
+    seeds = sorted({int(row["seed"]) for row in rows})
+    per_seed_lines = []
+    for seed in seeds:
+        subset = [row for row in rows if int(row["seed"]) == seed]
+        delta = paired(rows, "total_time_per_source_s", seed)
+        per_seed_lines.append(
+            f"| {seed} | {mean(subset,'C','total_time_per_source_s'):.1f} | "
+            f"{mean(subset,'C+','total_time_per_source_s'):.1f} | {delta[0]:.1f} | {delta[3]}/200 |"
+        )
+
+    report = f"""# C 模型的不足与 C+ 的机制性改进
+
+## 技术摘要
+
+在三个新随机种子、共 600 个配对案例中，C+ 将平均每源总耗时从 **{c_total:.1f} s** 降到 **{cp_total:.1f} s**，净省 **{total_delta:.1f} s/源（{100*total_delta/c_total:.1f}%）**，且 600/600 局均更快、两组全清除率均为 100%。
+
+这项收益可以做精确的时间分解：C+ 平均节省 **{move_delta:.1f} s/源移动时间**，同时增加 **{abs(detect_delta):.1f} s/源检测与频道切换时间**，清除动作时间不变，因此
+
+`{move_delta:.1f} − {abs(detect_delta):.1f} = {total_delta:.1f} s/源`。
+
+三个搜索阶段指标在每个配对案例中都完全相同，说明 C+ 的作用边界很明确：它不负责更早发现全部干扰源，而是利用完成时间选点和共观测，降低发现之后的专程移动。
+
+## 主要结论
+
+- **C 的核心不足是移动成本过高。**移动占 C 总耗时的 81.6%，原选点指标只计到检测点的移动，无法反映检测后前往清除区域的成本。
+- **C+ 的净收益完全来自“以信息换移动”。**它增加 1.6 s/源检测与切换时间，减少 45.1 s/源移动时间，净省 43.5 s/源。
+- **C+ 改善的是发现后的定位与清除阶段。**七项指标中，与发现阶段相关的最后源首次发现时间和搜索结束定位负担均不变。
+- **完成时间指标和共观测均有独立贡献。**100 局消融中二者分别改善 37.0 和 20.8 s/源，组合改善 44.4 s/源。
+
+## 1. 评价指标及解释方向
+
+| 指标 | 计算口径 | 评价作用 | 期望方向 |
+|---|---|---|---|
+| 全清除率 | 完成全部真实源清除的局数占比 | 可靠性硬约束；未全清除组不参与速度优越性判断 | 保持 100% |
+| 平均每源总耗时 | 每局总虚拟时间除以该局源数，再对案例平均 | 模型优劣的主指标 | 降低 |
+| P95 每源总耗时 | 案例级每源耗时的第 95 百分位 | 困难案例与尾部风险 | 降低 |
+| 每源移动时间 | 动作序列相邻位置距离之和 / 5 / 源数 | 判断选点和协同是否减少专程行程 | 降低 |
+| 每源检测与切换时间 | `(5×检测次数 + 频道切换次数) / 源数` | 衡量为信息付出的直接时间 | 可小幅增加，但须换来更大的移动节省 |
+| 最后源首次发现时间 | 最后一个真实源首次返回方向或近距离结果的时刻 / 源数 | 衡量发现阶段效率；真值只用于事后确认频道集合 | 降低或不变 |
+| 搜索后剩余定位负担 | 搜索结束后最小包围圆仍大于 19.75 m 的源数 / 全部源数 | 衡量覆盖搜索结束后仍需继续定位的任务比例 | 降低 |
+
+总耗时用于判断改动是否有效，其余指标用于解释改动为何有效，不再把它们加权合成另一套综合分数。
+
+## 2. C 的主要不足是测量点与任务完成脱节
+
+C 的平均耗时为 {c_total:.1f} s/源，其中移动占 **{c_move:.1f} s/源（{100*c_move/c_total:.1f}%）**，检测与切换占 {c_detect:.1f} s/源，清除动作固定为 5.0 s/源。移动是绝对主导成本，因此仅根据“当前位置到下一检测点”的代价选点，容易选择检测本身便宜、但检测后仍要长距离前往预测清除区域的位置。
+
+C 还按频道逐一执行“选点—移动—测量—继续定位”。一个检测停靠点即使也适合其他频道，C 不会主动利用这个机会；之后处理这些频道时仍可能再次前往相近区域。这是多源任务中的重复接近成本。
+
+搜索结束时，C 平均仍有 **{pct(mean(rows,'C','unfinished_after_search_rate'))}** 的源未清除，其中 **{pct(mean(rows,'C','not_clear_ready_after_search_rate'))}** 尚未达到保守清除条件。这不代表覆盖搜索失败，而是说明搜索主要承担“发现”，后续阶段仍需处理大量定位任务。
+
+## 3. 模型改动通过两条路径降低移动成本
+
+| 模型改动 | 针对 C 的不足 | 作用路径 | 直接实验结果 | 核心收益判断 |
+|---|---|---|---|---|
+| 将移动指标改为预计完成时间 | C 只计算当前位置到检测点的移动，没有计入检测后前往预测清除区域的成本 | 候选点同时兼顾本次测量与后续清除，减少检测后的折返 | 单独启用时由 374.4 降至 337.4 s/源，改善 **37.0 s/源** | 第一项核心收益来源 |
+| 加入共观测 | C 按频道逐一定位，没有利用已经到达的停靠点服务其他频道 | 在同一停靠点为多个频道取得有效方位，以固定检测成本替代之后的专程移动 | 单独启用时降至 353.6 s/源，改善 **20.8 s/源** | 第二项核心收益来源 |
+| 完成时间与共观测联合使用 | 两项改动都在减少专程接近目标的行程 | 完成时间优化主要检测点，共观测提高停靠点复用率 | 保持 C 权重时降至 330.0 s/源，改善 **44.4 s/源** | 两项作用范围重叠，组合收益不能简单相加 |
+| 调整四指标权重 | 第二问权重未按第三问多源总时间目标校准 | 在两项核心机制生效后提高完成时间因素的重要性 | 完整 C+ 为 328.7 s/源，较保持 C 权重再改善约 **1.3 s/源** | 小幅经验校准，不作为核心创新 |
+| 完整 C+ | 综合使用完成时间、共观测和校准权重 | 用少量额外信息动作换取显著移动节省 | 600 局中移动减少 **45.1 s/源**、检测与切换增加 **1.6 s/源**，总耗时净减 **43.5 s/源** | “以信息换移动”的总体机制得到验证 |
+
+这张表把模型结构和评价指标连接起来：完成时间指标改变“主要检测点选在哪里”，共观测改变“一个停靠点服务多少频道”，二者最终共同作用于移动时间；权重只调整这套机制内部的取舍。因而论文中的因果叙述应把前两项作为模型创新，把权重写成参数校准。
+
+## 4. 七项核心指标表明 C+ 用信息换取移动
+
+| 指标 | C | C+ | C−C+ | 结论 |
+|---|---:|---:|---:|---|
+| 全清除率 | 100% | 100% | 0.0 pp | 可靠性保持不变 |
+| 平均总耗时（s/源） | {c_total:.1f} | {cp_total:.1f} | **{total_delta:+.1f}** | C+ 净提速 |
+| P95 总耗时（s/源） | {summaries['C']['p95_total_time_per_source_s']:.1f} | {summaries['C+']['p95_total_time_per_source_s']:.1f} | **{summaries['C']['p95_total_time_per_source_s']-summaries['C+']['p95_total_time_per_source_s']:+.1f}** | 尾部同步改善 |
+| 移动时间（s/源） | {c_move:.1f} | {cp_move:.1f} | **{move_delta:+.1f}** | 核心收益来源 |
+| 检测与切换时间（s/源） | {c_detect:.1f} | {cp_detect:.1f} | **{detect_delta:+.1f}** | C+ 多付少量信息成本 |
+| 最后源首次发现时间（s/源） | {mean(rows,'C','last_discovery_time_per_source_s'):.1f} | {mean(rows,'C+','last_discovery_time_per_source_s'):.1f} | 0.0 | 搜索阶段相同 |
+| 搜索后剩余定位负担 | {pct(mean(rows,'C','not_clear_ready_after_search_rate'))} | {pct(mean(rows,'C+','not_clear_ready_after_search_rate'))} | 0.0 pp | 改动发生在搜索之后 |
+
+七项指标构成一条闭合证据链：可靠性不变，平均与 P95 同时下降，移动时间的大幅下降超过检测成本的小幅增加，而发现时间和搜索后定位负担不变。因此 C+ 的收益发生在搜索之后，且来源是移动组织方式的改善。
+
+C+ 实际多进行约 {mean(rows,'C+','measure_actions_per_source')-mean(rows,'C','measure_actions_per_source'):.2f} 次/源检测，其中共观测约 {mean(rows,'C+','co_measurements_per_source'):.2f} 次/源，却少移动 {move_delta:.1f} s/源。共观测的作用不是减少检测动作，而是把多个频道的有效观测集中在已经到达的停靠点，从而减少之后的专程移动。两者的搜索结束时间也完全相同，均为 {mean(rows,'C','search_end_time_per_source_s'):.1f} s/源。
+
+## 5. 三个种子给出一致结论
+
+| 新种子 | C（s/源） | C+（s/源） | 平均节省 | C+ 更快局数 |
+|---:|---:|---:|---:|---:|
+{chr(10).join(per_seed_lines)}
+
+600 局的配对平均节省为 {total_ci[0]:.1f} s/源，近似 95% 置信区间为 **[{total_ci[1]:.1f}, {total_ci[2]:.1f}]**；移动时间节省的对应区间为 **[{move_ci[1]:.1f}, {move_ci[2]:.1f}] s/源**。既有三种子各 1000 局的鲁棒性实验也显示，C+ 相对 C 池化平均节省 43.2 s/源，二者结论一致。
+
+## 6. 单模块消融支持两条机制解释
+
+独立的 100 局因子实验采用未参与原模型筛选的 seed 982451653，并保持其他结构不变：
+
+| 实验组 | 平均 s/源 | 相对 C 的改善 | 全清除率 | 对应判断 |
+|---|---:|---:|---:|---|
+| C | {factorial['C']['mean_time_per_source_s']:.1f} | — | 100% | 基准 |
+| 仅改完成时间指标，保持 C 权重 | {factorial['C_completion_c_weights']['mean_time_per_source_s']:.1f} | {factorial['C']['mean_time_per_source_s']-factorial['C_completion_c_weights']['mean_time_per_source_s']:.1f} | 100% | 完成时间指标有效 |
+| 仅开共观测，保持 C 选点 | {factorial['C_coobserve_only']['mean_time_per_source_s']:.1f} | {factorial['C']['mean_time_per_source_s']-factorial['C_coobserve_only']['mean_time_per_source_s']:.1f} | 100% | 共观测有效 |
+| 两项同时开启，保持 C 权重 | {factorial['C_completion_coobserve_c_weights']['mean_time_per_source_s']:.1f} | {factorial['C']['mean_time_per_source_s']-factorial['C_completion_coobserve_c_weights']['mean_time_per_source_s']:.1f} | 100% | 两项存在部分重叠，组合仍最优 |
+| 完整 C+ | {factorial['Cplus']['mean_time_per_source_s']:.1f} | {factorial['C']['mean_time_per_source_s']-factorial['Cplus']['mean_time_per_source_s']:.1f} | 100% | 权重只带来小幅追加改善 |
+
+完成时间单项改善 37.0 s/源，共观测单项改善 20.8 s/源，两者合用改善 44.4 s/源。二者不能简单相加，因为它们都在减少专程接近目标的行程，作用范围存在重叠。完整 C+ 比保持 C 权重的两项组合只再改善约 1.3 s/源，因此权重适合作为经验校准，不应写成主要理论贡献。
+
+## 7. 可用于论文的机制链条
+
+C 的目标函数主要评价下一次测量本身，却没有充分反映测量后完成定位与清除所需的空间代价；同时，其逐频道处理方式未利用已到达停靠点对其他频道的观测价值。由于移动时间占总耗时的八成以上，上述局部决策容易产生多次专程接近。
+
+C+ 首先将移动指标扩展为“当前位置—候选检测点—预测清除区域”的预计完成时间，使选点同时考虑测量与后续任务；随后在主动检测点对满足接收概率和交会几何条件的其他频道进行共观测，以少量检测和频道切换时间替代后续专程移动。配对实验表明，C+ 增加 1.6 s/源的信息动作成本，却减少 45.1 s/源移动时间，最终降低 43.5 s/源总耗时，并同步改善 P95。因此，C+ 的优越性来自对多源任务中移动成本的前瞻控制和停靠机会共享。
+
+## 8. 结论边界与下一步
+
+上述结果支持“完成时间指标和共观测导致 C+ 提速”的机制解释，因为单模块消融和成本分解给出了相互一致的证据。它仍属于当前离线模拟器分布下的结论；边界聚集、最小接收半径和系统性测角偏差等压力情形需要另行验证。
+
+搜索结束指标对 C 和 C+ 完全相同，是代码结构决定且被 600 局结果确认的现象。因此这些指标适合界定 C+ 的作用阶段，却不适合把 C+ 描述成“改进覆盖发现”。覆盖阶段的剩余定位负担应留给后续 F 模型解释。
+"""
+    OUT.write_text(report, encoding="utf-8")
+    print(OUT)
+
+
+if __name__ == "__main__":
+    main()

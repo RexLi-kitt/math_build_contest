@@ -1,0 +1,30 @@
+{
+  "note": "C validation: boundary stress 200 cases seed=20260924",
+  "summaries": [
+    {
+      "strategy": "Bplus",
+      "cases": 200,
+      "all_clear": 200,
+      "mean_s_per_source": 589.3369040625,
+      "p95_s_per_source": 692.672875,
+      "mean_search_movement_s": 239.66404964225617,
+      "mean_post_search_movement_s": 166.92473262667332,
+      "mean_detection_s": 148.8859375,
+      "mean_switching_s": 28.8575,
+      "mean_measure_actions": 476.435
+    },
+    {
+      "strategy": "C",
+      "cases": 200,
+      "all_clear": 200,
+      "mean_s_per_source": 774.2030678125,
+      "p95_s_per_source": 974.534625,
+      "mean_search_movement_s": 220.1524812396957,
+      "mean_post_search_movement_s": 247.12808670947996,
+      "mean_detection_s": 252.2703125,
+      "mean_switching_s": 49.64375,
+      "mean_measure_actions": 807.265
+    }
+  ],
+  "failures": []
+}

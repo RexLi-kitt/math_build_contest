@@ -1,0 +1,114 @@
+{
+  "config": {
+    "cases": 50,
+    "seed": 20260913,
+    "sources": null,
+    "directional_fraction": 0.5,
+    "min_success": 0.95,
+    "strategies": null,
+    "output": "results\\screen50"
+  },
+  "best_feasible": "L950_C2",
+  "summaries": [
+    {
+      "strategy": "L950_C2",
+      "search_sites": 31,
+      "success_rate": 1.0,
+      "feasible": true,
+      "mean_time_per_source_s": 732.9981495897435,
+      "p95_time_per_source_s": 1080.1206,
+      "mean_measure_actions": 319.68,
+      "mean_cleared": 13.66
+    },
+    {
+      "strategy": "L950_C3",
+      "search_sites": 31,
+      "success_rate": 1.0,
+      "feasible": true,
+      "mean_time_per_source_s": 737.783610264652,
+      "p95_time_per_source_s": 1091.7744,
+      "mean_measure_actions": 395.94,
+      "mean_cleared": 13.66
+    },
+    {
+      "strategy": "L950_C4",
+      "search_sites": 31,
+      "success_rate": 1.0,
+      "feasible": true,
+      "mean_time_per_source_s": 755.1186500100732,
+      "p95_time_per_source_s": 1116.9737,
+      "mean_measure_actions": 446.38,
+      "mean_cleared": 13.66
+    },
+    {
+      "strategy": "L1000_C2",
+      "search_sites": 31,
+      "success_rate": 1.0,
+      "feasible": true,
+      "mean_time_per_source_s": 789.8491874719447,
+      "p95_time_per_source_s": 1144.982,
+      "mean_measure_actions": 336.46,
+      "mean_cleared": 13.66
+    },
+    {
+      "strategy": "L900_C3",
+      "search_sites": 37,
+      "success_rate": 1.0,
+      "feasible": true,
+      "mean_time_per_source_s": 791.6693477377622,
+      "p95_time_per_source_s": 1202.06,
+      "mean_measure_actions": 424.02,
+      "mean_cleared": 13.66
+    },
+    {
+      "strategy": "L1000_C3",
+      "search_sites": 31,
+      "success_rate": 1.0,
+      "feasible": true,
+      "mean_time_per_source_s": 808.5764821154679,
+      "p95_time_per_source_s": 1201.3953999999999,
+      "mean_measure_actions": 428.16,
+      "mean_cleared": 13.66
+    },
+    {
+      "strategy": "L900_C5",
+      "search_sites": 37,
+      "success_rate": 1.0,
+      "feasible": true,
+      "mean_time_per_source_s": 829.2516541557609,
+      "p95_time_per_source_s": 1234.035,
+      "mean_measure_actions": 529.68,
+      "mean_cleared": 13.66
+    },
+    {
+      "strategy": "L1000_C4",
+      "search_sites": 31,
+      "success_rate": 1.0,
+      "feasible": true,
+      "mean_time_per_source_s": 830.4395132648185,
+      "p95_time_per_source_s": 1207.8705,
+      "mean_measure_actions": 483.74,
+      "mean_cleared": 13.66
+    },
+    {
+      "strategy": "L1000_C5",
+      "search_sites": 31,
+      "success_rate": 1.0,
+      "feasible": true,
+      "mean_time_per_source_s": 848.4780553880287,
+      "p95_time_per_source_s": 1211.5971,
+      "mean_measure_actions": 525.12,
+      "mean_cleared": 13.66
+    },
+    {
+      "strategy": "Q3_direct",
+      "search_sites": 8,
+      "success_rate": 0.06,
+      "feasible": false,
+      "mean_time_per_source_s": 306.99765797286045,
+      "p95_time_per_source_s": 394.3782,
+      "mean_measure_actions": 139.68,
+      "mean_cleared": 11.26
+    }
+  ]
+}

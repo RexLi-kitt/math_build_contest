@@ -1,0 +1,12 @@
+{
+  "baseline": {
+    "all_clear": 200,
+    "cases": 200,
+    "mean_seconds_per_source": 781.12094875
+  },
+  "route28": {
+    "all_clear": 200,
+    "cases": 200,
+    "mean_seconds_per_source": 702.7777415625
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "note": "normal 500 cases seed=20260923",
+  "summaries": [
+    {
+      "strategy": "Bplus",
+      "cases": 500,
+      "all_clear": 500,
+      "mean_s_per_source": 667.3583479804945,
+      "p95_s_per_source": 856.9568999999999,
+      "mean_search_movement_s": 313.38397324488045,
+      "mean_post_search_movement_s": 181.63579598271215,
+      "mean_detection_s": 140.4008625957376,
+      "mean_switching_s": 26.937715551115552,
+      "mean_measure_actions": 350.842
+    },
+    {
+      "strategy": "AggOrder",
+      "cases": 500,
+      "all_clear": 500,
+      "mean_s_per_source": 625.003095527947,
+      "p95_s_per_source": 815.8882727272728,
+      "mean_search_movement_s": 276.5899236663014,
+      "mean_post_search_movement_s": 184.53870097722063,
+      "mean_detection_s": 133.2607112054612,
+      "mean_switching_s": 25.613759815184814,
+      "mean_measure_actions": 331.116
+    },
+    {
+      "strategy": "BNewOrder",
+      "cases": 500,
+      "all_clear": 500,
+      "mean_s_per_source": 662.539628912987,
+      "p95_s_per_source": 877.8978,
+      "mean_search_movement_s": 313.7577501390406,
+      "mean_post_search_movement_s": 192.8462459257109,
+      "mean_detection_s": 126.7472224025974,
+      "mean_switching_s": 24.18841003996004,
+      "mean_measure_actions": 315.094
+    }
+  ],
+  "failures": []
+}

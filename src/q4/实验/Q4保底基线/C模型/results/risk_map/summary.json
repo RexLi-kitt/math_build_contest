@@ -1,0 +1,18 @@
+{
+  "note": "风险映射: C vs B+ 在困难但非对抗场景 (100局各, 均100%清除)",
+  "minR_uniform_seed20260931": {
+    "description": "16源均匀分布, 全部R=1000, 50%定向随机波束",
+    "C_s_per_source": 437.35,
+    "Bplus_s_per_source": 502.85
+  },
+  "boundary_randbeam_seed20260932": {
+    "description": "16源r∈[1700,1800], R=1000, 75%定向随机波束",
+    "C_s_per_source": 575.97,
+    "Bplus_s_per_source": 572.72
+  },
+  "adversarial_stress_seed20260924": {
+    "description": "16源贴边+波束全朝外, R=1000 (人造对抗角落)",
+    "C_s_per_source": 774.20,
+    "Bplus_s_per_source": 589.34
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "cases": 30,
+  "all_cleared_rate": 1.0,
+  "mean_virtual_time_s": 4321.356633333334,
+  "median_virtual_time_s": 4239.7365,
+  "max_virtual_time_s": 5575.773
+}

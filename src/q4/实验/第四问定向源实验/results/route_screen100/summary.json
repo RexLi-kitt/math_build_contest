@@ -1,0 +1,73 @@
+{
+  "config": {
+    "cases": 100,
+    "seed": 20260922,
+    "sources": null,
+    "directional_fraction": 0.5,
+    "min_success": 1.0,
+    "strategies": "L950_C2,Route31,ClippedRoute",
+    "jobs": 8,
+    "output": "results\\route_screen100"
+  },
+  "elapsed_wall_time_s": 18.995223900012206,
+  "best_feasible": "L950_C2",
+  "summaries": [
+    {
+      "strategy": "L950_C2",
+      "search_sites": 31,
+      "success_rate": 1.0,
+      "feasible": true,
+      "mean_time_per_source_s": 786.259385576257,
+      "p95_time_per_source_s": 1067.9355,
+      "mean_measure_actions": 326.96,
+      "mean_cleared": 13.26,
+      "mean_movement_per_source_s": 627.7124710981836,
+      "mean_search_movement_per_source_s": 455.727757013562,
+      "mean_post_search_movement_per_source_s": 171.98471408462171,
+      "mean_detection_per_source_s": 128.76093052780553,
+      "mean_switching_per_source_s": 24.78598031135531,
+      "mean_clearing_per_source_s": 5.0,
+      "mean_failed_clear_actions": 0,
+      "mean_search_phase_per_source_s": 597.5604373332422,
+      "mean_post_search_per_source_s": 188.69894824301477
+    },
+    {
+      "strategy": "Route31",
+      "search_sites": 31,
+      "success_rate": 1.0,
+      "feasible": true,
+      "mean_time_per_source_s": 793.6471575879538,
+      "p95_time_per_source_s": 1063.9465,
+      "mean_measure_actions": 358.32,
+      "mean_cleared": 13.26,
+      "mean_movement_per_source_s": 621.1700904185417,
+      "mean_search_movement_per_source_s": 445.0978375409986,
+      "mean_post_search_movement_per_source_s": 176.07225287754312,
+      "mean_detection_per_source_s": 140.40932962870463,
+      "mean_switching_per_source_s": 27.067737554112554,
+      "mean_clearing_per_source_s": 5.0,
+      "mean_failed_clear_actions": 0,
+      "mean_search_phase_per_source_s": 600.7814568799929,
+      "mean_post_search_per_source_s": 192.86570070796074
+    },
+    {
+      "strategy": "ClippedRoute",
+      "search_sites": 31,
+      "success_rate": 1.0,
+      "feasible": true,
+      "mean_time_per_source_s": 793.6471575879538,
+      "p95_time_per_source_s": 1063.9465,
+      "mean_measure_actions": 358.32,
+      "mean_cleared": 13.26,
+      "mean_movement_per_source_s": 621.1700904185417,
+      "mean_search_movement_per_source_s": 445.0978375409986,
+      "mean_post_search_movement_per_source_s": 176.07225287754312,
+      "mean_detection_per_source_s": 140.40932962870463,
+      "mean_switching_per_source_s": 27.067737554112554,
+      "mean_clearing_per_source_s": 5.0,
+      "mean_failed_clear_actions": 0,
+      "mean_search_phase_per_source_s": 600.7814568799929,
+      "mean_post_search_per_source_s": 192.86570070796074
+    }
+  ]
+}

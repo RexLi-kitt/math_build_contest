@@ -1,0 +1,26 @@
+{
+  "config": {
+    "cases": 5,
+    "seed": 20260921,
+    "sources": null,
+    "directional_fraction": 0.5,
+    "min_success": 1.0,
+    "strategies": "L950_C2",
+    "jobs": 1,
+    "output": "results\\profile5"
+  },
+  "elapsed_wall_time_s": 2.794530700019095,
+  "best_feasible": "L950_C2",
+  "summaries": [
+    {
+      "strategy": "L950_C2",
+      "search_sites": 31,
+      "success_rate": 1.0,
+      "feasible": true,
+      "mean_time_per_source_s": 875.6004541666666,
+      "p95_time_per_source_s": 1079.7554,
+      "mean_measure_actions": 364,
+      "mean_cleared": 12.2
+    }
+  ]
+}

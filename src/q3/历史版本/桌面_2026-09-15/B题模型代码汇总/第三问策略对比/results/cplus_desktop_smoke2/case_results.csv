@@ -1,0 +1,9 @@
+﻿seed,case,strategy,source_count,detected_channels,cleared_channels,total_virtual_time_s,measure_actions,clear_actions,all_cleared,movement_time_s,active_measurements,co_measurements,no_signal_actions,failed_clear_actions,decision_wall_time_s
+991,1,A_current_ls_dopt,11,11,11,4028.205,141,12,1,3125.204526,3,0,118,1,0.008115
+991,1,B_region_dopt,11,11,11,4138.397,151,11,1,3180.396848,12,0,118,0,0.232933
+991,1,C_region_q2,11,11,11,4308.565,149,11,1,3360.56489,10,0,118,0,0.949952
+991,1,Cplus_completion_coobserve,11,11,11,4061.591,152,11,1,3097.590824,13,6,118,0,0.780239
+991,2,A_current_ls_dopt,16,16,16,4507.556,121,21,1,3690.55599,8,0,79,5,0.017776
+991,2,B_region_dopt,16,16,16,4512.052,133,16,1,3640.052293,16,0,79,0,0.290056
+991,2,C_region_q2,16,16,16,4890.736,131,16,1,4028.73559,14,0,79,0,0.971948
+991,2,Cplus_completion_coobserve,16,16,16,4495.104,139,16,1,3583.104066,22,11,79,0,0.926404

@@ -1,0 +1,30 @@
+{
+  "note": "C validation: normal 500 cases seed=20260925",
+  "summaries": [
+    {
+      "strategy": "Bplus",
+      "cases": 500,
+      "all_clear": 500,
+      "mean_s_per_source": 661.4883289986263,
+      "p95_s_per_source": 853.9036,
+      "mean_search_movement_s": 316.8918152693763,
+      "mean_post_search_movement_s": 186.45713051025135,
+      "mean_detection_s": 128.5223772061272,
+      "mean_switching_s": 24.617006884781883,
+      "mean_measure_actions": 317.226
+    },
+    {
+      "strategy": "C",
+      "cases": 500,
+      "all_clear": 500,
+      "mean_s_per_source": 627.9521273422495,
+      "p95_s_per_source": 820.0669,
+      "mean_search_movement_s": 278.73052160560906,
+      "mean_post_search_movement_s": 183.4319448123804,
+      "mean_detection_s": 134.82992245254746,
+      "mean_switching_s": 25.959737645687646,
+      "mean_measure_actions": 332.176
+    }
+  ],
+  "failures": []
+}

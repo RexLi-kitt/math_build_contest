@@ -1,0 +1,64 @@
+{
+  "config": {
+    "cases": 100,
+    "seed": 20260915,
+    "sources": null,
+    "directional_fraction": 0.5,
+    "min_success": 0.95,
+    "strategies": "L950_C2,L1100_C2,L1100_C3,L1100_C4,L1200_C2",
+    "output": "results\\refine100"
+  },
+  "best_feasible": "L1100_C2",
+  "summaries": [
+    {
+      "strategy": "L1100_C2",
+      "search_sites": 19,
+      "success_rate": 0.99,
+      "feasible": true,
+      "mean_time_per_source_s": 609.4294626410257,
+      "p95_time_per_source_s": 781.2483,
+      "mean_measure_actions": 271.79,
+      "mean_cleared": 12.93
+    },
+    {
+      "strategy": "L1100_C3",
+      "search_sites": 19,
+      "success_rate": 0.99,
+      "feasible": true,
+      "mean_time_per_source_s": 633.9017244655345,
+      "p95_time_per_source_s": 790.8219,
+      "mean_measure_actions": 354.3,
+      "mean_cleared": 12.93
+    },
+    {
+      "strategy": "L1100_C4",
+      "search_sites": 19,
+      "success_rate": 0.99,
+      "feasible": true,
+      "mean_time_per_source_s": 655.1629904368964,
+      "p95_time_per_source_s": 805.0255,
+      "mean_measure_actions": 407.28,
+      "mean_cleared": 12.93
+    },
+    {
+      "strategy": "L1200_C2",
+      "search_sites": 19,
+      "success_rate": 0.97,
+      "feasible": true,
+      "mean_time_per_source_s": 669.6384026887696,
+      "p95_time_per_source_s": 851.7451818181818,
+      "mean_measure_actions": 298.87,
+      "mean_cleared": 12.91
+    },
+    {
+      "strategy": "L950_C2",
+      "search_sites": 31,
+      "success_rate": 1.0,
+      "feasible": true,
+      "mean_time_per_source_s": 805.6117423611389,
+      "p95_time_per_source_s": 1068.3967,
+      "mean_measure_actions": 335.02,
+      "mean_cleared": 12.94
+    }
+  ]
+}

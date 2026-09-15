@@ -1,0 +1,71 @@
+{
+  "note": "boundary stress 200 cases seed=20260924",
+  "summaries": [
+    {
+      "strategy": "L950_C2",
+      "cases": 200,
+      "all_clear": 200,
+      "success_rate": 1.0,
+      "mean_s_per_source": 781.12094875,
+      "p95_s_per_source": 893.5521875,
+      "mean_search_movement_s": 356.46842861303355,
+      "mean_post_search_movement_s": 199.25314278850152,
+      "mean_detection_s": 184.2328125,
+      "mean_switching_s": 35.993125,
+      "mean_search_sites": 31
+    },
+    {
+      "strategy": "ShiftB",
+      "cases": 200,
+      "all_clear": 200,
+      "success_rate": 1.0,
+      "mean_s_per_source": 702.7777415625,
+      "p95_s_per_source": 797.0259375,
+      "mean_search_movement_s": 309.9501018976202,
+      "mean_post_search_movement_s": 187.5460773904966,
+      "mean_detection_s": 167.6671875,
+      "mean_switching_s": 32.614375,
+      "mean_search_sites": 28
+    },
+    {
+      "strategy": "H8",
+      "cases": 200,
+      "all_clear": 200,
+      "success_rate": 1.0,
+      "mean_s_per_source": 638.5772034375,
+      "p95_s_per_source": 765.971875,
+      "mean_search_movement_s": 237.41316993409316,
+      "mean_post_search_movement_s": 198.96871855328618,
+      "mean_detection_s": 165.2140625,
+      "mean_switching_s": 31.98125,
+      "mean_search_sites": 31
+    },
+    {
+      "strategy": "Cert2548",
+      "cases": 200,
+      "all_clear": 200,
+      "success_rate": 1.0,
+      "mean_s_per_source": 708.0167475,
+      "p95_s_per_source": 927.3040625,
+      "mean_search_movement_s": 173.6335614264337,
+      "mean_post_search_movement_s": 257.8131847406195,
+      "mean_detection_s": 226.9734375,
+      "mean_switching_s": 44.588125,
+      "mean_search_sites": 29
+    },
+    {
+      "strategy": "Cert3146",
+      "cases": 200,
+      "all_clear": 200,
+      "success_rate": 1.0,
+      "mean_s_per_source": 572.6712034375,
+      "p95_s_per_source": 676.8016875,
+      "mean_search_movement_s": 233.38598509138203,
+      "mean_post_search_movement_s": 168.26959331838995,
+      "mean_detection_s": 139.096875,
+      "mean_switching_s": 26.91875,
+      "mean_search_sites": 27
+    }
+  ],
+  "failures": []
+}

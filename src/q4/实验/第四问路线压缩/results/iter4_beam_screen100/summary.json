@@ -1,0 +1,73 @@
+{
+  "config": {
+    "cases": 100,
+    "seed": 20260928,
+    "sources": null,
+    "directional_fraction": 0.5,
+    "min_success": 1.0,
+    "strategies": "Base,Beam,Chase",
+    "jobs": 16,
+    "output": "C:\\Users\\李\\Desktop\\第四问路线压缩\\results\\iter4_beam_screen100"
+  },
+  "elapsed_wall_time_s": 13.162053200008813,
+  "best_feasible": "Beam",
+  "summaries": [
+    {
+      "strategy": "Beam",
+      "search_sites": 27,
+      "success_rate": 1.0,
+      "feasible": true,
+      "mean_time_per_source_s": 677.7997822094989,
+      "p95_time_per_source_s": 875.9519,
+      "mean_measure_actions": 355.36,
+      "mean_cleared": 12.94,
+      "mean_movement_per_source_s": 503.00432512334874,
+      "mean_search_movement_per_source_s": 314.7951960438657,
+      "mean_post_search_movement_per_source_s": 188.20912907948315,
+      "mean_detection_per_source_s": 142.45855602730603,
+      "mean_switching_per_source_s": 27.33689980852481,
+      "mean_clearing_per_source_s": 5.0,
+      "mean_failed_clear_actions": 0,
+      "mean_search_phase_per_source_s": 472.0723225423671,
+      "mean_post_search_per_source_s": 205.72745966713174
+    },
+    {
+      "strategy": "Base",
+      "search_sites": 27,
+      "success_rate": 1.0,
+      "feasible": true,
+      "mean_time_per_source_s": 678.2275550575258,
+      "p95_time_per_source_s": 875.9519,
+      "mean_measure_actions": 355.6,
+      "mean_cleared": 12.94,
+      "mean_movement_per_source_s": 503.34963993682896,
+      "mean_search_movement_per_source_s": 314.7951960438657,
+      "mean_post_search_movement_per_source_s": 188.55444389296338,
+      "mean_detection_per_source_s": 142.53351523476525,
+      "mean_switching_per_source_s": 27.34439980852481,
+      "mean_clearing_per_source_s": 5.0,
+      "mean_failed_clear_actions": 0,
+      "mean_search_phase_per_source_s": 472.0723225423671,
+      "mean_post_search_per_source_s": 206.1552325151587
+    },
+    {
+      "strategy": "Chase",
+      "search_sites": 27,
+      "success_rate": 1.0,
+      "feasible": true,
+      "mean_time_per_source_s": 686.5783348499417,
+      "p95_time_per_source_s": 879.7274,
+      "mean_measure_actions": 360.26,
+      "mean_cleared": 12.94,
+      "mean_movement_per_source_s": 509.910495356156,
+      "mean_search_movement_per_source_s": 314.7951960438657,
+      "mean_post_search_movement_per_source_s": 195.11529931229055,
+      "mean_detection_per_source_s": 144.2667698967699,
+      "mean_switching_per_source_s": 27.401071678321678,
+      "mean_clearing_per_source_s": 5.0,
+      "mean_failed_clear_actions": 0,
+      "mean_search_phase_per_source_s": 472.0723225423671,
+      "mean_post_search_per_source_s": 214.50601230757462
+    }
+  ]
+}

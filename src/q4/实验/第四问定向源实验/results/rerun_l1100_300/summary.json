@@ -1,0 +1,50 @@
+{
+  "config": {
+    "cases": 300,
+    "seed": 20260916,
+    "sources": null,
+    "directional_fraction": 0.5,
+    "min_success": 0.95,
+    "strategies": "L1100_C2,L1000_C2",
+    "jobs": 8,
+    "output": "results\\rerun_l1100_300"
+  },
+  "elapsed_wall_time_s": 28.558516100019915,
+  "best_feasible": "L1100_C2",
+  "summaries": [
+    {
+      "strategy": "L1100_C2",
+      "search_sites": 19,
+      "success_rate": 0.9966666666666667,
+      "feasible": true,
+      "mean_time_per_source_s": 600.2515062277861,
+      "p95_time_per_source_s": 780.6456363636364,
+      "mean_measure_actions": 267.99333333333334,
+      "mean_cleared": 13.22,
+      "mean_movement_per_source_s": 470.82477518588877,
+      "mean_detection_per_source_s": 104.50140657953158,
+      "mean_switching_per_source_s": 19.856436466311468,
+      "mean_clearing_per_source_s": 5.068888888888889,
+      "mean_failed_clear_actions": 0.37333333333333335,
+      "mean_search_phase_per_source_s": 403.00963719111735,
+      "mean_post_search_per_source_s": 197.24186903666876
+    },
+    {
+      "strategy": "L1000_C2",
+      "search_sites": 31,
+      "success_rate": 1.0,
+      "feasible": true,
+      "mean_time_per_source_s": 847.2844480235598,
+      "p95_time_per_source_s": 1149.3008,
+      "mean_measure_actions": 338.9533333333333,
+      "mean_cleared": 13.223333333333333,
+      "mean_movement_per_source_s": 682.6234981309628,
+      "mean_detection_per_source_s": 133.78501685814186,
+      "mean_switching_per_source_s": 25.875931568431568,
+      "mean_clearing_per_source_s": 5.0,
+      "mean_failed_clear_actions": 0,
+      "mean_search_phase_per_source_s": 660.5107696491015,
+      "mean_post_search_per_source_s": 186.77367837445829
+    }
+  ]
+}

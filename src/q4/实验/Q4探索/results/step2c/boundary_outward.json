@@ -1,0 +1,24 @@
+{
+  "label": "boundary_outward",
+  "seed": 20261024,
+  "summaries": [
+    {
+      "strategy": "CplusLog",
+      "cases": 200,
+      "all_clear": 200,
+      "mean_s_per_source": 567.6215553125,
+      "p95_s_per_source": 681.56,
+      "cvar90_s_per_source": 687.819653125,
+      "mean_search_movement_s": 234.52868715765166,
+      "mean_post_search_movement_s": 165.23349326627996,
+      "mean_detection_s": 136.4546875,
+      "mean_switching_s": 26.37375,
+      "mean_clearing_s": 5.0309375,
+      "mean_search_phase_s": 370.41368715765157,
+      "mean_post_search_phase_s": 197.20786815484843,
+      "mean_failed_clear_actions": 0.165,
+      "mean_program_time_s": 0.4237447995010007
+    }
+  ],
+  "failures": []
+}

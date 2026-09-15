@@ -1,0 +1,61 @@
+return None
+qualities = []
+for target in samples:
+candidate_angle = bearing(candidate, target)
+qualities.append(max((math.sin(math.radians(wrap(bearing(station, target)
+- candidate_angle))) ** 2
+for station, _ in observations), default=0.0))
+radii, centers = [], []
+for target in receive:
+center, radius = predicted_radius(candidate, bearing(candidate, target))
+if math.isfinite(radius):
+radii.append(radius)
+centers.append(center)
+if not radii:
+return None
+q_geo = sum(qualities) / len(qualities)
+p_rec = len(receive) / len(samples)
+r_pred = sum(radii) / len(radii)
+if third == "move":
+return q_geo, p_rec, math.dist(current_position, candidate) / SPEED,
+r_pred
+post_distance = sum(math.dist(candidate, center) for center in centers) /
+len(centers)
+path_distance = math.dist(current_position, candidate) + post_distance
+return q_geo, p_rec, path_distance / SPEED + MEASURE_TIME_S, r_pred
+def score_pool(pool, weights, metrics_fn):
+"""池内四项指标各自 min-max 归一化后加权：J = w1·q_geo + w2·p_rec − w3·travel_s −
+w4·r_pred。"""
+rows = [(q, *metrics_fn(q)) for q in pool]
+rows = [(q, *m) for q, *m in rows if m[0] is not None]
+if not rows:
+return []
+columns = [[row[i] for row in rows] for i in range(1, 5)]
+scored = []
+for q, q_geo, p_rec, travel_s, r_pred in rows:
+normalized = [normal(columns[i], value)
+for i, value in enumerate((q_geo, p_rec, travel_s, r_pred))]
+score = (weights[0] * normalized[0] + weights[1] * normalized[1]
+- weights[2] * normalized[2] - weights[3] * normalized[3])
+scored.append(SelectionDecision(q, score, q_geo, p_rec, travel_s, r_pred))
+return scored
+def select_from_scored(scored):
+"""高分区（range-based R_good 带）内优先短移动，其次取预测包围圆更小的点。"""
+peak = max(item.score for item in scored)
+low = min(item.score for item in scored)
+threshold = peak - GOOD_ETA * (peak - low)
+return min((item for item in scored if item.score >= threshold),
+key=lambda item: (item.travel_s, item.r_pred_m, -item.score))
+def next_measurement_point(station, bearing_deg, weights, metrics_fn):
+"""选点主流程：粗网格（5 距离 × 6 方位）取前二 → ±100 m、±10° 邻域加密 → 重算分数。
+加密集上重新归一化与评分（与第二问求解器完全一致），最后选执行点。
+"""
+coarse_points = [add(station, d, bearing_deg + offset)
+for d in COARSE_DISTANCES for offset in range(0, 360,
+int(COARSE_BEARING_STEP))]
+coarse = score_pool(coarse_points, weights, metrics_fn)
+if not coarse:
+return None
+seeds = sorted(coarse, key=lambda item: item.score, reverse=True)[:2]
+refined_points, seen = [], set()
+47

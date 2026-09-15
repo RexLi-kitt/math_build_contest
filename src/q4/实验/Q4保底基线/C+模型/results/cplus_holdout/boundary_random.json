@@ -1,0 +1,51 @@
+{
+  "label": "boundary_random",
+  "seed": 20261023,
+  "summaries": [
+    {
+      "strategy": "B",
+      "cases": 200,
+      "all_clear": 200,
+      "mean_s_per_source": 567.87329,
+      "p95_s_per_source": 662.6548125,
+      "mean_program_time_s": 0.7275373624994245
+    },
+    {
+      "strategy": "C",
+      "cases": 200,
+      "all_clear": 200,
+      "mean_s_per_source": 577.1089021875,
+      "p95_s_per_source": 663.054,
+      "mean_program_time_s": 0.9018077939996146
+    },
+    {
+      "strategy": "Cplus",
+      "cases": 200,
+      "all_clear": 200,
+      "mean_s_per_source": 567.87329,
+      "p95_s_per_source": 662.6548125,
+      "mean_program_time_s": 0.7273928315007652
+    }
+  ],
+  "paired_comparisons": [
+    {
+      "comparison": "Cplus-B",
+      "mean_paired_difference_s_per_source": 0.0,
+      "normal_approx_95ci": [
+        0.0,
+        0.0
+      ],
+      "cplus_win_rate": 0.0
+    },
+    {
+      "comparison": "Cplus-C",
+      "mean_paired_difference_s_per_source": -9.235612187500001,
+      "normal_approx_95ci": [
+        -19.237799054183732,
+        0.7665746791837282
+      ],
+      "cplus_win_rate": 0.54
+    }
+  ],
+  "failures": []
+}

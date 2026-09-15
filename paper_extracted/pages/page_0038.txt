@@ -1,0 +1,53 @@
+math.sin(angle)
+def choose_second_point(bearing_deg: float, weights: tuple[float, float, float,
+float],
+metric_fn: Callable[[tuple[float, float]], dict]) ->
+tuple[dict, list[dict]]:
+"""metric_fn 必须返回 q_geo、p_rec、travel_s、r_pred_m 四项原始指标。"""
+coarse_points = [polar_point(bearing_deg, d, offset)
+for d in range(100, 1801, 200) for offset in range(0, 360,
+30)]
+coarse = [{"x_m": x, "y_m": y, **metric_fn((x, y))} for x, y in coarse_points]
+normalize_and_score(coarse, weights)
+seeds = sorted(coarse, key=lambda r: r["J"], reverse=True)[:2]
+refined_points: set[tuple[float, float]] = set()
+for seed in seeds:
+distance = math.dist(S1, (seed["x_m"], seed["y_m"]))
+direction = math.degrees(math.atan2(seed["y_m"] - S1[1], seed["x_m"] -
+S1[0]))
+for d in (max(50.0, distance - 100.0), distance, min(1800.0, distance +
+100.0)):
+for offset in (-10.0, 0.0, 10.0):
+refined_points.add(tuple(round(v, 7) for v in polar_point(0.0, d,
+direction + offset)))
+refined = [{"x_m": x, "y_m": y, **metric_fn((x, y))} for x, y in
+refined_points]
+normalize_and_score(refined, weights)
+peak = max(refined, key=lambda r: r["J"])
+good = [r for r in refined if r["J"] >= (1.0 - ETA) * peak["J"]]
+# 高分区内优先短移动；若相同，再选预测 MEC 更小的点。
+execute = min(good, key=lambda r: (round(r["travel_s"], 6), r["r_pred_m"], -
+r["J"]))
+return execute, good
+q2_weight_calibrate.py
+以蒙特卡洛场景和单纯形网格校准四指标权重，并进行归一化扰动检验
+from __future__ import annotations
+def simplex_grid(step: float = 0.25) -> list[tuple[float, float, float, float]]:
+"""列举 w_i>=0、sum(w_i)=1 的四维权重网格。"""
+n = round(1 / step)
+return [(a / n, b / n, c / n, (n - a - b - c) / n)
+for a in range(n + 1)
+for b in range(n - a + 1)
+for c in range(n - a - b + 1)]
+def outer_loss(mean_mec_m: float, receive_rate: float, mean_time_s: float,
+baseline_time_s: float) -> float:
+"""以实际二测 MEC、接收率和总时间构造外层损失，越小越好。"""
+return 0.40 * mean_mec_m / 20.0 + 0.35 * (1.0 - receive_rate) + 0.25 *
+mean_time_s / baseline_time_s
+def normalize_perturbation(weights: tuple[float, float, float, float], index: int,
+factor: float) -> tuple[float, float, float, float]:
+"""只扰动一个权重后重新归一化，保持总权重恒为 1。"""
+changed = list(weights)
+changed[index] *= factor
+total = sum(changed)
+38

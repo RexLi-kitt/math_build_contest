@@ -1,0 +1,41 @@
+{
+  "config": {
+    "cases": 10,
+    "seed": 20260918,
+    "sources": null,
+    "directional_fraction": 0.5,
+    "output": "results\\final_default_smoke10"
+  },
+  "elapsed_wall_time_s": 4.340941700007534,
+  "model_note": "定向源覆盖角为中轴两侧各90度；no_signal不生成位置排除圆。",
+  "summaries": [
+    {
+      "strategy": "Q3_Jplus_direct",
+      "cases": 10,
+      "search_sites": 8,
+      "all_cleared_rate": 0.0,
+      "directional_clear_rate": 0.6911764705882353,
+      "mean_detected": 12,
+      "mean_cleared": 11.4,
+      "mean_virtual_time_s": 4145.3916,
+      "mean_time_per_source_s": 310.80936576340326,
+      "p95_virtual_time_s": 4770.595,
+      "max_virtual_time_s": 4770.595,
+      "mean_measure_actions": 137.4
+    },
+    {
+      "strategy": "Q4_fast_1100_C2",
+      "cases": 10,
+      "search_sites": 19,
+      "all_cleared_rate": 1.0,
+      "directional_clear_rate": 1.0,
+      "mean_detected": 13.5,
+      "mean_cleared": 13.5,
+      "mean_virtual_time_s": 7276.3801,
+      "mean_time_per_source_s": 555.1005749155012,
+      "p95_virtual_time_s": 8362.186,
+      "max_virtual_time_s": 8362.186,
+      "mean_measure_actions": 264.4
+    }
+  ]
+}

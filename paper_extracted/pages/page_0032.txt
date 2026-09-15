@@ -1,0 +1,41 @@
+9 附录
+附录 A 支撑材料文件清单
+q1_exact_verify.py
+q1_solver.py
+q2_actual_replay.py
+q2_solver.py
+q2_weight_calibrate.py
+q3_coobserve.py
+q3_coverage_ring.py
+q3_feasible_region.py
+q3_scheduler.py
+q3_selector.py
+q4_exact_verify.py
+q4_solver.py
+q1_experiment_data.json
+q2_candidate_scores.csv
+q2_formal_strategy_comparison.csv
+q2_formal_weight_robustness.csv
+q2_weight_grid_calibration.csv
+q3_jplus_final_actions.json
+q3_jplus_robustness_seed24119_summary.json
+q3_jplus_robustness_seed55021_summary.json
+q4_b_route_design.json
+q4_c_route_design.json
+q4_robustness_report.json
+q3_formal_test_formal-p3-1-VQ68-NDNM-2CSA-8UAP.jlog
+q3_formal_test_formal-p3-2-AHVB-CW98-XXVA-Q6MQ.jlog
+q3_formal_test_formal-p3-3-RNZ5-BXVN-SY4H-22R4.jlog
+q4_formal_test_formal-p4-1-CUE7-UQXY-C2CP-EDAR.jlog
+q4_formal_test_formal-p4-2-QKWP-TYM6-ERGS-TD3J.jlog
+q4_formal_test_formal-p4-3-WN66-ZTSM-A7JF-XYH4.jlog
+附录 B 完整源程序
+q1_exact_verify.py
+以旋转卡壳与全顶点枚举精确求区域直径，并判定以直径 D 为直径的同直径圆
+能否覆盖区域。
+from __future__ import annotations
+from fractions import Fraction
+from itertools import combinations
+import math
+Point = tuple[Fraction, Fraction]
+32

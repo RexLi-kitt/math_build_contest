@@ -1,0 +1,14 @@
+{
+  "paired_mean_saved_s_per_source": 45.72872986154679,
+  "normal_95_ci": [
+    38.5160186435202,
+    52.94144107957338
+  ],
+  "improved_cases": 404,
+  "cases": 500,
+  "hashes": {
+    "q4_routes.py": "d47b079392bb7ea7661786647d9119087c91620247dc1e0394ccdc1e7b76ee8a",
+    "q4_experiment.py": "05c0a8719ee4bb92b7445d7f682eadf41dac94eb91f27f090615fa85f47da660",
+    "q4_optimize.py": "eb3cbcdc06facf6d50870de919acdddce6454e0273274764690adc067a92fea9"
+  }
+}

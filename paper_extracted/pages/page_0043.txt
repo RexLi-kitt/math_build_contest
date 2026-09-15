@@ -1,0 +1,58 @@
+def belief_samples(poly, limit=64):
+"""在可行域上取 11×11 网格内点并补边界顶点，薄区域也不会被网格漏掉。"""
+if not poly:
+return []
+xs, ys = [p[0] for p in poly], [p[1] for p in poly]
+points = [(min(xs) + (max(xs) - min(xs)) * (i + .5) / 11,
+min(ys) + (max(ys) - min(ys)) * (j + .5) / 11)
+for i in range(11) for j in range(11)]
+points = [p for p in points if _inside_convex(poly, p)] + list(poly)
+if len(points) <= limit:
+return points
+step = len(points) / limit
+return [points[min(int(k * step), len(points) - 1)] for k in range(limit)]
+def build_region(observations, no_signal_points):
+"""信念层主流程：任务圆域外接 72 边形起，逐条观测裁剪方位带与 1500 m 上界。
+返回 (保守多边形, 样本, 接收半径区间)；no_signal 排除圆是非凸孔洞，
+只从样本里删除，保守多边形仍用于清除判定以免误清除。
+"""
+poly = task_area_polygon()
+for station, angle in observations:
+poly = clip_bearing(poly, station, angle)
+poly = clip_outer_circle(poly, station, MAX_DIRECTION_R)
+if not poly:
+break
+samples, bounds = [], []
+for point in belief_samples(poly):
+lower = max([GUARANTEE_R] + [math.dist(point, station) for station, _ in
+observations])
+upper = min([MAX_DIRECTION_R] + [math.dist(point, station) for station in
+no_signal_points])
+if upper - lower > 1e-9:
+samples.append(point)
+bounds.append((lower, upper))
+return poly, samples, bounds
+def minimum_enclosing_circle_of_region(poly):
+return minimum_enclosing_circle(list(poly))
+def clear_decision(poly):
+"""清除判定：保守外包络的最小包围圆半径不超过 19.75 m 时才前往圆心清除。"""
+center, radius = minimum_enclosing_circle_of_region(poly)
+return center if radius <= CLEAR_RADIUS_M else None
+def reception_probabilities(samples, bounds, station):
+"""固定未知接收半径下的条件接收概率 p_rec，供四指标 p_rec 项使用。"""
+probabilities = []
+for target, (lower, upper) in zip(samples, bounds):
+distance = math.dist(target, station)
+if distance <= lower:
+probabilities.append(1.0)
+elif distance >= upper:
+probabilities.append(0.0)
+else:
+probabilities.append((upper - distance) / (upper - lower))
+return probabilities
+def predicted_circle(poly, station, predicted_bearing):
+"""预加入一条假设方位后的包围圆，用于四指标中的 R_pred 项。"""
+updated = clip_bearing(list(poly), station, predicted_bearing)
+updated = clip_outer_circle(updated, station, MAX_DIRECTION_R)
+return minimum_enclosing_circle(updated)
+43

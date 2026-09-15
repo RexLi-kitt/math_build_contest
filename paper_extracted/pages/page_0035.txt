@@ -1,0 +1,59 @@
+stations: Iterable[Sequence[Number]],
+bearings_deg: Iterable[Number],
+error_deg: Number = 1.0,
+) -> tuple[tuple[Fraction, Fraction, Fraction], ...]:
+"""第一步：每条观测的楔形 W_i = {X | cross(u⁻, X−M) ≥ 0 且 cross(u⁺, X−M) ≤ 0}。
+等价于两个闭半平面 a*x + b*y <= c，共 2n 个约束；方位从正东逆时针计量，
+允许负角度或超过 360°；0 < error_deg < 90 保证张角小于 180°。
+"""
+points = tuple((_number(x), _number(y)) for x, y in stations)
+angles = tuple(_number(a) for a in bearings_deg)
+epsilon = _number(error_deg)
+if len(points) != len(angles):
+raise ValueError("检测点数量必须与示向度数量相同")
+if not 0 < epsilon < 90:
+raise ValueError("误差半角必须满足 0 < error_deg < 90")
+result = []
+for (x, y), angle in zip(points, angles):
+lower = _direction_degrees(angle - epsilon)
+upper = _direction_degrees(angle + epsilon)
+if lower[0] * upper[1] - lower[1] * upper[0] <= 0:
+raise ValueError("误差半角接近浮点分辨率极限，边界方向无法可靠区分")
+for a, b in (
+(lower[1], -lower[0]),
+(-upper[1], upper[0]),
+):
+a, b = _number(a), _number(b)
+result.append((a, b, a * x + b * y))
+return tuple(result)
+def convex_hull(points: Iterable[Sequence[Number]]) -> tuple[Point, ...]:
+"""二维单调链凸包：逆时针、去重、删除共线中间点，不重复首点。"""
+ordered = sorted({(_number(p[0]), _number(p[1])) for p in points})
+if len(ordered) <= 1:
+return tuple(ordered)
+lower, upper = [], []
+for part, sequence in ((lower, ordered), (upper, reversed(ordered))):
+for p in sequence:
+while len(part) >= 2 and _cross(part[-2], part[-1], p) <= 0:
+part.pop()
+part.append(p)
+return tuple(lower[:-1] + upper[:-1])
+def intersect_halfplanes(
+halfplanes: Iterable[tuple[Number, Number, Number]],
+) -> tuple[RegionStatus, tuple[Point, ...], Point | None, Point | None]:
+"""第二步：通用闭半平面交，无人工包围框，支持退化和无界。
+枚举边界交点并按全部约束筛选，O(k³) 次有理数运算，适合少量测向观测。
+返回 (区域状态, 顶点, 可行点, 无界延伸方向)。
+"""
+constraints = tuple((_number(a), _number(b), _number(c)) for a, b, c in
+halfplanes)
+if any(a == b == 0 and c < 0 for a, b, c in constraints):
+return "empty", (), None, None
+constraints = tuple((a, b, c) for a, b, c in constraints if a or b)
+def feasible(p: Point) -> bool:
+return all(a * p[0] + b * p[1] <= c for a, b, c in constraints)
+origin = (Fraction(0), Fraction(0))
+witness = origin if feasible(origin) else None
+# 非空闭凸集距原点最近点必为原点、边界垂足或边界交点之一。
+if witness is None:
+35

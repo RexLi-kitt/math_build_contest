@@ -1,0 +1,21 @@
+{
+  "joined_keys": [
+    "normal",
+    "min_radius",
+    "boundary_random",
+    "boundary_outward",
+    "mixed"
+  ],
+  "best_two_feature_rule": {
+    "theta": 0,
+    "phi": 0.1,
+    "mean_loss": 14.481063548934399,
+    "per_scenario": [
+      4.011938074925076,
+      9.48033898141442,
+      23.0413490625,
+      1.1388937500000003,
+      34.7327978758325
+    ]
+  }
+}

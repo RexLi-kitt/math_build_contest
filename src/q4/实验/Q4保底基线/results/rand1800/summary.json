@@ -1,0 +1,33 @@
+{
+  "config": {
+    "design": "C:\\Users\\李\\Desktop\\第四问路线压缩\\best_design.json",
+    "tag": "rand1800",
+    "cases": 300,
+    "seed": 20260923,
+    "sources": 12,
+    "directional_fraction": 0.5,
+    "jobs": 8,
+    "output": "C:\\Users\\李\\Desktop\\Q4保底基线\\results\\rand1800",
+    "re_certify": true
+  },
+  "summaries": [
+    {
+      "design": "rand1800",
+      "sites": 25,
+      "tour_m": 18828.22137248389,
+      "gap_fine": 173.5583822463454,
+      "gap_ultra": 174.10782918269882,
+      "success_rate": 1.0,
+      "mean_time_per_source_s": 680.5188575,
+      "p95_time_per_source_s": 752.0365833333334,
+      "mean_search_per_source_s": 475.3035898013051,
+      "mean_post_search_per_source_s": 205.2152676986949,
+      "mean_movement_per_source_s": 502.6021928070149,
+      "mean_search_movement_per_source_s": 314.61747869019405,
+      "mean_post_search_movement_per_source_s": 187.98471411682098,
+      "mean_detection_per_source_s": 145.0861111111111,
+      "mean_failed_clear_actions": 0.03
+    }
+  ],
+  "failures": []
+}

@@ -1,0 +1,24 @@
+{
+  "note": "refined validation: stress 200 cases seed=20260924",
+  "summaries": [
+    {
+      "strategy": "C",
+      "cases": 200,
+      "all_clear": 200,
+      "mean_s_per_source": 774.2030678125,
+      "p95_s_per_source": 974.534625,
+      "mean_search_movement_s": 220.1524812396957,
+      "mean_detection_s": 252.2703125
+    },
+    {
+      "strategy": "Cref",
+      "cases": 200,
+      "all_clear": 200,
+      "mean_s_per_source": 774.0849140625,
+      "p95_s_per_source": 963.6428125,
+      "mean_search_movement_s": 217.89057848973044,
+      "mean_detection_s": 251.8484375
+    }
+  ],
+  "failures": []
+}

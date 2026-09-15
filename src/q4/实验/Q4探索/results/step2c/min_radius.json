@@ -1,0 +1,24 @@
+{
+  "label": "min_radius",
+  "seed": 20261022,
+  "summaries": [
+    {
+      "strategy": "CplusLog",
+      "cases": 200,
+      "all_clear": 200,
+      "mean_s_per_source": 612.9913475569431,
+      "p95_s_per_source": 811.0455,
+      "cvar90_s_per_source": 824.257225,
+      "mean_search_movement_s": 273.95208207984274,
+      "mean_post_search_movement_s": 162.30396131866186,
+      "mean_detection_s": 143.75231414418914,
+      "mean_switching_s": 27.982989593739592,
+      "mean_clearing_s": 5.0,
+      "mean_search_phase_s": 435.33372102423175,
+      "mean_post_search_phase_s": 177.6576265327113,
+      "mean_failed_clear_actions": 0,
+      "mean_program_time_s": 0.3470280760002788
+    }
+  ],
+  "failures": []
+}

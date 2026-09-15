@@ -1,0 +1,58 @@
+{
+  "label": "C_one_quadrant",
+  "seed": 20270703,
+  "summaries": [
+    {
+      "strategy": "BF",
+      "cases": 25,
+      "all_clear": 25,
+      "mean_s_per_source": 265.6914525,
+      "p95_s_per_source": 335.06125,
+      "cvar90_s_per_source": 346.1624375,
+      "mean_search_movement_s": 72.63712651964667,
+      "mean_post_search_movement_s": 132.93932592012595,
+      "mean_detection_s": 46.6,
+      "mean_switching_s": 8.515,
+      "mean_clearing_s": 5.0,
+      "mean_search_phase_s": 111.13462651964667,
+      "mean_post_search_phase_s": 154.55682598035332,
+      "mean_failed_clear_actions": 0,
+      "mean_program_time_s": 0.4095656799979042
+    },
+    {
+      "strategy": "CF",
+      "cases": 25,
+      "all_clear": 25,
+      "mean_s_per_source": 287.8690725,
+      "p95_s_per_source": 357.126625,
+      "cvar90_s_per_source": 359.64934374999996,
+      "mean_search_movement_s": 118.76475478572904,
+      "mean_post_search_movement_s": 94.00681552957309,
+      "mean_detection_s": 59.0375,
+      "mean_switching_s": 11.06,
+      "mean_clearing_s": 5.0,
+      "mean_search_phase_s": 174.88725478572903,
+      "mean_post_search_phase_s": 112.98181771427096,
+      "mean_failed_clear_actions": 0,
+      "mean_program_time_s": 0.24751005199854262
+    },
+    {
+      "strategy": "D",
+      "cases": 25,
+      "all_clear": 25,
+      "mean_s_per_source": 287.8690725,
+      "p95_s_per_source": 357.126625,
+      "cvar90_s_per_source": 359.64934374999996,
+      "mean_search_movement_s": 118.76475478572904,
+      "mean_post_search_movement_s": 94.00681552957309,
+      "mean_detection_s": 59.0375,
+      "mean_switching_s": 11.06,
+      "mean_clearing_s": 5.0,
+      "mean_search_phase_s": 174.88725478572903,
+      "mean_post_search_phase_s": 112.98181771427096,
+      "mean_failed_clear_actions": 0,
+      "mean_program_time_s": 0.23656135599827394
+    }
+  ],
+  "failures": []
+}
