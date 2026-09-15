@@ -1,0 +1,49 @@
+]
+if __name__ == "__main__":
+for k in (6, 7, 8):
+print(f"k={k}: R_min={min_safe_radius(k):8.1f} m "
+f"d_k(1000)={worst_coverage_distance(k, 1000.0):8.2f} m "
+f"巡回(R=1000)={open_sweep_length(k, 1000.0):7.0f} m")
+print(f"J+ 采用 k={RING_COUNT}, R={SEARCH_RING_R:.0f} m："
+f"最坏覆盖 {worst_coverage_distance(RING_COUNT, SEARCH_RING_R):.2f} m"
+f" （ 余 量 {MIN_RECEIVE_R - worst_coverage_distance(RING_COUNT,
+SEARCH_RING_R):.2f} m），"
+f"巡回 {open_sweep_length(RING_COUNT, SEARCH_RING_R):.0f} m")
+q3_feasible_region.py
+用 ±1° 方位带与距离上界裁剪出保守可行域，并以最小包围圆判定能否前往圆
+心清除。
+from __future__ import annotations
+import math
+AREA_R = 1800.0 # 任务圆域半径
+MAX_DIRECTION_R = 1500.0 # 接收半径上界：超过必然无信号，可作裁剪约束
+GUARANTEE_R = 1000.0 # 接收半径下界：环内必然有信号
+ERROR_DEG = 1.0 # 示向度误差半角
+CLEAR_RADIUS_M = 19.75 # 20 m 光学/清除半径留 0.25 m 数值余量
+def clip(poly, a, b, c):
+"""Sutherland–Hodgman 裁剪一条半平面 a*x + b*y <= c，返回交点多边形。"""
+if not poly:
+return []
+out, previous = [], poly[-1]
+previous_value = a * previous[0] + b * previous[1] - c
+for current in poly:
+current_value = a * current[0] + b * current[1] - c
+previous_inside = previous_value <= 1e-8
+current_inside = current_value <= 1e-8
+if previous_inside != current_inside:
+t = previous_value / (previous_value - current_value)
+out.append((previous[0] + t * (current[0] - previous[0]),
+previous[1] + t * (current[1] - previous[1])))
+if current_inside:
+out.append(current)
+previous, previous_value = current, current_value
+return out
+def clip_bearing(poly, station, angle_deg):
+"""加入一条 ±1° 示向度带（张角 2° 的闭楔形），即两个半平面约束。"""
+lower = math.radians(angle_deg - ERROR_DEG)
+upper = math.radians(angle_deg + ERROR_DEG)
+for a, b in ((math.sin(lower), -math.cos(lower)),
+(-math.sin(upper), math.cos(upper))):
+poly = clip(poly, a, b, a * station[0] + b * station[1])
+return poly
+def task_area_polygon(sides=72):
+41

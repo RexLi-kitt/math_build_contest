@@ -1,0 +1,2442 @@
+{
+  "summary": {
+    "正常分布": {
+      "cases": 100,
+      "abort_rate": 0.04,
+      "clear_rate": 0.9738333333333333,
+      "clear_rate_among_aborts": 0.3458333333333333,
+      "mean_leftover": 0.38,
+      "first_rejected": [
+        [
+          -1034.96,
+          -1557.97,
+          1870.41
+        ]
+      ]
+    },
+    "贴边重压": {
+      "cases": 100,
+      "abort_rate": 0.64,
+      "clear_rate": 0.6471860223110223,
+      "clear_rate_among_aborts": 0.44872815986097236,
+      "mean_leftover": 4.58,
+      "first_rejected": [
+        [
+          1434.18,
+          -1088.97,
+          1800.75
+        ]
+      ]
+    }
+  },
+  "cases": [
+    {
+      "case": 1,
+      "sources": 13,
+      "cleared": 13,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 3626.2140705347306,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 2,
+      "sources": 12,
+      "cleared": 12,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 3938.0666295376236,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 3,
+      "sources": 13,
+      "cleared": 13,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 4194.524770050519,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 4,
+      "sources": 15,
+      "cleared": 15,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 3837.124524018838,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 5,
+      "sources": 12,
+      "cleared": 12,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 3114.2974089135582,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 6,
+      "sources": 13,
+      "cleared": 13,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 3521.2569359354466,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 7,
+      "sources": 13,
+      "cleared": 13,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 4295.715894650433,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 8,
+      "sources": 13,
+      "cleared": 13,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 4028.2854175917646,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 9,
+      "sources": 11,
+      "cleared": 11,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 3550.014841743236,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 10,
+      "sources": 13,
+      "cleared": 13,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 3914.7075624108156,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 11,
+      "sources": 12,
+      "cleared": 12,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 3387.151515312755,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 12,
+      "sources": 10,
+      "cleared": 10,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 3100.9780629543407,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 13,
+      "sources": 11,
+      "cleared": 11,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 3679.598963203416,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 14,
+      "sources": 16,
+      "cleared": 16,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 4601.100405956187,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 15,
+      "sources": 12,
+      "cleared": 12,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 4065.0675494551288,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 16,
+      "sources": 12,
+      "cleared": 12,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 3963.577057967836,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 17,
+      "sources": 14,
+      "cleared": 14,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 3809.3384354416785,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 18,
+      "sources": 16,
+      "cleared": 16,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 3586.77009685328,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 19,
+      "sources": 10,
+      "cleared": 10,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 3526.377939452506,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 20,
+      "sources": 10,
+      "cleared": 10,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 2943.0611514042685,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 21,
+      "sources": 11,
+      "cleared": 11,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 3645.105459153228,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 22,
+      "sources": 13,
+      "cleared": 13,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 3451.392446069807,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 23,
+      "sources": 13,
+      "cleared": 13,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 3866.987519312067,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 24,
+      "sources": 10,
+      "cleared": 10,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 3456.598825970145,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 25,
+      "sources": 10,
+      "cleared": 10,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 3628.3209490829304,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 26,
+      "sources": 13,
+      "cleared": 13,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 3882.079004528832,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 27,
+      "sources": 11,
+      "cleared": 11,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 3421.7087619093513,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 28,
+      "sources": 12,
+      "cleared": 12,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 3454.745364158207,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 29,
+      "sources": 15,
+      "cleared": 15,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 4201.356849143524,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 30,
+      "sources": 13,
+      "cleared": 13,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 3887.1435590494248,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 31,
+      "sources": 11,
+      "cleared": 11,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 3639.6986243274605,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 32,
+      "sources": 11,
+      "cleared": 11,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 3768.781606274134,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 33,
+      "sources": 13,
+      "cleared": 13,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 3734.954041134046,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 34,
+      "sources": 14,
+      "cleared": 14,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 3710.2556937374316,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 35,
+      "sources": 12,
+      "cleared": 12,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 3880.8073667541757,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 36,
+      "sources": 10,
+      "cleared": 10,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 3388.941432046532,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 37,
+      "sources": 15,
+      "cleared": 15,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 3628.2679056867946,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 38,
+      "sources": 10,
+      "cleared": 10,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 3771.432455364844,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 39,
+      "sources": 15,
+      "cleared": 15,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 3644.64305415484,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 40,
+      "sources": 14,
+      "cleared": 14,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 3924.5061374215948,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 41,
+      "sources": 12,
+      "cleared": 12,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 3830.045500611725,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 42,
+      "sources": 16,
+      "cleared": 16,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 4269.271424600869,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 43,
+      "sources": 16,
+      "cleared": 16,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 3810.4806766642805,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 44,
+      "sources": 12,
+      "cleared": 12,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 3208.735411145685,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 45,
+      "sources": 10,
+      "cleared": 10,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 3384.9005194396964,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 46,
+      "sources": 13,
+      "cleared": 13,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 3748.889543769296,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 47,
+      "sources": 14,
+      "cleared": 14,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 3551.5242689094016,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 48,
+      "sources": 11,
+      "cleared": 11,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 3933.261934777085,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 49,
+      "sources": 10,
+      "cleared": 10,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 3570.4548925975655,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 50,
+      "sources": 15,
+      "cleared": 12,
+      "aborted": true,
+      "error": "位置越界被拒绝：(-1034.96, -1557.97, 1870.41)",
+      "rejected": [
+        [
+          -1034.96,
+          -1557.97,
+          1870.41
+        ]
+      ],
+      "virtual_time_s": 3393.8044476727587,
+      "unresolved_at_end": 3
+    },
+    {
+      "case": 51,
+      "sources": 13,
+      "cleared": 13,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 4340.055573350546,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 52,
+      "sources": 15,
+      "cleared": 15,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 4336.314374136085,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 53,
+      "sources": 13,
+      "cleared": 13,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 3772.384705559071,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 54,
+      "sources": 16,
+      "cleared": 16,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 3684.0082419083215,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 55,
+      "sources": 16,
+      "cleared": 4,
+      "aborted": true,
+      "error": "位置越界被拒绝：(-1274.9, 1295.07, 1817.3)",
+      "rejected": [
+        [
+          -1274.9,
+          1295.07,
+          1817.3
+        ]
+      ],
+      "virtual_time_s": 2124.5666228669174,
+      "unresolved_at_end": 12
+    },
+    {
+      "case": 56,
+      "sources": 12,
+      "cleared": 12,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 3609.790364822283,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 57,
+      "sources": 10,
+      "cleared": 10,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 3535.412546424488,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 58,
+      "sources": 12,
+      "cleared": 12,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 3826.0796833128115,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 59,
+      "sources": 13,
+      "cleared": 13,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 3709.7764472518847,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 60,
+      "sources": 14,
+      "cleared": 14,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 3752.3026532380204,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 61,
+      "sources": 16,
+      "cleared": 16,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 3858.7475443536723,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 62,
+      "sources": 12,
+      "cleared": 1,
+      "aborted": true,
+      "error": "位置越界被拒绝：(-1800.89, -445.76, 1855.24)",
+      "rejected": [
+        [
+          -1800.89,
+          -445.76,
+          1855.24
+        ]
+      ],
+      "virtual_time_s": 2286.773519519043,
+      "unresolved_at_end": 11
+    },
+    {
+      "case": 63,
+      "sources": 13,
+      "cleared": 13,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 3716.1720299933636,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 64,
+      "sources": 14,
+      "cleared": 14,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 3918.537016398021,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 65,
+      "sources": 13,
+      "cleared": 13,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 3590.4851998427025,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 66,
+      "sources": 11,
+      "cleared": 11,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 3338.3264280346234,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 67,
+      "sources": 11,
+      "cleared": 11,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 3809.4360091511144,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 68,
+      "sources": 13,
+      "cleared": 13,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 3744.3411609996756,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 69,
+      "sources": 15,
+      "cleared": 15,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 3948.9497207069326,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 70,
+      "sources": 10,
+      "cleared": 10,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 3412.9788646342904,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 71,
+      "sources": 16,
+      "cleared": 16,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 4011.6729836583895,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 72,
+      "sources": 16,
+      "cleared": 4,
+      "aborted": true,
+      "error": "位置越界被拒绝：(480.07, -1771.49, 1835.39)",
+      "rejected": [
+        [
+          480.07,
+          -1771.49,
+          1835.39
+        ]
+      ],
+      "virtual_time_s": 1581.3303900823014,
+      "unresolved_at_end": 12
+    },
+    {
+      "case": 73,
+      "sources": 11,
+      "cleared": 11,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 3909.283228624715,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 74,
+      "sources": 12,
+      "cleared": 12,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 3792.989476214962,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 75,
+      "sources": 10,
+      "cleared": 10,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 3410.90534986699,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 76,
+      "sources": 15,
+      "cleared": 15,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 4188.696514694415,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 77,
+      "sources": 16,
+      "cleared": 16,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 3697.936540714577,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 78,
+      "sources": 10,
+      "cleared": 10,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 3404.5119035838516,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 79,
+      "sources": 14,
+      "cleared": 14,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 3895.0820482560234,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 80,
+      "sources": 13,
+      "cleared": 13,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 3463.125589284474,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 81,
+      "sources": 10,
+      "cleared": 10,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 3179.443225566812,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 82,
+      "sources": 11,
+      "cleared": 11,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 3847.0817478419003,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 83,
+      "sources": 14,
+      "cleared": 14,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 4009.4396429695817,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 84,
+      "sources": 14,
+      "cleared": 14,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 3859.756171458087,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 85,
+      "sources": 13,
+      "cleared": 13,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 4130.69261039575,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 86,
+      "sources": 15,
+      "cleared": 15,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 3709.881450377353,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 87,
+      "sources": 13,
+      "cleared": 13,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 4248.580407531075,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 88,
+      "sources": 10,
+      "cleared": 10,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 3650.6671994356607,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 89,
+      "sources": 11,
+      "cleared": 11,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 3379.460762985556,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 90,
+      "sources": 11,
+      "cleared": 11,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 3280.8720152471233,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 91,
+      "sources": 14,
+      "cleared": 14,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 3662.159031300368,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 92,
+      "sources": 11,
+      "cleared": 11,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 3439.142665812641,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 93,
+      "sources": 16,
+      "cleared": 16,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 3737.115696198921,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 94,
+      "sources": 10,
+      "cleared": 10,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 3430.318033649569,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 95,
+      "sources": 15,
+      "cleared": 15,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 4280.040686314442,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 96,
+      "sources": 16,
+      "cleared": 16,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 4144.626894176366,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 97,
+      "sources": 13,
+      "cleared": 13,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 3389.1569019968115,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 98,
+      "sources": 14,
+      "cleared": 14,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 3768.125294786951,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 99,
+      "sources": 10,
+      "cleared": 10,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 3579.237777290306,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 100,
+      "sources": 14,
+      "cleared": 14,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 4039.0792686431873,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 1,
+      "sources": 11,
+      "cleared": 3,
+      "aborted": true,
+      "error": "位置越界被拒绝：(1434.18, -1088.97, 1800.75)",
+      "rejected": [
+        [
+          1434.18,
+          -1088.97,
+          1800.75
+        ]
+      ],
+      "virtual_time_s": 2689.695272986439,
+      "unresolved_at_end": 8
+    },
+    {
+      "case": 2,
+      "sources": 14,
+      "cleared": 8,
+      "aborted": true,
+      "error": "位置越界被拒绝：(-1040.81, -1549.74, 1866.81)",
+      "rejected": [
+        [
+          -1040.81,
+          -1549.74,
+          1866.81
+        ]
+      ],
+      "virtual_time_s": 3559.6157637226015,
+      "unresolved_at_end": 6
+    },
+    {
+      "case": 3,
+      "sources": 16,
+      "cleared": 13,
+      "aborted": true,
+      "error": "位置越界被拒绝：(-1815.64, 29.68, 1815.88)",
+      "rejected": [
+        [
+          -1815.64,
+          29.68,
+          1815.88
+        ]
+      ],
+      "virtual_time_s": 4066.3256440961595,
+      "unresolved_at_end": 3
+    },
+    {
+      "case": 4,
+      "sources": 10,
+      "cleared": 10,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 3658.1294994086556,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 5,
+      "sources": 12,
+      "cleared": 12,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 3881.417392619061,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 6,
+      "sources": 10,
+      "cleared": 10,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 4196.481436797821,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 7,
+      "sources": 15,
+      "cleared": 15,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 4620.8706597849305,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 8,
+      "sources": 12,
+      "cleared": 5,
+      "aborted": true,
+      "error": "位置越界被拒绝：(-1360.5, -1207.72, 1819.22)",
+      "rejected": [
+        [
+          -1360.5,
+          -1207.72,
+          1819.22
+        ]
+      ],
+      "virtual_time_s": 3554.8628556239746,
+      "unresolved_at_end": 7
+    },
+    {
+      "case": 9,
+      "sources": 11,
+      "cleared": 4,
+      "aborted": true,
+      "error": "位置越界被拒绝：(1615.37, -794.85, 1800.33)",
+      "rejected": [
+        [
+          1615.37,
+          -794.85,
+          1800.33
+        ]
+      ],
+      "virtual_time_s": 3428.8330084671143,
+      "unresolved_at_end": 7
+    },
+    {
+      "case": 10,
+      "sources": 12,
+      "cleared": 12,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 4247.125550309924,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 11,
+      "sources": 10,
+      "cleared": 6,
+      "aborted": true,
+      "error": "位置越界被拒绝：(-1791.93, -306.65, 1817.98)",
+      "rejected": [
+        [
+          -1791.93,
+          -306.65,
+          1817.98
+        ]
+      ],
+      "virtual_time_s": 3802.8396651697453,
+      "unresolved_at_end": 4
+    },
+    {
+      "case": 12,
+      "sources": 11,
+      "cleared": 0,
+      "aborted": true,
+      "error": "位置越界被拒绝：(1473.66, 1077.14, 1825.35)",
+      "rejected": [
+        [
+          1473.66,
+          1077.14,
+          1825.35
+        ]
+      ],
+      "virtual_time_s": 2220.363664066971,
+      "unresolved_at_end": 11
+    },
+    {
+      "case": 13,
+      "sources": 13,
+      "cleared": 9,
+      "aborted": true,
+      "error": "位置越界被拒绝：(-873.54, -1596.36, 1819.73)",
+      "rejected": [
+        [
+          -873.54,
+          -1596.36,
+          1819.73
+        ]
+      ],
+      "virtual_time_s": 3537.674617588356,
+      "unresolved_at_end": 4
+    },
+    {
+      "case": 14,
+      "sources": 15,
+      "cleared": 8,
+      "aborted": true,
+      "error": "位置越界被拒绝：(-1332.7, -1335.89, 1886.98)",
+      "rejected": [
+        [
+          -1332.7,
+          -1335.89,
+          1886.98
+        ]
+      ],
+      "virtual_time_s": 3233.521241603278,
+      "unresolved_at_end": 7
+    },
+    {
+      "case": 15,
+      "sources": 14,
+      "cleared": 9,
+      "aborted": true,
+      "error": "位置越界被拒绝：(-1786.69, -228.69, 1801.27)",
+      "rejected": [
+        [
+          -1786.69,
+          -228.69,
+          1801.27
+        ]
+      ],
+      "virtual_time_s": 3421.9427341841256,
+      "unresolved_at_end": 5
+    },
+    {
+      "case": 16,
+      "sources": 13,
+      "cleared": 13,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 4464.86081986914,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 17,
+      "sources": 14,
+      "cleared": 11,
+      "aborted": true,
+      "error": "位置越界被拒绝：(837.95, -1593.29, 1800.21)",
+      "rejected": [
+        [
+          837.95,
+          -1593.29,
+          1800.21
+        ]
+      ],
+      "virtual_time_s": 3510.063422286462,
+      "unresolved_at_end": 3
+    },
+    {
+      "case": 18,
+      "sources": 14,
+      "cleared": 14,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 4691.146155125193,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 19,
+      "sources": 15,
+      "cleared": 15,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 4369.315194796351,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 20,
+      "sources": 13,
+      "cleared": 13,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 4080.076926509323,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 21,
+      "sources": 16,
+      "cleared": 16,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 3906.150359958914,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 22,
+      "sources": 11,
+      "cleared": 11,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 4518.74974711161,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 23,
+      "sources": 11,
+      "cleared": 1,
+      "aborted": true,
+      "error": "位置越界被拒绝：(71.28, 1798.98, 1800.39)",
+      "rejected": [
+        [
+          71.28,
+          1798.98,
+          1800.39
+        ]
+      ],
+      "virtual_time_s": 2219.5385531010415,
+      "unresolved_at_end": 10
+    },
+    {
+      "case": 24,
+      "sources": 14,
+      "cleared": 10,
+      "aborted": true,
+      "error": "位置越界被拒绝：(486.75, 1772.44, 1838.06)",
+      "rejected": [
+        [
+          486.75,
+          1772.44,
+          1838.06
+        ]
+      ],
+      "virtual_time_s": 4592.929421788741,
+      "unresolved_at_end": 4
+    },
+    {
+      "case": 25,
+      "sources": 11,
+      "cleared": 11,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 4250.921341860722,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 26,
+      "sources": 10,
+      "cleared": 2,
+      "aborted": true,
+      "error": "位置越界被拒绝：(-1799.68, -385.71, 1840.55)",
+      "rejected": [
+        [
+          -1799.68,
+          -385.71,
+          1840.55
+        ]
+      ],
+      "virtual_time_s": 2637.2467064484317,
+      "unresolved_at_end": 8
+    },
+    {
+      "case": 27,
+      "sources": 13,
+      "cleared": 12,
+      "aborted": true,
+      "error": "位置越界被拒绝：(1456.29, 1123.06, 1839.04)",
+      "rejected": [
+        [
+          1456.29,
+          1123.06,
+          1839.04
+        ]
+      ],
+      "virtual_time_s": 5003.07731642628,
+      "unresolved_at_end": 1
+    },
+    {
+      "case": 28,
+      "sources": 15,
+      "cleared": 12,
+      "aborted": true,
+      "error": "位置越界被拒绝：(1580.6, -1071.56, 1909.59)",
+      "rejected": [
+        [
+          1580.6,
+          -1071.56,
+          1909.59
+        ]
+      ],
+      "virtual_time_s": 3801.019274484219,
+      "unresolved_at_end": 3
+    },
+    {
+      "case": 29,
+      "sources": 13,
+      "cleared": 13,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 4787.086521873447,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 30,
+      "sources": 11,
+      "cleared": 11,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 4245.547702552444,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 31,
+      "sources": 14,
+      "cleared": 8,
+      "aborted": true,
+      "error": "位置越界被拒绝：(38.39, -1836.28, 1836.68)",
+      "rejected": [
+        [
+          38.39,
+          -1836.28,
+          1836.68
+        ]
+      ],
+      "virtual_time_s": 3927.3880571805958,
+      "unresolved_at_end": 6
+    },
+    {
+      "case": 32,
+      "sources": 15,
+      "cleared": 14,
+      "aborted": true,
+      "error": "位置越界被拒绝：(-1800.5, -462.85, 1859.04)",
+      "rejected": [
+        [
+          -1800.5,
+          -462.85,
+          1859.04
+        ]
+      ],
+      "virtual_time_s": 4143.855166054085,
+      "unresolved_at_end": 1
+    },
+    {
+      "case": 33,
+      "sources": 15,
+      "cleared": 15,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 4831.938438245695,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 34,
+      "sources": 16,
+      "cleared": 10,
+      "aborted": true,
+      "error": "位置越界被拒绝：(-1787.96, -281.42, 1809.97)",
+      "rejected": [
+        [
+          -1787.96,
+          -281.42,
+          1809.97
+        ]
+      ],
+      "virtual_time_s": 3285.5004723438888,
+      "unresolved_at_end": 6
+    },
+    {
+      "case": 35,
+      "sources": 12,
+      "cleared": 12,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 4223.21036839743,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 36,
+      "sources": 13,
+      "cleared": 11,
+      "aborted": true,
+      "error": "位置越界被拒绝：(656.21, -1681.24, 1804.76)",
+      "rejected": [
+        [
+          656.21,
+          -1681.24,
+          1804.76
+        ]
+      ],
+      "virtual_time_s": 3806.4371359744127,
+      "unresolved_at_end": 2
+    },
+    {
+      "case": 37,
+      "sources": 13,
+      "cleared": 0,
+      "aborted": true,
+      "error": "位置越界被拒绝：(1511.24, 978.18, 1800.19)",
+      "rejected": [
+        [
+          1511.24,
+          978.18,
+          1800.19
+        ]
+      ],
+      "virtual_time_s": 2742.347409014014,
+      "unresolved_at_end": 13
+    },
+    {
+      "case": 38,
+      "sources": 14,
+      "cleared": 3,
+      "aborted": true,
+      "error": "位置越界被拒绝：(716.4, -1677.02, 1823.63)",
+      "rejected": [
+        [
+          716.4,
+          -1677.02,
+          1823.63
+        ]
+      ],
+      "virtual_time_s": 2717.7637266942947,
+      "unresolved_at_end": 11
+    },
+    {
+      "case": 39,
+      "sources": 13,
+      "cleared": 13,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 4183.169195312427,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 40,
+      "sources": 16,
+      "cleared": 4,
+      "aborted": true,
+      "error": "位置越界被拒绝：(1752.44, -493.79, 1820.68)",
+      "rejected": [
+        [
+          1752.44,
+          -493.79,
+          1820.68
+        ]
+      ],
+      "virtual_time_s": 2982.908018227993,
+      "unresolved_at_end": 12
+    },
+    {
+      "case": 41,
+      "sources": 12,
+      "cleared": 3,
+      "aborted": true,
+      "error": "位置越界被拒绝：(658.58, -1681.15, 1805.54)",
+      "rejected": [
+        [
+          658.58,
+          -1681.15,
+          1805.54
+        ]
+      ],
+      "virtual_time_s": 2579.7353891315456,
+      "unresolved_at_end": 9
+    },
+    {
+      "case": 42,
+      "sources": 11,
+      "cleared": 2,
+      "aborted": true,
+      "error": "位置越界被拒绝：(1806.73, -398.98, 1850.26)",
+      "rejected": [
+        [
+          1806.73,
+          -398.98,
+          1850.26
+        ]
+      ],
+      "virtual_time_s": 2292.2496956660034,
+      "unresolved_at_end": 9
+    },
+    {
+      "case": 43,
+      "sources": 10,
+      "cleared": 4,
+      "aborted": true,
+      "error": "位置越界被拒绝：(1673.43, -664.58, 1800.57)",
+      "rejected": [
+        [
+          1673.43,
+          -664.58,
+          1800.57
+        ]
+      ],
+      "virtual_time_s": 2707.824525959042,
+      "unresolved_at_end": 6
+    },
+    {
+      "case": 44,
+      "sources": 15,
+      "cleared": 2,
+      "aborted": true,
+      "error": "位置越界被拒绝：(731.47, -1675.33, 1828.05)",
+      "rejected": [
+        [
+          731.47,
+          -1675.33,
+          1828.05
+        ]
+      ],
+      "virtual_time_s": 2402.08503210331,
+      "unresolved_at_end": 13
+    },
+    {
+      "case": 45,
+      "sources": 16,
+      "cleared": 6,
+      "aborted": true,
+      "error": "位置越界被拒绝：(-1237.58, -1308.0, 1800.69)",
+      "rejected": [
+        [
+          -1237.58,
+          -1308.0,
+          1800.69
+        ]
+      ],
+      "virtual_time_s": 3363.8215944120216,
+      "unresolved_at_end": 10
+    },
+    {
+      "case": 46,
+      "sources": 14,
+      "cleared": 14,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 4392.435609577916,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 47,
+      "sources": 15,
+      "cleared": 3,
+      "aborted": true,
+      "error": "位置越界被拒绝：(808.75, -1662.56, 1848.83)",
+      "rejected": [
+        [
+          808.75,
+          -1662.56,
+          1848.83
+        ]
+      ],
+      "virtual_time_s": 2476.3741209608843,
+      "unresolved_at_end": 12
+    },
+    {
+      "case": 48,
+      "sources": 13,
+      "cleared": 4,
+      "aborted": true,
+      "error": "位置越界被拒绝：(-1309.41, 1235.86, 1800.53)",
+      "rejected": [
+        [
+          -1309.41,
+          1235.86,
+          1800.53
+        ]
+      ],
+      "virtual_time_s": 3137.891571192729,
+      "unresolved_at_end": 9
+    },
+    {
+      "case": 49,
+      "sources": 11,
+      "cleared": 11,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 4453.064507654152,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 50,
+      "sources": 15,
+      "cleared": 5,
+      "aborted": true,
+      "error": "位置越界被拒绝：(-654.77, 1764.33, 1881.91)",
+      "rejected": [
+        [
+          -654.77,
+          1764.33,
+          1881.91
+        ]
+      ],
+      "virtual_time_s": 2992.7174010142235,
+      "unresolved_at_end": 10
+    },
+    {
+      "case": 51,
+      "sources": 12,
+      "cleared": 0,
+      "aborted": true,
+      "error": "位置越界被拒绝：(98.26, 1815.82, 1818.48)",
+      "rejected": [
+        [
+          98.26,
+          1815.82,
+          1818.48
+        ]
+      ],
+      "virtual_time_s": 2696.240089687491,
+      "unresolved_at_end": 12
+    },
+    {
+      "case": 52,
+      "sources": 10,
+      "cleared": 4,
+      "aborted": true,
+      "error": "位置越界被拒绝：(-841.69, -1628.1, 1832.8)",
+      "rejected": [
+        [
+          -841.69,
+          -1628.1,
+          1832.8
+        ]
+      ],
+      "virtual_time_s": 3116.634226478766,
+      "unresolved_at_end": 6
+    },
+    {
+      "case": 53,
+      "sources": 14,
+      "cleared": 1,
+      "aborted": true,
+      "error": "位置越界被拒绝：(652.78, 1677.71, 1800.23)",
+      "rejected": [
+        [
+          652.78,
+          1677.71,
+          1800.23
+        ]
+      ],
+      "virtual_time_s": 2452.8209186941453,
+      "unresolved_at_end": 13
+    },
+    {
+      "case": 54,
+      "sources": 12,
+      "cleared": 0,
+      "aborted": true,
+      "error": "位置越界被拒绝：(746.88, -1673.33, 1832.45)",
+      "rejected": [
+        [
+          746.88,
+          -1673.33,
+          1832.45
+        ]
+      ],
+      "virtual_time_s": 2150.774173913419,
+      "unresolved_at_end": 12
+    },
+    {
+      "case": 55,
+      "sources": 13,
+      "cleared": 8,
+      "aborted": true,
+      "error": "位置越界被拒绝：(1467.61, -1094.01, 1830.51)",
+      "rejected": [
+        [
+          1467.61,
+          -1094.01,
+          1830.51
+        ]
+      ],
+      "virtual_time_s": 3752.7243797333635,
+      "unresolved_at_end": 5
+    },
+    {
+      "case": 56,
+      "sources": 15,
+      "cleared": 15,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 4808.570314086137,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 57,
+      "sources": 15,
+      "cleared": 4,
+      "aborted": true,
+      "error": "位置越界被拒绝：(699.95, -1678.58, 1818.67)",
+      "rejected": [
+        [
+          699.95,
+          -1678.58,
+          1818.67
+        ]
+      ],
+      "virtual_time_s": 2672.525307610776,
+      "unresolved_at_end": 11
+    },
+    {
+      "case": 58,
+      "sources": 16,
+      "cleared": 4,
+      "aborted": true,
+      "error": "位置越界被拒绝：(1791.43, 428.53, 1841.97)",
+      "rejected": [
+        [
+          1791.43,
+          428.53,
+          1841.97
+        ]
+      ],
+      "virtual_time_s": 2451.5364818618345,
+      "unresolved_at_end": 12
+    },
+    {
+      "case": 59,
+      "sources": 13,
+      "cleared": 4,
+      "aborted": true,
+      "error": "位置越界被拒绝：(722.03, -1776.96, 1918.05)",
+      "rejected": [
+        [
+          722.03,
+          -1776.96,
+          1918.05
+        ]
+      ],
+      "virtual_time_s": 2717.4835878130666,
+      "unresolved_at_end": 9
+    },
+    {
+      "case": 60,
+      "sources": 11,
+      "cleared": 11,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 4207.361717182612,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 61,
+      "sources": 14,
+      "cleared": 14,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 4888.407868550802,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 62,
+      "sources": 11,
+      "cleared": 11,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 4516.823356839317,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 63,
+      "sources": 13,
+      "cleared": 10,
+      "aborted": true,
+      "error": "位置越界被拒绝：(397.3, -1759.67, 1803.96)",
+      "rejected": [
+        [
+          397.3,
+          -1759.67,
+          1803.96
+        ]
+      ],
+      "virtual_time_s": 4530.076384785926,
+      "unresolved_at_end": 3
+    },
+    {
+      "case": 64,
+      "sources": 16,
+      "cleared": 1,
+      "aborted": true,
+      "error": "位置越界被拒绝：(1587.5, 850.37, 1800.91)",
+      "rejected": [
+        [
+          1587.5,
+          850.37,
+          1800.91
+        ]
+      ],
+      "virtual_time_s": 2361.037913613117,
+      "unresolved_at_end": 15
+    },
+    {
+      "case": 65,
+      "sources": 10,
+      "cleared": 7,
+      "aborted": true,
+      "error": "位置越界被拒绝：(68.24, 1826.66, 1827.94)",
+      "rejected": [
+        [
+          68.24,
+          1826.66,
+          1827.94
+        ]
+      ],
+      "virtual_time_s": 4145.685774693203,
+      "unresolved_at_end": 3
+    },
+    {
+      "case": 66,
+      "sources": 11,
+      "cleared": 11,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 4249.80635793154,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 67,
+      "sources": 10,
+      "cleared": 6,
+      "aborted": true,
+      "error": "位置越界被拒绝：(-1782.58, -252.9, 1800.43)",
+      "rejected": [
+        [
+          -1782.58,
+          -252.9,
+          1800.43
+        ]
+      ],
+      "virtual_time_s": 4040.2964261834354,
+      "unresolved_at_end": 4
+    },
+    {
+      "case": 68,
+      "sources": 15,
+      "cleared": 15,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 4588.209673112515,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 69,
+      "sources": 13,
+      "cleared": 6,
+      "aborted": true,
+      "error": "位置越界被拒绝：(-1833.97, -74.0, 1835.46)",
+      "rejected": [
+        [
+          -1833.97,
+          -74.0,
+          1835.46
+        ]
+      ],
+      "virtual_time_s": 3043.377938961253,
+      "unresolved_at_end": 7
+    },
+    {
+      "case": 70,
+      "sources": 16,
+      "cleared": 14,
+      "aborted": true,
+      "error": "位置越界被拒绝：(-1813.16, 24.13, 1813.33)",
+      "rejected": [
+        [
+          -1813.16,
+          24.13,
+          1813.33
+        ]
+      ],
+      "virtual_time_s": 4657.5484006644465,
+      "unresolved_at_end": 2
+    },
+    {
+      "case": 71,
+      "sources": 11,
+      "cleared": 7,
+      "aborted": true,
+      "error": "位置越界被拒绝：(1532.48, -944.62, 1800.22)",
+      "rejected": [
+        [
+          1532.48,
+          -944.62,
+          1800.22
+        ]
+      ],
+      "virtual_time_s": 3467.6781315029507,
+      "unresolved_at_end": 4
+    },
+    {
+      "case": 72,
+      "sources": 10,
+      "cleared": 5,
+      "aborted": true,
+      "error": "位置越界被拒绝：(-1120.46, -1415.06, 1804.94)",
+      "rejected": [
+        [
+          -1120.46,
+          -1415.06,
+          1804.94
+        ]
+      ],
+      "virtual_time_s": 3534.7691891049617,
+      "unresolved_at_end": 5
+    },
+    {
+      "case": 73,
+      "sources": 11,
+      "cleared": 11,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 4012.5439345567074,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 74,
+      "sources": 10,
+      "cleared": 3,
+      "aborted": true,
+      "error": "位置越界被拒绝：(-831.63, -1637.49, 1836.57)",
+      "rejected": [
+        [
+          -831.63,
+          -1637.49,
+          1836.57
+        ]
+      ],
+      "virtual_time_s": 2775.5495944463214,
+      "unresolved_at_end": 7
+    },
+    {
+      "case": 75,
+      "sources": 10,
+      "cleared": 1,
+      "aborted": true,
+      "error": "位置越界被拒绝：(1423.39, 1194.34, 1858.09)",
+      "rejected": [
+        [
+          1423.39,
+          1194.34,
+          1858.09
+        ]
+      ],
+      "virtual_time_s": 2510.9519505673866,
+      "unresolved_at_end": 9
+    },
+    {
+      "case": 76,
+      "sources": 12,
+      "cleared": 9,
+      "aborted": true,
+      "error": "位置越界被拒绝：(-944.24, -1532.81, 1800.31)",
+      "rejected": [
+        [
+          -944.24,
+          -1532.81,
+          1800.31
+        ]
+      ],
+      "virtual_time_s": 3846.687153006122,
+      "unresolved_at_end": 3
+    },
+    {
+      "case": 77,
+      "sources": 13,
+      "cleared": 13,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 4349.086922900486,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 78,
+      "sources": 11,
+      "cleared": 10,
+      "aborted": true,
+      "error": "位置越界被拒绝：(1764.41, -475.06, 1827.24)",
+      "rejected": [
+        [
+          1764.41,
+          -475.06,
+          1827.24
+        ]
+      ],
+      "virtual_time_s": 4233.734835409469,
+      "unresolved_at_end": 1
+    },
+    {
+      "case": 79,
+      "sources": 13,
+      "cleared": 8,
+      "aborted": true,
+      "error": "位置越界被拒绝：(106.2, -1797.19, 1800.32)",
+      "rejected": [
+        [
+          106.2,
+          -1797.19,
+          1800.32
+        ]
+      ],
+      "virtual_time_s": 3310.3771995172838,
+      "unresolved_at_end": 5
+    },
+    {
+      "case": 80,
+      "sources": 10,
+      "cleared": 10,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 4091.9660627489193,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 81,
+      "sources": 11,
+      "cleared": 11,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 3897.3256312464737,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 82,
+      "sources": 10,
+      "cleared": 10,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 4299.218274664181,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 83,
+      "sources": 10,
+      "cleared": 10,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 4337.937101045426,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 84,
+      "sources": 10,
+      "cleared": 7,
+      "aborted": true,
+      "error": "位置越界被拒绝：(-1794.33, 324.81, 1823.5)",
+      "rejected": [
+        [
+          -1794.33,
+          324.81,
+          1823.5
+        ]
+      ],
+      "virtual_time_s": 3973.981244102464,
+      "unresolved_at_end": 3
+    },
+    {
+      "case": 85,
+      "sources": 12,
+      "cleared": 8,
+      "aborted": true,
+      "error": "位置越界被拒绝：(-836.2, 1633.26, 1834.87)",
+      "rejected": [
+        [
+          -836.2,
+          1633.26,
+          1834.87
+        ]
+      ],
+      "virtual_time_s": 4387.435962705701,
+      "unresolved_at_end": 4
+    },
+    {
+      "case": 86,
+      "sources": 15,
+      "cleared": 7,
+      "aborted": true,
+      "error": "位置越界被拒绝：(115.71, -1796.54, 1800.26)",
+      "rejected": [
+        [
+          115.71,
+          -1796.54,
+          1800.26
+        ]
+      ],
+      "virtual_time_s": 3797.7866435430424,
+      "unresolved_at_end": 8
+    },
+    {
+      "case": 87,
+      "sources": 15,
+      "cleared": 8,
+      "aborted": true,
+      "error": "位置越界被拒绝：(-1769.33, -331.43, 1800.1)",
+      "rejected": [
+        [
+          -1769.33,
+          -331.43,
+          1800.1
+        ]
+      ],
+      "virtual_time_s": 3240.9352082671303,
+      "unresolved_at_end": 7
+    },
+    {
+      "case": 88,
+      "sources": 10,
+      "cleared": 7,
+      "aborted": true,
+      "error": "位置越界被拒绝：(-1787.59, 279.26, 1809.27)",
+      "rejected": [
+        [
+          -1787.59,
+          279.26,
+          1809.27
+        ]
+      ],
+      "virtual_time_s": 3294.130831325794,
+      "unresolved_at_end": 3
+    },
+    {
+      "case": 89,
+      "sources": 11,
+      "cleared": 11,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 4138.960711822559,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 90,
+      "sources": 15,
+      "cleared": 2,
+      "aborted": true,
+      "error": "位置越界被拒绝：(1428.04, 1185.18, 1855.79)",
+      "rejected": [
+        [
+          1428.04,
+          1185.18,
+          1855.79
+        ]
+      ],
+      "virtual_time_s": 2371.35777055884,
+      "unresolved_at_end": 13
+    },
+    {
+      "case": 91,
+      "sources": 16,
+      "cleared": 12,
+      "aborted": true,
+      "error": "位置越界被拒绝：(-1793.59, -318.91, 1821.73)",
+      "rejected": [
+        [
+          -1793.59,
+          -318.91,
+          1821.73
+        ]
+      ],
+      "virtual_time_s": 4845.6976636003565,
+      "unresolved_at_end": 4
+    },
+    {
+      "case": 92,
+      "sources": 15,
+      "cleared": 5,
+      "aborted": true,
+      "error": "位置越界被拒绝：(1707.54, -570.87, 1800.44)",
+      "rejected": [
+        [
+          1707.54,
+          -570.87,
+          1800.44
+        ]
+      ],
+      "virtual_time_s": 3222.1659680657035,
+      "unresolved_at_end": 10
+    },
+    {
+      "case": 93,
+      "sources": 12,
+      "cleared": 3,
+      "aborted": true,
+      "error": "位置越界被拒绝：(441.66, -1765.16, 1819.58)",
+      "rejected": [
+        [
+          441.66,
+          -1765.16,
+          1819.58
+        ]
+      ],
+      "virtual_time_s": 2898.7051351147284,
+      "unresolved_at_end": 9
+    },
+    {
+      "case": 94,
+      "sources": 16,
+      "cleared": 7,
+      "aborted": true,
+      "error": "位置越界被拒绝：(-1790.59, 297.57, 1815.14)",
+      "rejected": [
+        [
+          -1790.59,
+          297.57,
+          1815.14
+        ]
+      ],
+      "virtual_time_s": 3483.844194938938,
+      "unresolved_at_end": 9
+    },
+    {
+      "case": 95,
+      "sources": 12,
+      "cleared": 3,
+      "aborted": true,
+      "error": "位置越界被拒绝：(-729.07, -1718.84, 1867.07)",
+      "rejected": [
+        [
+          -729.07,
+          -1718.84,
+          1867.07
+        ]
+      ],
+      "virtual_time_s": 2649.557090460678,
+      "unresolved_at_end": 9
+    },
+    {
+      "case": 96,
+      "sources": 15,
+      "cleared": 15,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 4306.82952264293,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 97,
+      "sources": 10,
+      "cleared": 10,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 4119.516702798949,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 98,
+      "sources": 10,
+      "cleared": 10,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 4838.321585187264,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 99,
+      "sources": 11,
+      "cleared": 11,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 4199.436005460242,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 100,
+      "sources": 15,
+      "cleared": 4,
+      "aborted": true,
+      "error": "位置越界被拒绝：(-986.5, 1620.17, 1896.88)",
+      "rejected": [
+        [
+          -986.5,
+          1620.17,
+          1896.88
+        ]
+      ],
+      "virtual_time_s": 2806.8500966798915,
+      "unresolved_at_end": 11
+    }
+  ]
+}

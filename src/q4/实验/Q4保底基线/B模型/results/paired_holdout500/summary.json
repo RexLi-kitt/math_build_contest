@@ -1,0 +1,71 @@
+{
+  "note": "normal 500 cases seed=20260923",
+  "summaries": [
+    {
+      "strategy": "L950_C2",
+      "cases": 500,
+      "all_clear": 500,
+      "success_rate": 1.0,
+      "mean_s_per_source": 801.8263306299367,
+      "p95_s_per_source": 1079.1790999999998,
+      "mean_search_movement_s": 464.2825021090506,
+      "mean_post_search_movement_s": 172.19607437673866,
+      "mean_detection_s": 134.3875327172827,
+      "mean_switching_s": 25.96022216117216,
+      "mean_search_sites": 31
+    },
+    {
+      "strategy": "ShiftB",
+      "cases": 500,
+      "all_clear": 500,
+      "success_rate": 1.0,
+      "mean_s_per_source": 756.09760076839,
+      "p95_s_per_source": 996.1092000000001,
+      "mean_search_movement_s": 390.7204489061541,
+      "mean_post_search_movement_s": 201.82167965641113,
+      "mean_detection_s": 133.063641983017,
+      "mean_switching_s": 25.49183136030636,
+      "mean_search_sites": 28
+    },
+    {
+      "strategy": "H8",
+      "cases": 500,
+      "all_clear": 500,
+      "success_rate": 1.0,
+      "mean_s_per_source": 713.4165104080004,
+      "p95_s_per_source": 916.5187272727272,
+      "mean_search_movement_s": 328.92882878082133,
+      "mean_post_search_movement_s": 185.8179432727963,
+      "mean_detection_s": 162.40699596237096,
+      "mean_switching_s": 31.26274224109224,
+      "mean_search_sites": 31
+    },
+    {
+      "strategy": "Cert2548",
+      "cases": 500,
+      "all_clear": 500,
+      "success_rate": 1.0,
+      "mean_s_per_source": 672.8445928165501,
+      "p95_s_per_source": 861.1867,
+      "mean_search_movement_s": 276.7305350357237,
+      "mean_post_search_movement_s": 209.2240443012864,
+      "mean_detection_s": 152.6185260989011,
+      "mean_switching_s": 29.271488086913088,
+      "mean_search_sites": 29
+    },
+    {
+      "strategy": "Cert3146",
+      "cases": 500,
+      "all_clear": 500,
+      "success_rate": 1.0,
+      "mean_s_per_source": 667.3583479804945,
+      "p95_s_per_source": 856.9568999999999,
+      "mean_search_movement_s": 313.38397324488045,
+      "mean_post_search_movement_s": 181.63579598271215,
+      "mean_detection_s": 140.4008625957376,
+      "mean_switching_s": 26.937715551115552,
+      "mean_search_sites": 27
+    }
+  ],
+  "failures": []
+}

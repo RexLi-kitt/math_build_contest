@@ -1,0 +1,7 @@
+﻿seed,case,strategy,source_count,detected_channels,cleared_channels,total_virtual_time_s,measure_actions,clear_actions,all_cleared,movement_time_s,active_measurements,co_measurements,coverage_insertions,search_end_time_s,no_signal_actions,failed_clear_actions,decision_wall_time_s
+999,1,I_ring_optimized,16,16,16,4087.629,105,16,1,3381.629268,35,25,7,1883.935779020358,54,0,0.519777
+999,1,J_q2_fidelity,16,16,16,3872.947,107,16,1,3160.947021,43,29,6,1699.8712540411498,48,0,0.560489
+999,2,I_ring_optimized,10,10,10,4151.423,116,10,1,3408.422835,27,15,8,2202.628954038725,79,0,0.362041
+999,2,J_q2_fidelity,10,10,10,3485.428,114,10,1,2757.427717,25,13,6,2112.8392918828667,80,0,0.458546
+999,3,I_ring_optimized,16,16,16,3962.093,101,16,1,3281.092734,35,21,8,2000.778267683398,50,0,0.492446
+999,3,J_q2_fidelity,16,16,16,3916.247,103,16,1,3221.246862,35,21,8,1822.5435481623897,52,0,0.311279

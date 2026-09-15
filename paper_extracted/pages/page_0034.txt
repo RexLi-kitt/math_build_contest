@@ -1,0 +1,50 @@
+半径 D/2 的圆若要同时包含最远点对 a,b，圆心只能是中点 c=(a+b)/2；
+圆盘为凸集，故只检查 max_i ||v_i − c|| <= D/2 即可，结论精确（不用浮点容差）。
+等边三角形反例中 R_min = D/√3 > D/2，判定为「否」。
+"""
+hull = convex_hull(vertices)
+_, squared_diameter, (a, b) = convex_diameter(hull)
+center = ((a[0] + b[0]) / 2, (a[1] + b[1]) / 2)
+farthest = max(hull, key=lambda p: _distance2(p, center))
+maximum = _distance2(farthest, center)
+radius2 = squared_diameter / 4
+radius = math.sqrt(radius2)
+covers = maximum <= radius2
+# 正值为最远顶点超出圆边界的量，负值表示仍有余量，仅供显示。
+return center, radius, covers, math.sqrt(maximum) - radius, farthest
+q1_solver.py
+把每条 ±1° 示向度误差带转成闭半平面并逐次求交，得到凸定位区域并判定空
+集、无界与退化。
+from __future__ import annotations
+from fractions import Fraction
+from itertools import combinations
+import math
+from typing import Iterable, Literal, Sequence
+Number = int | float | Fraction
+Point = tuple[Fraction, Fraction]
+RegionStatus = Literal["empty", "unbounded", "point", "segment", "polygon"]
+def _number(value: Number) -> Fraction:
+if isinstance(value, float) and not math.isfinite(value):
+raise ValueError("坐标、角度和系数必须是有限数值")
+return Fraction(value)
+def _cross(a: Point, b: Point, c: Point) -> Fraction:
+return (b[0] - a[0]) * (c[1] - a[1]) - (b[1] - a[1]) * (c[0] - a[0])
+def _direction_degrees(angle: Fraction) -> Point:
+"""按八分圆计算方向，保持轴向/对角向精确以及反向、旋转对称。
+向量不必归一化。普通角度仍受浮点三角函数精度限制；这里不放宽误差界。
+"""
+quadrant, remainder = divmod(angle % 360, 90)
+swap = remainder > 45
+reduced = 90 - remainder if swap else remainder
+if reduced == 0:
+x, y = Fraction(1), Fraction(0)
+elif reduced == 45:
+x, y = Fraction(1), Fraction(1)
+else:
+radians = math.radians(float(reduced))
+x, y = _number(math.cos(radians)), _number(math.sin(radians))
+if swap:
+x, y = y, x
+return ((x, y), (-y, x), (-x, -y), (y, -x))[int(quadrant)]
+def bearing_halfplanes(
+34

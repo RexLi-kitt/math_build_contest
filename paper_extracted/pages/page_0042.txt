@@ -1,0 +1,59 @@
+"""任务圆域的保守表示：外接正 sides 边形（默认 72 边）。"""
+vertex_radius = AREA_R / math.cos(math.pi / sides)
+return [(vertex_radius * math.cos(2 * math.pi * (k + .5) / sides),
+vertex_radius * math.sin(2 * math.pi * (k + .5) / sides)) for k in
+range(sides)]
+def clip_outer_circle(poly, center, radius, sides=72):
+"""用外接正 sides 边形保守表示距离上界 d <= radius（72 面切向在实现中预缓存）。"""
+if not poly:
+return []
+cx, cy = center
+limit = radius * radius + 1e-9
+if all((x - cx) ** 2 + (y - cy) ** 2 <= limit for x, y in poly):
+return poly # 全部顶点已在半径内，整段裁剪可跳过
+for k in range(sides):
+a, b = math.cos(2 * math.pi * k / sides), math.sin(2 * math.pi * k /
+sides)
+poly = clip(poly, a, b, radius + a * cx + b * cy)
+if not poly:
+break
+return poly
+def _circle_two(a, b):
+center = ((a[0] + b[0]) / 2, (a[1] + b[1]) / 2)
+return center, math.dist(center, a)
+def _circle_three(a, b, c):
+d = 2 * (a[0] * (b[1] - c[1]) + b[0] * (c[1] - a[1]) + c[0] * (a[1] - b[1]))
+if abs(d) < 1e-10:
+return None
+aa, bb, cc = a[0] ** 2 + a[1] ** 2, b[0] ** 2 + b[1] ** 2, c[0] ** 2 + c[1] **
+2
+center = ((aa * (b[1] - c[1]) + bb * (c[1] - a[1]) + cc * (a[1] - b[1])) / d,
+(aa * (c[0] - b[0]) + bb * (a[0] - c[0]) + cc * (b[0] - a[0])) / d)
+return center, math.dist(center, a)
+def minimum_enclosing_circle(points):
+"""随机增量最小包围圆：圆心是 0/1/2/3 个边界点的确定结果，半径即包围圆半径。"""
+if not points:
+return (0.0, 0.0), math.inf
+circle = (points[0], 0.0)
+for i, p in enumerate(points):
+if math.dist(p, circle[0]) <= circle[1] + 1e-7:
+continue
+circle = (p, 0.0)
+for j, q in enumerate(points[:i]):
+if math.dist(q, circle[0]) <= circle[1] + 1e-7:
+continue
+circle = _circle_two(p, q)
+for r in points[:j]:
+if math.dist(r, circle[0]) <= circle[1] + 1e-7:
+continue
+candidate = _circle_three(p, q, r)
+if candidate is not None:
+circle = candidate
+return circle
+def _inside_convex(poly, point):
+return all((poly[(i + 1) % len(poly)][0] - poly[i][0]) * (point[1] -
+poly[i][1])
+- (poly[(i + 1) % len(poly)][1] - poly[i][1]) * (point[0] -
+poly[i][0]) >= -1e-7
+for i in range(len(poly)))
+42

@@ -1,0 +1,809 @@
+{
+  "config": {
+    "seeds": "112358",
+    "cases_per_seed": 2,
+    "jobs": 1,
+    "output": "diagnostics/results/cplus_to_f_smoke2"
+  },
+  "summaries": [
+    {
+      "model": "C+",
+      "cases": 2,
+      "mean_total_time_per_source_s": 275.9440625,
+      "p95_total_time_per_source_s": 295.430125,
+      "mean_movement_time_per_source_s": 223.03782758982555,
+      "mean_detection_switch_time_per_source_s": 47.90625,
+      "mean_clear_action_time_per_source_s": 5.0,
+      "mean_measure_actions_per_source": 8.03125,
+      "mean_channel_switches_per_source": 7.75,
+      "mean_last_discovery_time_per_source_s": 107.75,
+      "mean_search_end_time_per_source_s": 108.6875,
+      "mean_unfinished_after_search_rate": 1.0,
+      "mean_not_clear_ready_after_search_rate": 0.90625,
+      "mean_active_measurements_per_source": 1.625,
+      "mean_co_measurements_per_source": 0.8125,
+      "mean_coverage_insertions_per_source": 0.0,
+      "all_cleared_rate": 1
+    },
+    {
+      "model": "F_fixed_no_insert",
+      "cases": 2,
+      "mean_total_time_per_source_s": 270.56225,
+      "p95_total_time_per_source_s": 293.6395625,
+      "mean_movement_time_per_source_s": 227.87476087753782,
+      "mean_detection_switch_time_per_source_s": 37.6875,
+      "mean_clear_action_time_per_source_s": 5.0,
+      "mean_measure_actions_per_source": 6.34375,
+      "mean_channel_switches_per_source": 5.96875,
+      "mean_last_discovery_time_per_source_s": 97.25,
+      "mean_search_end_time_per_source_s": 97.8125,
+      "mean_unfinished_after_search_rate": 1.0,
+      "mean_not_clear_ready_after_search_rate": 0.96875,
+      "mean_active_measurements_per_source": 2.25,
+      "mean_co_measurements_per_source": 1.375,
+      "mean_coverage_insertions_per_source": 0.0,
+      "all_cleared_rate": 1
+    },
+    {
+      "model": "F_dynamic_no_insert",
+      "cases": 2,
+      "mean_total_time_per_source_s": 288.62743750000004,
+      "p95_total_time_per_source_s": 293.6395625,
+      "mean_movement_time_per_source_s": 242.81493121247988,
+      "mean_detection_switch_time_per_source_s": 40.8125,
+      "mean_clear_action_time_per_source_s": 5.0,
+      "mean_measure_actions_per_source": 6.875,
+      "mean_channel_switches_per_source": 6.4375,
+      "mean_last_discovery_time_per_source_s": 107.3125,
+      "mean_search_end_time_per_source_s": 107.875,
+      "mean_unfinished_after_search_rate": 1.0,
+      "mean_not_clear_ready_after_search_rate": 0.96875,
+      "mean_active_measurements_per_source": 2.40625,
+      "mean_co_measurements_per_source": 1.5,
+      "mean_coverage_insertions_per_source": 0.0,
+      "all_cleared_rate": 1
+    },
+    {
+      "model": "F_fixed_insert",
+      "cases": 2,
+      "mean_total_time_per_source_s": 257.57315625,
+      "p95_total_time_per_source_s": 257.9643125,
+      "mean_movement_time_per_source_s": 213.72939156781564,
+      "mean_detection_switch_time_per_source_s": 38.84375,
+      "mean_clear_action_time_per_source_s": 5.0,
+      "mean_measure_actions_per_source": 6.53125,
+      "mean_channel_switches_per_source": 6.1875,
+      "mean_last_discovery_time_per_source_s": 107.61960328125,
+      "mean_search_end_time_per_source_s": 108.18210329040492,
+      "mean_unfinished_after_search_rate": 0.875,
+      "mean_not_clear_ready_after_search_rate": 0.65625,
+      "mean_active_measurements_per_source": 2.4375,
+      "mean_co_measurements_per_source": 1.375,
+      "mean_coverage_insertions_per_source": 0.4375,
+      "all_cleared_rate": 1
+    },
+    {
+      "model": "F",
+      "cases": 2,
+      "mean_total_time_per_source_s": 268.02903125,
+      "p95_total_time_per_source_s": 278.8760625,
+      "mean_movement_time_per_source_s": 223.7477959314728,
+      "mean_detection_switch_time_per_source_s": 39.28125,
+      "mean_clear_action_time_per_source_s": 5.0,
+      "mean_measure_actions_per_source": 6.59375,
+      "mean_channel_switches_per_source": 6.3125,
+      "mean_last_discovery_time_per_source_s": 115.07948131250001,
+      "mean_search_end_time_per_source_s": 116.95448132068151,
+      "mean_unfinished_after_search_rate": 0.84375,
+      "mean_not_clear_ready_after_search_rate": 0.5625,
+      "mean_active_measurements_per_source": 2.5,
+      "mean_co_measurements_per_source": 1.5,
+      "mean_coverage_insertions_per_source": 0.4375,
+      "all_cleared_rate": 1
+    }
+  ],
+  "paired": [
+    {
+      "left": "C+",
+      "right": "F",
+      "metric": "total_time_per_source_s",
+      "mean_left_minus_right": 7.915031249999998,
+      "right_better_cases": 1,
+      "equal_cases": 0,
+      "left_better_cases": 1
+    },
+    {
+      "left": "C+",
+      "right": "F",
+      "metric": "movement_time_per_source_s",
+      "mean_left_minus_right": -0.7099683416472686,
+      "right_better_cases": 1,
+      "equal_cases": 0,
+      "left_better_cases": 1
+    },
+    {
+      "left": "C+",
+      "right": "F",
+      "metric": "detection_switch_time_per_source_s",
+      "mean_left_minus_right": 8.625,
+      "right_better_cases": 2,
+      "equal_cases": 0,
+      "left_better_cases": 0
+    },
+    {
+      "left": "C+",
+      "right": "F",
+      "metric": "clear_action_time_per_source_s",
+      "mean_left_minus_right": 0.0,
+      "right_better_cases": 0,
+      "equal_cases": 2,
+      "left_better_cases": 0
+    },
+    {
+      "left": "C+",
+      "right": "F",
+      "metric": "measure_actions_per_source",
+      "mean_left_minus_right": 1.4375,
+      "right_better_cases": 2,
+      "equal_cases": 0,
+      "left_better_cases": 0
+    },
+    {
+      "left": "C+",
+      "right": "F",
+      "metric": "channel_switches_per_source",
+      "mean_left_minus_right": 1.4375,
+      "right_better_cases": 2,
+      "equal_cases": 0,
+      "left_better_cases": 0
+    },
+    {
+      "left": "C+",
+      "right": "F",
+      "metric": "last_discovery_time_per_source_s",
+      "mean_left_minus_right": -7.329481312500008,
+      "right_better_cases": 1,
+      "equal_cases": 0,
+      "left_better_cases": 1
+    },
+    {
+      "left": "C+",
+      "right": "F",
+      "metric": "search_end_time_per_source_s",
+      "mean_left_minus_right": -8.26698132068151,
+      "right_better_cases": 1,
+      "equal_cases": 0,
+      "left_better_cases": 1
+    },
+    {
+      "left": "C+",
+      "right": "F",
+      "metric": "unfinished_after_search_rate",
+      "mean_left_minus_right": 0.15625,
+      "right_better_cases": 2,
+      "equal_cases": 0,
+      "left_better_cases": 0
+    },
+    {
+      "left": "C+",
+      "right": "F",
+      "metric": "not_clear_ready_after_search_rate",
+      "mean_left_minus_right": 0.34375,
+      "right_better_cases": 2,
+      "equal_cases": 0,
+      "left_better_cases": 0
+    },
+    {
+      "left": "C+",
+      "right": "F",
+      "metric": "active_measurements_per_source",
+      "mean_left_minus_right": -0.875,
+      "right_better_cases": 0,
+      "equal_cases": 0,
+      "left_better_cases": 2
+    },
+    {
+      "left": "C+",
+      "right": "F",
+      "metric": "co_measurements_per_source",
+      "mean_left_minus_right": -0.6875,
+      "right_better_cases": 0,
+      "equal_cases": 0,
+      "left_better_cases": 2
+    },
+    {
+      "left": "C+",
+      "right": "F",
+      "metric": "coverage_insertions_per_source",
+      "mean_left_minus_right": -0.4375,
+      "right_better_cases": 0,
+      "equal_cases": 0,
+      "left_better_cases": 2
+    },
+    {
+      "left": "C+",
+      "right": "F_fixed_no_insert",
+      "metric": "total_time_per_source_s",
+      "mean_left_minus_right": 5.381812499999995,
+      "right_better_cases": 2,
+      "equal_cases": 0,
+      "left_better_cases": 0
+    },
+    {
+      "left": "C+",
+      "right": "F_fixed_no_insert",
+      "metric": "movement_time_per_source_s",
+      "mean_left_minus_right": -4.836933287712256,
+      "right_better_cases": 0,
+      "equal_cases": 0,
+      "left_better_cases": 2
+    },
+    {
+      "left": "C+",
+      "right": "F_fixed_no_insert",
+      "metric": "detection_switch_time_per_source_s",
+      "mean_left_minus_right": 10.21875,
+      "right_better_cases": 2,
+      "equal_cases": 0,
+      "left_better_cases": 0
+    },
+    {
+      "left": "C+",
+      "right": "F_fixed_no_insert",
+      "metric": "clear_action_time_per_source_s",
+      "mean_left_minus_right": 0.0,
+      "right_better_cases": 0,
+      "equal_cases": 2,
+      "left_better_cases": 0
+    },
+    {
+      "left": "C+",
+      "right": "F_fixed_no_insert",
+      "metric": "measure_actions_per_source",
+      "mean_left_minus_right": 1.6875,
+      "right_better_cases": 2,
+      "equal_cases": 0,
+      "left_better_cases": 0
+    },
+    {
+      "left": "C+",
+      "right": "F_fixed_no_insert",
+      "metric": "channel_switches_per_source",
+      "mean_left_minus_right": 1.78125,
+      "right_better_cases": 2,
+      "equal_cases": 0,
+      "left_better_cases": 0
+    },
+    {
+      "left": "C+",
+      "right": "F_fixed_no_insert",
+      "metric": "last_discovery_time_per_source_s",
+      "mean_left_minus_right": 10.5,
+      "right_better_cases": 2,
+      "equal_cases": 0,
+      "left_better_cases": 0
+    },
+    {
+      "left": "C+",
+      "right": "F_fixed_no_insert",
+      "metric": "search_end_time_per_source_s",
+      "mean_left_minus_right": 10.875,
+      "right_better_cases": 2,
+      "equal_cases": 0,
+      "left_better_cases": 0
+    },
+    {
+      "left": "C+",
+      "right": "F_fixed_no_insert",
+      "metric": "unfinished_after_search_rate",
+      "mean_left_minus_right": 0.0,
+      "right_better_cases": 0,
+      "equal_cases": 2,
+      "left_better_cases": 0
+    },
+    {
+      "left": "C+",
+      "right": "F_fixed_no_insert",
+      "metric": "not_clear_ready_after_search_rate",
+      "mean_left_minus_right": -0.0625,
+      "right_better_cases": 0,
+      "equal_cases": 1,
+      "left_better_cases": 1
+    },
+    {
+      "left": "C+",
+      "right": "F_fixed_no_insert",
+      "metric": "active_measurements_per_source",
+      "mean_left_minus_right": -0.625,
+      "right_better_cases": 0,
+      "equal_cases": 0,
+      "left_better_cases": 2
+    },
+    {
+      "left": "C+",
+      "right": "F_fixed_no_insert",
+      "metric": "co_measurements_per_source",
+      "mean_left_minus_right": -0.5625,
+      "right_better_cases": 0,
+      "equal_cases": 0,
+      "left_better_cases": 2
+    },
+    {
+      "left": "C+",
+      "right": "F_fixed_no_insert",
+      "metric": "coverage_insertions_per_source",
+      "mean_left_minus_right": 0.0,
+      "right_better_cases": 0,
+      "equal_cases": 2,
+      "left_better_cases": 0
+    },
+    {
+      "left": "F_fixed_no_insert",
+      "right": "F_dynamic_no_insert",
+      "metric": "total_time_per_source_s",
+      "mean_left_minus_right": -18.065187500000008,
+      "right_better_cases": 0,
+      "equal_cases": 1,
+      "left_better_cases": 1
+    },
+    {
+      "left": "F_fixed_no_insert",
+      "right": "F_dynamic_no_insert",
+      "metric": "movement_time_per_source_s",
+      "mean_left_minus_right": -14.940170334942067,
+      "right_better_cases": 0,
+      "equal_cases": 1,
+      "left_better_cases": 1
+    },
+    {
+      "left": "F_fixed_no_insert",
+      "right": "F_dynamic_no_insert",
+      "metric": "detection_switch_time_per_source_s",
+      "mean_left_minus_right": -3.125,
+      "right_better_cases": 0,
+      "equal_cases": 1,
+      "left_better_cases": 1
+    },
+    {
+      "left": "F_fixed_no_insert",
+      "right": "F_dynamic_no_insert",
+      "metric": "clear_action_time_per_source_s",
+      "mean_left_minus_right": 0.0,
+      "right_better_cases": 0,
+      "equal_cases": 2,
+      "left_better_cases": 0
+    },
+    {
+      "left": "F_fixed_no_insert",
+      "right": "F_dynamic_no_insert",
+      "metric": "measure_actions_per_source",
+      "mean_left_minus_right": -0.53125,
+      "right_better_cases": 0,
+      "equal_cases": 1,
+      "left_better_cases": 1
+    },
+    {
+      "left": "F_fixed_no_insert",
+      "right": "F_dynamic_no_insert",
+      "metric": "channel_switches_per_source",
+      "mean_left_minus_right": -0.46875,
+      "right_better_cases": 0,
+      "equal_cases": 1,
+      "left_better_cases": 1
+    },
+    {
+      "left": "F_fixed_no_insert",
+      "right": "F_dynamic_no_insert",
+      "metric": "last_discovery_time_per_source_s",
+      "mean_left_minus_right": -10.0625,
+      "right_better_cases": 0,
+      "equal_cases": 1,
+      "left_better_cases": 1
+    },
+    {
+      "left": "F_fixed_no_insert",
+      "right": "F_dynamic_no_insert",
+      "metric": "search_end_time_per_source_s",
+      "mean_left_minus_right": -10.062500000000007,
+      "right_better_cases": 0,
+      "equal_cases": 1,
+      "left_better_cases": 1
+    },
+    {
+      "left": "F_fixed_no_insert",
+      "right": "F_dynamic_no_insert",
+      "metric": "unfinished_after_search_rate",
+      "mean_left_minus_right": 0.0,
+      "right_better_cases": 0,
+      "equal_cases": 2,
+      "left_better_cases": 0
+    },
+    {
+      "left": "F_fixed_no_insert",
+      "right": "F_dynamic_no_insert",
+      "metric": "not_clear_ready_after_search_rate",
+      "mean_left_minus_right": 0.0,
+      "right_better_cases": 0,
+      "equal_cases": 2,
+      "left_better_cases": 0
+    },
+    {
+      "left": "F_fixed_no_insert",
+      "right": "F_dynamic_no_insert",
+      "metric": "active_measurements_per_source",
+      "mean_left_minus_right": -0.15625,
+      "right_better_cases": 0,
+      "equal_cases": 1,
+      "left_better_cases": 1
+    },
+    {
+      "left": "F_fixed_no_insert",
+      "right": "F_dynamic_no_insert",
+      "metric": "co_measurements_per_source",
+      "mean_left_minus_right": -0.125,
+      "right_better_cases": 0,
+      "equal_cases": 1,
+      "left_better_cases": 1
+    },
+    {
+      "left": "F_fixed_no_insert",
+      "right": "F_dynamic_no_insert",
+      "metric": "coverage_insertions_per_source",
+      "mean_left_minus_right": 0.0,
+      "right_better_cases": 0,
+      "equal_cases": 2,
+      "left_better_cases": 0
+    },
+    {
+      "left": "F_fixed_no_insert",
+      "right": "F_fixed_insert",
+      "metric": "total_time_per_source_s",
+      "mean_left_minus_right": 12.989093749999995,
+      "right_better_cases": 1,
+      "equal_cases": 0,
+      "left_better_cases": 1
+    },
+    {
+      "left": "F_fixed_no_insert",
+      "right": "F_fixed_insert",
+      "metric": "movement_time_per_source_s",
+      "mean_left_minus_right": 14.14536930972217,
+      "right_better_cases": 1,
+      "equal_cases": 0,
+      "left_better_cases": 1
+    },
+    {
+      "left": "F_fixed_no_insert",
+      "right": "F_fixed_insert",
+      "metric": "detection_switch_time_per_source_s",
+      "mean_left_minus_right": -1.15625,
+      "right_better_cases": 0,
+      "equal_cases": 0,
+      "left_better_cases": 2
+    },
+    {
+      "left": "F_fixed_no_insert",
+      "right": "F_fixed_insert",
+      "metric": "clear_action_time_per_source_s",
+      "mean_left_minus_right": 0.0,
+      "right_better_cases": 0,
+      "equal_cases": 2,
+      "left_better_cases": 0
+    },
+    {
+      "left": "F_fixed_no_insert",
+      "right": "F_fixed_insert",
+      "metric": "measure_actions_per_source",
+      "mean_left_minus_right": -0.1875,
+      "right_better_cases": 0,
+      "equal_cases": 0,
+      "left_better_cases": 2
+    },
+    {
+      "left": "F_fixed_no_insert",
+      "right": "F_fixed_insert",
+      "metric": "channel_switches_per_source",
+      "mean_left_minus_right": -0.21875,
+      "right_better_cases": 0,
+      "equal_cases": 0,
+      "left_better_cases": 2
+    },
+    {
+      "left": "F_fixed_no_insert",
+      "right": "F_fixed_insert",
+      "metric": "last_discovery_time_per_source_s",
+      "mean_left_minus_right": -10.36960328125,
+      "right_better_cases": 0,
+      "equal_cases": 0,
+      "left_better_cases": 2
+    },
+    {
+      "left": "F_fixed_no_insert",
+      "right": "F_fixed_insert",
+      "metric": "search_end_time_per_source_s",
+      "mean_left_minus_right": -10.369603290404925,
+      "right_better_cases": 0,
+      "equal_cases": 0,
+      "left_better_cases": 2
+    },
+    {
+      "left": "F_fixed_no_insert",
+      "right": "F_fixed_insert",
+      "metric": "unfinished_after_search_rate",
+      "mean_left_minus_right": 0.125,
+      "right_better_cases": 2,
+      "equal_cases": 0,
+      "left_better_cases": 0
+    },
+    {
+      "left": "F_fixed_no_insert",
+      "right": "F_fixed_insert",
+      "metric": "not_clear_ready_after_search_rate",
+      "mean_left_minus_right": 0.3125,
+      "right_better_cases": 2,
+      "equal_cases": 0,
+      "left_better_cases": 0
+    },
+    {
+      "left": "F_fixed_no_insert",
+      "right": "F_fixed_insert",
+      "metric": "active_measurements_per_source",
+      "mean_left_minus_right": -0.1875,
+      "right_better_cases": 0,
+      "equal_cases": 0,
+      "left_better_cases": 2
+    },
+    {
+      "left": "F_fixed_no_insert",
+      "right": "F_fixed_insert",
+      "metric": "co_measurements_per_source",
+      "mean_left_minus_right": 0.0,
+      "right_better_cases": 1,
+      "equal_cases": 0,
+      "left_better_cases": 1
+    },
+    {
+      "left": "F_fixed_no_insert",
+      "right": "F_fixed_insert",
+      "metric": "coverage_insertions_per_source",
+      "mean_left_minus_right": -0.4375,
+      "right_better_cases": 0,
+      "equal_cases": 0,
+      "left_better_cases": 2
+    },
+    {
+      "left": "F_dynamic_no_insert",
+      "right": "F",
+      "metric": "total_time_per_source_s",
+      "mean_left_minus_right": 20.59840625000001,
+      "right_better_cases": 2,
+      "equal_cases": 0,
+      "left_better_cases": 0
+    },
+    {
+      "left": "F_dynamic_no_insert",
+      "right": "F",
+      "metric": "movement_time_per_source_s",
+      "mean_left_minus_right": 19.067135281007054,
+      "right_better_cases": 2,
+      "equal_cases": 0,
+      "left_better_cases": 0
+    },
+    {
+      "left": "F_dynamic_no_insert",
+      "right": "F",
+      "metric": "detection_switch_time_per_source_s",
+      "mean_left_minus_right": 1.53125,
+      "right_better_cases": 1,
+      "equal_cases": 0,
+      "left_better_cases": 1
+    },
+    {
+      "left": "F_dynamic_no_insert",
+      "right": "F",
+      "metric": "clear_action_time_per_source_s",
+      "mean_left_minus_right": 0.0,
+      "right_better_cases": 0,
+      "equal_cases": 2,
+      "left_better_cases": 0
+    },
+    {
+      "left": "F_dynamic_no_insert",
+      "right": "F",
+      "metric": "measure_actions_per_source",
+      "mean_left_minus_right": 0.28125,
+      "right_better_cases": 1,
+      "equal_cases": 0,
+      "left_better_cases": 1
+    },
+    {
+      "left": "F_dynamic_no_insert",
+      "right": "F",
+      "metric": "channel_switches_per_source",
+      "mean_left_minus_right": 0.125,
+      "right_better_cases": 1,
+      "equal_cases": 0,
+      "left_better_cases": 1
+    },
+    {
+      "left": "F_dynamic_no_insert",
+      "right": "F",
+      "metric": "last_discovery_time_per_source_s",
+      "mean_left_minus_right": -7.766981312500008,
+      "right_better_cases": 1,
+      "equal_cases": 0,
+      "left_better_cases": 1
+    },
+    {
+      "left": "F_dynamic_no_insert",
+      "right": "F",
+      "metric": "search_end_time_per_source_s",
+      "mean_left_minus_right": -9.079481320681502,
+      "right_better_cases": 1,
+      "equal_cases": 0,
+      "left_better_cases": 1
+    },
+    {
+      "left": "F_dynamic_no_insert",
+      "right": "F",
+      "metric": "unfinished_after_search_rate",
+      "mean_left_minus_right": 0.15625,
+      "right_better_cases": 2,
+      "equal_cases": 0,
+      "left_better_cases": 0
+    },
+    {
+      "left": "F_dynamic_no_insert",
+      "right": "F",
+      "metric": "not_clear_ready_after_search_rate",
+      "mean_left_minus_right": 0.40625,
+      "right_better_cases": 2,
+      "equal_cases": 0,
+      "left_better_cases": 0
+    },
+    {
+      "left": "F_dynamic_no_insert",
+      "right": "F",
+      "metric": "active_measurements_per_source",
+      "mean_left_minus_right": -0.09375,
+      "right_better_cases": 0,
+      "equal_cases": 1,
+      "left_better_cases": 1
+    },
+    {
+      "left": "F_dynamic_no_insert",
+      "right": "F",
+      "metric": "co_measurements_per_source",
+      "mean_left_minus_right": 0.0,
+      "right_better_cases": 1,
+      "equal_cases": 0,
+      "left_better_cases": 1
+    },
+    {
+      "left": "F_dynamic_no_insert",
+      "right": "F",
+      "metric": "coverage_insertions_per_source",
+      "mean_left_minus_right": -0.4375,
+      "right_better_cases": 0,
+      "equal_cases": 0,
+      "left_better_cases": 2
+    },
+    {
+      "left": "F_fixed_insert",
+      "right": "F",
+      "metric": "total_time_per_source_s",
+      "mean_left_minus_right": -10.455874999999992,
+      "right_better_cases": 0,
+      "equal_cases": 1,
+      "left_better_cases": 1
+    },
+    {
+      "left": "F_fixed_insert",
+      "right": "F",
+      "metric": "movement_time_per_source_s",
+      "mean_left_minus_right": -10.018404363657183,
+      "right_better_cases": 0,
+      "equal_cases": 1,
+      "left_better_cases": 1
+    },
+    {
+      "left": "F_fixed_insert",
+      "right": "F",
+      "metric": "detection_switch_time_per_source_s",
+      "mean_left_minus_right": -0.4375,
+      "right_better_cases": 0,
+      "equal_cases": 1,
+      "left_better_cases": 1
+    },
+    {
+      "left": "F_fixed_insert",
+      "right": "F",
+      "metric": "clear_action_time_per_source_s",
+      "mean_left_minus_right": 0.0,
+      "right_better_cases": 0,
+      "equal_cases": 2,
+      "left_better_cases": 0
+    },
+    {
+      "left": "F_fixed_insert",
+      "right": "F",
+      "metric": "measure_actions_per_source",
+      "mean_left_minus_right": -0.0625,
+      "right_better_cases": 0,
+      "equal_cases": 1,
+      "left_better_cases": 1
+    },
+    {
+      "left": "F_fixed_insert",
+      "right": "F",
+      "metric": "channel_switches_per_source",
+      "mean_left_minus_right": -0.125,
+      "right_better_cases": 0,
+      "equal_cases": 1,
+      "left_better_cases": 1
+    },
+    {
+      "left": "F_fixed_insert",
+      "right": "F",
+      "metric": "last_discovery_time_per_source_s",
+      "mean_left_minus_right": -7.459878031250007,
+      "right_better_cases": 0,
+      "equal_cases": 1,
+      "left_better_cases": 1
+    },
+    {
+      "left": "F_fixed_insert",
+      "right": "F",
+      "metric": "search_end_time_per_source_s",
+      "mean_left_minus_right": -8.772378030276585,
+      "right_better_cases": 0,
+      "equal_cases": 1,
+      "left_better_cases": 1
+    },
+    {
+      "left": "F_fixed_insert",
+      "right": "F",
+      "metric": "unfinished_after_search_rate",
+      "mean_left_minus_right": 0.03125,
+      "right_better_cases": 1,
+      "equal_cases": 1,
+      "left_better_cases": 0
+    },
+    {
+      "left": "F_fixed_insert",
+      "right": "F",
+      "metric": "not_clear_ready_after_search_rate",
+      "mean_left_minus_right": 0.09375,
+      "right_better_cases": 1,
+      "equal_cases": 1,
+      "left_better_cases": 0
+    },
+    {
+      "left": "F_fixed_insert",
+      "right": "F",
+      "metric": "active_measurements_per_source",
+      "mean_left_minus_right": -0.0625,
+      "right_better_cases": 0,
+      "equal_cases": 1,
+      "left_better_cases": 1
+    },
+    {
+      "left": "F_fixed_insert",
+      "right": "F",
+      "metric": "co_measurements_per_source",
+      "mean_left_minus_right": -0.125,
+      "right_better_cases": 0,
+      "equal_cases": 1,
+      "left_better_cases": 1
+    },
+    {
+      "left": "F_fixed_insert",
+      "right": "F",
+      "metric": "coverage_insertions_per_source",
+      "mean_left_minus_right": 0.0,
+      "right_better_cases": 0,
+      "equal_cases": 2,
+      "left_better_cases": 0
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "label": "D_halfplane_90.1",
+  "seed": 20271702,
+  "summaries": [
+    {
+      "strategy": "BF",
+      "cases": 25,
+      "all_clear": 25,
+      "mean_s_per_source": 548.7481325,
+      "p95_s_per_source": 599.8088125,
+      "cvar90_s_per_source": 600.5331874999999,
+      "mean_search_movement_s": 235.66205586951725,
+      "mean_post_search_movement_s": 162.17107262528924,
+      "mean_detection_s": 122.4625,
+      "mean_switching_s": 23.4525,
+      "mean_clearing_s": 5.0,
+      "mean_search_phase_s": 366.4920558695172,
+      "mean_post_search_phase_s": 182.25607663048285,
+      "mean_failed_clear_actions": 0,
+      "mean_program_time_s": 0.4074111800000537
+    },
+    {
+      "strategy": "CF",
+      "cases": 25,
+      "all_clear": 25,
+      "mean_s_per_source": 681.6481475,
+      "p95_s_per_source": 767.6085,
+      "cvar90_s_per_source": 769.3970937500001,
+      "mean_search_movement_s": 219.093723479119,
+      "mean_post_search_movement_s": 224.2294293834818,
+      "mean_detection_s": 195.2375,
+      "mean_switching_s": 38.02,
+      "mean_clearing_s": 5.0675,
+      "mean_search_phase_s": 385.7512234791191,
+      "mean_post_search_phase_s": 295.89692402088093,
+      "mean_failed_clear_actions": 0.36,
+      "mean_program_time_s": 0.5678223479993175
+    },
+    {
+      "strategy": "D",
+      "cases": 25,
+      "all_clear": 25,
+      "mean_s_per_source": 548.7481325,
+      "p95_s_per_source": 599.8088125,
+      "cvar90_s_per_source": 600.5331874999999,
+      "mean_search_movement_s": 235.66205586951725,
+      "mean_post_search_movement_s": 162.17107262528924,
+      "mean_detection_s": 122.4625,
+      "mean_switching_s": 23.4525,
+      "mean_clearing_s": 5.0,
+      "mean_search_phase_s": 366.4920558695172,
+      "mean_post_search_phase_s": 182.25607663048285,
+      "mean_failed_clear_actions": 0,
+      "mean_program_time_s": 0.42843883199966515
+    }
+  ],
+  "failures": []
+}

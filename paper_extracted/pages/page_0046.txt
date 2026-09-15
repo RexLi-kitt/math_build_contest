@@ -1,0 +1,51 @@
+q3_selector.py
+第二问四指标选点内核——粗网格到加密两阶段打分，并在高分区内选出下一
+测量点。
+from __future__ import annotations
+import math
+from dataclasses import dataclass
+COARSE_DISTANCES = (200.0, 600.0, 1000.0, 1400.0, 1800.0) # 以首次检测站为原点的粗
+网格距离
+COARSE_BEARING_STEP = 60.0
+GOOD_ETA = 0.10 # 高分区带宽：峰值的 10%（range-based，在线负分时仍有效）
+SPEED = 5.0 # 移动速度 5 m/s
+MEASURE_TIME_S = 6.0 # 一次测量动作（切换 1 s + 检测 5 s）
+MAX_EXTRA_DISTANCE_M = 250.0 # C+ 限制：绕行测量相对直奔圆心的额外路程上限
+WEIGHTS_C = (0.35, 0.30, 0.15, 0.20) # C：第二问示例权重
+WEIGHTS_CPLUS = (0.25, 0.25, 0.35, 0.15) # C+：第三问在线权重
+WEIGHTS_JPLUS = (0.25, 0.25, 0.25, 0.25) # J+：等权标定（最终模型）
+@dataclass(frozen=True)
+class SelectionDecision:
+position: tuple[float, float]
+score: float
+q_geo: float
+p_rec: float
+travel_s: float
+r_pred_m: float
+def add(point, length, angle_deg):
+angle = math.radians(angle_deg)
+return (point[0] + length * math.cos(angle), point[1] + length *
+math.sin(angle))
+def bearing(a, b):
+return math.degrees(math.atan2(b[1] - a[1], b[0] - a[0]))
+def wrap(angle_deg):
+return (angle_deg + 180.0) % 360.0 - 180.0
+def normal(values, value):
+"""min-max 归一化；上界等于下界时取 1.0。"""
+lo, hi = min(values), max(values)
+return 1.0 if hi <= lo else (value - lo) / (hi - lo)
+def raw_metrics(samples, observations, current_position, candidate, min_receive_r,
+predicted_radius, third="completion"):
+"""四项原始指标 q_geo、p_rec、travel_s、r_pred；候选点看不到任何样本时返回 None。
+q_geo：对全部信念样本取「与历史各站交角 sin²」的最大值再平均，衡量交会几何质量；
+p_rec：候选点在保证接收半径内的样本占比；
+third="move" 第三指标为到候选点的移动时间（C 口径）；
+third="completion" 第三指标为完成时间 = (到候选点 + 候选点到预测圆心)/v + 6 s（C+
+起口径）。
+"""
+if not samples:
+return None
+receive = [target for target in samples if math.dist(candidate, target) <=
+min_receive_r]
+if not receive:
+46

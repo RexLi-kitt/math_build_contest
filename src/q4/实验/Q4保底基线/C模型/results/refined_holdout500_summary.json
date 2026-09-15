@@ -1,0 +1,24 @@
+{
+  "note": "refined validation: normal 500 cases seed=20260934",
+  "summaries": [
+    {
+      "strategy": "C",
+      "cases": 500,
+      "all_clear": 500,
+      "mean_s_per_source": 631.2459064506327,
+      "p95_s_per_source": 816.1884,
+      "mean_search_movement_s": 282.8160888206367,
+      "mean_detection_s": 134.63182076257075
+    },
+    {
+      "strategy": "Cref",
+      "cases": 500,
+      "all_clear": 500,
+      "mean_s_per_source": 625.6525665645854,
+      "p95_s_per_source": 812.5029999999999,
+      "mean_search_movement_s": 280.09291452381285,
+      "mean_detection_s": 134.19854091741593
+    }
+  ],
+  "failures": []
+}

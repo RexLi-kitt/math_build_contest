@@ -1,0 +1,49 @@
+for a, b, c in constraints:
+norm2 = a * a + b * b
+p = (a * c / norm2, b * c / norm2)
+if feasible(p):
+witness = p
+break
+vertices = set()
+for (a1, b1, c1), (a2, b2, c2) in combinations(constraints, 2):
+determinant = a1 * b2 - a2 * b1
+if determinant == 0:
+continue
+p = ((c1 * b2 - c2 * b1) / determinant, (a1 * c2 - a2 * c1) / determinant)
+if feasible(p):
+vertices.add(p)
+witness = p
+if witness is None:
+return "empty", (), None, None
+# 无界等价于存在 d != 0，使全部法向量满足 n·d <= 0；
+# 二维非平凡衰退锥必包含某条约束边界的切向方向。
+directions = [(Fraction(1), Fraction(0))] if not constraints else []
+for a, b, _ in constraints:
+directions.extend(((b, -a), (-b, a)))
+for d in directions:
+if all(a * d[0] + b * d[1] <= 0 for a, b, _ in constraints):
+return "unbounded", (), witness, d
+hull = convex_hull(vertices)
+if not hull:
+raise ArithmeticError("非空有界区域未找到顶点")
+status: RegionStatus = "point" if len(hull) == 1 else "segment" if len(hull)
+== 2 else "polygon"
+return status, hull, witness, None
+def localize(stations, bearings_deg, error_deg: Number = 1.0):
+"""串联两步：观测 -> 半平面 -> 定位区域（空集与无界不返回直径）。"""
+region = intersect_halfplanes(bearing_halfplanes(stations, bearings_deg,
+error_deg))
+return region
+q2_actual_replay.py
+按真实接收半径和第二次角度误差回放检测结果，并以 MEC 判断能否清除。
+from __future__ import annotations
+import math
+import sys
+from pathlib import Path
+Q2_DIR = Path(__file__).resolve().parents[1] / "q2"
+sys.path.insert(0, str(Q2_DIR))
+from q1_q2_bridge import bearing, evaluate_a2 # noqa: E402
+S1 = (-750.0, -450.0)
+FAILURE_MEC = 250.0
+def wrap(angle_deg: float) -> float:
+36

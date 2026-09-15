@@ -1,0 +1,27 @@
+{
+  "config": {
+    "cases": 3,
+    "seed": 42,
+    "strategies": "H8",
+    "jobs": 2,
+    "sources": null,
+    "directional_fraction": 0.5,
+    "output": "results\\smoke_fast"
+  },
+  "summaries": {
+    "H8": {
+      "success": 1.0,
+      "per_source": 717.6850388888888,
+      "p95": 733.0867499999999,
+      "search": 536.7252831589061,
+      "post": 180.9597557299827,
+      "move": 525.5516935789817,
+      "det": 156.55555555555554,
+      "sw": 30.577777777777776,
+      "clr": 5.0,
+      "fail": 0,
+      "sites": 31
+    }
+  },
+  "failures": []
+}

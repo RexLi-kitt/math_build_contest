@@ -1,0 +1,48 @@
+{
+  "config": {
+    "cases": 3,
+    "seed": 999,
+    "sources": null,
+    "strategies": "G_rolling_coverage,H_task_scheduling",
+    "output": "results/h_smoke3"
+  },
+  "elapsed_wall_time_s": 10.473046300001442,
+  "summaries": [
+    {
+      "strategy": "G_rolling_coverage",
+      "all_cleared_rate": 1.0,
+      "mean_virtual_time_s": 4218.015666666666,
+      "median_virtual_time_s": 4313.098,
+      "p90_virtual_time_s": 4356.968,
+      "p95_virtual_time_s": 4356.968,
+      "max_virtual_time_s": 4356.968,
+      "mean_time_per_source_s": 313.4257416666667,
+      "mean_movement_time_s": 3515.348779666667,
+      "mean_measure_actions": 106.33333333333333,
+      "mean_active_measurements": 31.333333333333332,
+      "mean_co_measurements": 18.666666666666668,
+      "mean_coverage_insertions": 7.666666666666667,
+      "mean_search_end_time_s": 2125.449509608077,
+      "mean_failed_clear_actions": 0,
+      "wall_time_s": 3.146279
+    },
+    {
+      "strategy": "H_task_scheduling",
+      "all_cleared_rate": 1.0,
+      "mean_virtual_time_s": 4235.641666666666,
+      "median_virtual_time_s": 4325.622,
+      "p90_virtual_time_s": 4397.322,
+      "p95_virtual_time_s": 4397.322,
+      "max_virtual_time_s": 4397.322,
+      "mean_time_per_source_s": 314.5273666666667,
+      "mean_movement_time_s": 3534.308344,
+      "mean_measure_actions": 106,
+      "mean_active_measurements": 31,
+      "mean_co_measurements": 19.666666666666668,
+      "mean_coverage_insertions": 7.666666666666667,
+      "mean_search_end_time_s": 2125.449509608077,
+      "mean_failed_clear_actions": 0,
+      "wall_time_s": 7.32369
+    }
+  ]
+}

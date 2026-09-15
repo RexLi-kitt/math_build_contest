@@ -1,0 +1,71 @@
+{
+  "variants": [
+    "J_b0_even_co5",
+    "Jplus"
+  ],
+  "seed": 55021,
+  "cases": 10,
+  "elapsed_s": 5.164812800008804,
+  "summaries": {
+    "J_b0_even_co5": {
+      "cases": 10,
+      "seed": 55021,
+      "all_cleared_rate": 1,
+      "mean_per_source_s": 303.2812874513461,
+      "sd_per_source_s": 48.8831019888747,
+      "median_per_source_s": 289.8134003856947,
+      "p90_per_source_s": 334.9904729095379,
+      "p95_per_source_s": 428.85183049906544,
+      "max_per_source_s": 428.85183049906544,
+      "mean_total_s": 3854.823839066381,
+      "mean_n": 13,
+      "mean_search_end_s": 1913.8030518614357,
+      "mean_move_per_source_s": 242.69195844701707,
+      "mean_move_search_per_source_s": 100.30251673039965,
+      "mean_move_clear_per_source_s": 142.38944171661743,
+      "mean_meas_switch_per_source_s": 55.589329004329,
+      "mean_meas_search_per_source": 8.462256493506494,
+      "mean_meas_co_per_source": 1.5505248917748917,
+      "mean_nosig_search_per_source": 6.316255411255411,
+      "mean_meas_active_clear_per_source": 0.4517694805194805,
+      "mean_last_detect_s": 1570.7711947,
+      "mean_last_detect_per_source_s": 124.26623899353355,
+      "mean_post_share_pct": 50.05303518823522
+    },
+    "Jplus": {
+      "cases": 10,
+      "seed": 55021,
+      "all_cleared_rate": 1,
+      "mean_per_source_s": 303.2812874513461,
+      "sd_per_source_s": 48.8831019888747,
+      "median_per_source_s": 289.8134003856947,
+      "p90_per_source_s": 334.9904729095379,
+      "p95_per_source_s": 428.85183049906544,
+      "max_per_source_s": 428.85183049906544,
+      "mean_total_s": 3854.823839066381,
+      "mean_n": 13,
+      "mean_search_end_s": 1913.8030518614357,
+      "mean_move_per_source_s": 242.69195844701707,
+      "mean_move_search_per_source_s": 100.30251673039965,
+      "mean_move_clear_per_source_s": 142.38944171661743,
+      "mean_meas_switch_per_source_s": 55.589329004329,
+      "mean_meas_search_per_source": 8.462256493506494,
+      "mean_meas_co_per_source": 1.5505248917748917,
+      "mean_nosig_search_per_source": 6.316255411255411,
+      "mean_meas_active_clear_per_source": 0.4517694805194805,
+      "mean_last_detect_s": 1570.7711947,
+      "mean_last_detect_per_source_s": 124.26623899353355,
+      "mean_post_share_pct": 50.05303518823522
+    }
+  },
+  "pairing": {
+    "J_b0_even_co5 vs Jplus": {
+      "wins": 0,
+      "losses": 0,
+      "ties": 10,
+      "mean_delta_s_per_source": 0.0,
+      "ci95_low": 0.0,
+      "ci95_high": 0.0
+    }
+  }
+}

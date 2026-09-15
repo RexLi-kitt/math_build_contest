@@ -1,0 +1,73 @@
+{
+  "label": "boundary_outward",
+  "seed": 20261014,
+  "summaries": [
+    {
+      "strategy": "B",
+      "cases": 25,
+      "all_clear": 25,
+      "mean_s_per_source": 596.07417,
+      "p95_s_per_source": 697.432875,
+      "mean_search_movement_s": 233.19648017761227,
+      "mean_post_search_movement_s": 179.1526892176997,
+      "mean_detection_s": 149.75,
+      "mean_program_time_s": 0.4617864680022467
+    },
+    {
+      "strategy": "C",
+      "cases": 25,
+      "all_clear": 25,
+      "mean_s_per_source": 754.47973,
+      "p95_s_per_source": 890.6943125,
+      "mean_search_movement_s": 212.83568543342747,
+      "mean_post_search_movement_s": 242.89904799261646,
+      "mean_detection_s": 245.4125,
+      "mean_program_time_s": 0.6326600239973049
+    },
+    {
+      "strategy": "T0",
+      "cases": 25,
+      "all_clear": 25,
+      "mean_s_per_source": 596.07417,
+      "p95_s_per_source": 697.432875,
+      "mean_search_movement_s": 233.19648017761227,
+      "mean_post_search_movement_s": 179.1526892176997,
+      "mean_detection_s": 149.75,
+      "mean_program_time_s": 0.46793367199832575
+    },
+    {
+      "strategy": "T1",
+      "cases": 25,
+      "all_clear": 25,
+      "mean_s_per_source": 596.07417,
+      "p95_s_per_source": 697.432875,
+      "mean_search_movement_s": 233.19648017761227,
+      "mean_post_search_movement_s": 179.1526892176997,
+      "mean_detection_s": 149.75,
+      "mean_program_time_s": 0.4752074479975272
+    },
+    {
+      "strategy": "T2",
+      "cases": 25,
+      "all_clear": 25,
+      "mean_s_per_source": 596.07417,
+      "p95_s_per_source": 697.432875,
+      "mean_search_movement_s": 233.19648017761227,
+      "mean_post_search_movement_s": 179.1526892176997,
+      "mean_detection_s": 149.75,
+      "mean_program_time_s": 0.47443205199786465
+    },
+    {
+      "strategy": "T3",
+      "cases": 25,
+      "all_clear": 25,
+      "mean_s_per_source": 596.07417,
+      "p95_s_per_source": 697.432875,
+      "mean_search_movement_s": 233.19648017761227,
+      "mean_post_search_movement_s": 179.1526892176997,
+      "mean_detection_s": 149.75,
+      "mean_program_time_s": 0.4733004439994693
+    }
+  ],
+  "failures": []
+}

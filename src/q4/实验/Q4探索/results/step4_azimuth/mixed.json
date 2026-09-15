@@ -1,0 +1,58 @@
+{
+  "label": "mixed",
+  "seed": 20261025,
+  "summaries": [
+    {
+      "strategy": "C",
+      "cases": 200,
+      "all_clear": 200,
+      "mean_s_per_source": 717.3059913880911,
+      "p95_s_per_source": 913.7470999999999,
+      "cvar90_s_per_source": 935.8104781818182,
+      "mean_search_movement_s": 285.01166530682355,
+      "mean_post_search_movement_s": 213.66623938153762,
+      "mean_detection_s": 179.16425532800534,
+      "mean_switching_s": 34.46383135614386,
+      "mean_clearing_s": 5.0,
+      "mean_search_phase_s": 472.53430048414634,
+      "mean_post_search_phase_s": 244.77169090394477,
+      "mean_failed_clear_actions": 0,
+      "mean_program_time_s": 0.43250437649941886
+    },
+    {
+      "strategy": "CAz3",
+      "cases": 200,
+      "all_clear": 200,
+      "mean_s_per_source": 711.3270716427114,
+      "p95_s_per_source": 903.8492,
+      "cvar90_s_per_source": 919.0986815151515,
+      "mean_search_movement_s": 288.20370857874735,
+      "mean_post_search_movement_s": 174.57004042769316,
+      "mean_detection_s": 203.6473695054945,
+      "mean_switching_s": 39.90595471195471,
+      "mean_clearing_s": 5.0,
+      "mean_search_phase_s": 500.39476908074545,
+      "mean_post_search_phase_s": 210.93230256196603,
+      "mean_failed_clear_actions": 0,
+      "mean_program_time_s": 0.2786821580005926
+    },
+    {
+      "strategy": "CAz4",
+      "cases": 200,
+      "all_clear": 200,
+      "mean_s_per_source": 716.1847014334624,
+      "p95_s_per_source": 902.983,
+      "cvar90_s_per_source": 925.6574889393939,
+      "mean_search_movement_s": 289.36577876512257,
+      "mean_post_search_movement_s": 167.11269058093947,
+      "mean_detection_s": 212.84503475690977,
+      "mean_switching_s": 41.86119744838495,
+      "mean_clearing_s": 5.0,
+      "mean_search_phase_s": 512.650839683371,
+      "mean_post_search_phase_s": 203.5338617500913,
+      "mean_failed_clear_actions": 0,
+      "mean_program_time_s": 0.22046487099913065
+    }
+  ],
+  "failures": []
+}

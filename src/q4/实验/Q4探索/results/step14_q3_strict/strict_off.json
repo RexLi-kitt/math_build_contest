@@ -1,0 +1,2022 @@
+{
+  "summary": {
+    "正常分布": {
+      "cases": 100,
+      "abort_rate": 0.0,
+      "clear_rate": 1.0,
+      "clear_rate_among_aborts": null,
+      "mean_leftover": 0,
+      "first_rejected": null
+    },
+    "贴边重压": {
+      "cases": 100,
+      "abort_rate": 0.0,
+      "clear_rate": 1.0,
+      "clear_rate_among_aborts": null,
+      "mean_leftover": 0,
+      "first_rejected": null
+    }
+  },
+  "cases": [
+    {
+      "case": 1,
+      "sources": 13,
+      "cleared": 13,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 3626.2140705347306,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 2,
+      "sources": 12,
+      "cleared": 12,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 3938.0666295376236,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 3,
+      "sources": 13,
+      "cleared": 13,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 4194.524770050519,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 4,
+      "sources": 15,
+      "cleared": 15,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 3837.124524018838,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 5,
+      "sources": 12,
+      "cleared": 12,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 3114.2974089135582,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 6,
+      "sources": 13,
+      "cleared": 13,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 3521.2569359354466,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 7,
+      "sources": 13,
+      "cleared": 13,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 4295.715894650433,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 8,
+      "sources": 13,
+      "cleared": 13,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 4028.2854175917646,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 9,
+      "sources": 11,
+      "cleared": 11,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 3550.014841743236,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 10,
+      "sources": 13,
+      "cleared": 13,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 3914.7075624108156,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 11,
+      "sources": 12,
+      "cleared": 12,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 3387.151515312755,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 12,
+      "sources": 10,
+      "cleared": 10,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 3100.9780629543407,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 13,
+      "sources": 11,
+      "cleared": 11,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 3679.598963203416,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 14,
+      "sources": 16,
+      "cleared": 16,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 4601.100405956187,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 15,
+      "sources": 12,
+      "cleared": 12,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 4065.0675494551288,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 16,
+      "sources": 12,
+      "cleared": 12,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 3963.577057967836,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 17,
+      "sources": 14,
+      "cleared": 14,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 3809.3384354416785,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 18,
+      "sources": 16,
+      "cleared": 16,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 3586.77009685328,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 19,
+      "sources": 10,
+      "cleared": 10,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 3526.377939452506,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 20,
+      "sources": 10,
+      "cleared": 10,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 2943.0611514042685,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 21,
+      "sources": 11,
+      "cleared": 11,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 3645.105459153228,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 22,
+      "sources": 13,
+      "cleared": 13,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 3451.392446069807,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 23,
+      "sources": 13,
+      "cleared": 13,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 3866.987519312067,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 24,
+      "sources": 10,
+      "cleared": 10,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 3456.598825970145,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 25,
+      "sources": 10,
+      "cleared": 10,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 3628.3209490829304,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 26,
+      "sources": 13,
+      "cleared": 13,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 3882.079004528832,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 27,
+      "sources": 11,
+      "cleared": 11,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 3421.7087619093513,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 28,
+      "sources": 12,
+      "cleared": 12,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 3454.745364158207,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 29,
+      "sources": 15,
+      "cleared": 15,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 4201.356849143524,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 30,
+      "sources": 13,
+      "cleared": 13,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 3887.1435590494248,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 31,
+      "sources": 11,
+      "cleared": 11,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 3639.6986243274605,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 32,
+      "sources": 11,
+      "cleared": 11,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 3768.781606274134,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 33,
+      "sources": 13,
+      "cleared": 13,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 3734.954041134046,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 34,
+      "sources": 14,
+      "cleared": 14,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 3710.2556937374316,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 35,
+      "sources": 12,
+      "cleared": 12,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 3880.8073667541757,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 36,
+      "sources": 10,
+      "cleared": 10,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 3388.941432046532,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 37,
+      "sources": 15,
+      "cleared": 15,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 3628.2679056867946,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 38,
+      "sources": 10,
+      "cleared": 10,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 3771.432455364844,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 39,
+      "sources": 15,
+      "cleared": 15,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 3644.64305415484,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 40,
+      "sources": 14,
+      "cleared": 14,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 3924.5061374215948,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 41,
+      "sources": 12,
+      "cleared": 12,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 3830.045500611725,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 42,
+      "sources": 16,
+      "cleared": 16,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 4269.271424600869,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 43,
+      "sources": 16,
+      "cleared": 16,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 3810.4806766642805,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 44,
+      "sources": 12,
+      "cleared": 12,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 3208.735411145685,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 45,
+      "sources": 10,
+      "cleared": 10,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 3384.9005194396964,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 46,
+      "sources": 13,
+      "cleared": 13,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 3748.889543769296,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 47,
+      "sources": 14,
+      "cleared": 14,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 3551.5242689094016,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 48,
+      "sources": 11,
+      "cleared": 11,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 3933.261934777085,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 49,
+      "sources": 10,
+      "cleared": 10,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 3570.4548925975655,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 50,
+      "sources": 15,
+      "cleared": 15,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 3881.4331510848883,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 51,
+      "sources": 13,
+      "cleared": 13,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 4340.055573350546,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 52,
+      "sources": 15,
+      "cleared": 15,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 4336.314374136085,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 53,
+      "sources": 13,
+      "cleared": 13,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 3772.384705559071,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 54,
+      "sources": 16,
+      "cleared": 16,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 3684.0082419083215,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 55,
+      "sources": 16,
+      "cleared": 16,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 4007.8807419925574,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 56,
+      "sources": 12,
+      "cleared": 12,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 3609.790364822283,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 57,
+      "sources": 10,
+      "cleared": 10,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 3535.412546424488,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 58,
+      "sources": 12,
+      "cleared": 12,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 3826.0796833128115,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 59,
+      "sources": 13,
+      "cleared": 13,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 3709.7764472518847,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 60,
+      "sources": 14,
+      "cleared": 14,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 3752.3026532380204,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 61,
+      "sources": 16,
+      "cleared": 16,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 3858.7475443536723,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 62,
+      "sources": 12,
+      "cleared": 12,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 4350.849479913562,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 63,
+      "sources": 13,
+      "cleared": 13,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 3716.1720299933636,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 64,
+      "sources": 14,
+      "cleared": 14,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 3918.537016398021,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 65,
+      "sources": 13,
+      "cleared": 13,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 3590.4851998427025,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 66,
+      "sources": 11,
+      "cleared": 11,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 3338.3264280346234,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 67,
+      "sources": 11,
+      "cleared": 11,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 3809.4360091511144,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 68,
+      "sources": 13,
+      "cleared": 13,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 3744.3411609996756,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 69,
+      "sources": 15,
+      "cleared": 15,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 3948.9497207069326,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 70,
+      "sources": 10,
+      "cleared": 10,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 3412.9788646342904,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 71,
+      "sources": 16,
+      "cleared": 16,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 4011.6729836583895,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 72,
+      "sources": 16,
+      "cleared": 16,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 3499.2178110277578,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 73,
+      "sources": 11,
+      "cleared": 11,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 3909.283228624715,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 74,
+      "sources": 12,
+      "cleared": 12,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 3792.989476214962,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 75,
+      "sources": 10,
+      "cleared": 10,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 3410.90534986699,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 76,
+      "sources": 15,
+      "cleared": 15,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 4188.696514694415,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 77,
+      "sources": 16,
+      "cleared": 16,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 3697.936540714577,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 78,
+      "sources": 10,
+      "cleared": 10,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 3404.5119035838516,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 79,
+      "sources": 14,
+      "cleared": 14,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 3895.0820482560234,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 80,
+      "sources": 13,
+      "cleared": 13,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 3463.125589284474,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 81,
+      "sources": 10,
+      "cleared": 10,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 3179.443225566812,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 82,
+      "sources": 11,
+      "cleared": 11,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 3847.0817478419003,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 83,
+      "sources": 14,
+      "cleared": 14,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 4009.4396429695817,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 84,
+      "sources": 14,
+      "cleared": 14,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 3859.756171458087,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 85,
+      "sources": 13,
+      "cleared": 13,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 4130.69261039575,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 86,
+      "sources": 15,
+      "cleared": 15,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 3709.881450377353,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 87,
+      "sources": 13,
+      "cleared": 13,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 4248.580407531075,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 88,
+      "sources": 10,
+      "cleared": 10,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 3650.6671994356607,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 89,
+      "sources": 11,
+      "cleared": 11,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 3379.460762985556,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 90,
+      "sources": 11,
+      "cleared": 11,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 3280.8720152471233,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 91,
+      "sources": 14,
+      "cleared": 14,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 3662.159031300368,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 92,
+      "sources": 11,
+      "cleared": 11,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 3439.142665812641,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 93,
+      "sources": 16,
+      "cleared": 16,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 3737.115696198921,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 94,
+      "sources": 10,
+      "cleared": 10,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 3430.318033649569,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 95,
+      "sources": 15,
+      "cleared": 15,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 4280.040686314442,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 96,
+      "sources": 16,
+      "cleared": 16,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 4144.626894176366,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 97,
+      "sources": 13,
+      "cleared": 13,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 3389.1569019968115,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 98,
+      "sources": 14,
+      "cleared": 14,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 3768.125294786951,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 99,
+      "sources": 10,
+      "cleared": 10,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 3579.237777290306,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 100,
+      "sources": 14,
+      "cleared": 14,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 4039.0792686431873,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 1,
+      "sources": 11,
+      "cleared": 11,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 4394.740971112682,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 2,
+      "sources": 14,
+      "cleared": 14,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 4448.298383775607,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 3,
+      "sources": 16,
+      "cleared": 16,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 4972.975501534307,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 4,
+      "sources": 10,
+      "cleared": 10,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 3658.1294994086556,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 5,
+      "sources": 12,
+      "cleared": 12,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 3881.417392619061,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 6,
+      "sources": 10,
+      "cleared": 10,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 4196.481436797821,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 7,
+      "sources": 15,
+      "cleared": 15,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 4620.8706597849305,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 8,
+      "sources": 12,
+      "cleared": 12,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 4342.761670303859,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 9,
+      "sources": 11,
+      "cleared": 11,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 4491.451379795436,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 10,
+      "sources": 12,
+      "cleared": 12,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 4247.125550309924,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 11,
+      "sources": 10,
+      "cleared": 10,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 4106.472269186271,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 12,
+      "sources": 11,
+      "cleared": 11,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 4156.308054923124,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 13,
+      "sources": 13,
+      "cleared": 13,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 4473.771994858608,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 14,
+      "sources": 15,
+      "cleared": 15,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 4688.6924697827435,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 15,
+      "sources": 14,
+      "cleared": 14,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 4073.568391910028,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 16,
+      "sources": 13,
+      "cleared": 13,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 4464.86081986914,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 17,
+      "sources": 14,
+      "cleared": 14,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 4131.290992608465,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 18,
+      "sources": 14,
+      "cleared": 14,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 4691.146155125193,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 19,
+      "sources": 15,
+      "cleared": 15,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 4369.315194796351,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 20,
+      "sources": 13,
+      "cleared": 13,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 4080.076926509323,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 21,
+      "sources": 16,
+      "cleared": 16,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 3906.150359958914,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 22,
+      "sources": 11,
+      "cleared": 11,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 4518.74974711161,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 23,
+      "sources": 11,
+      "cleared": 11,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 4102.565269845409,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 24,
+      "sources": 14,
+      "cleared": 14,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 4871.7424439778815,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 25,
+      "sources": 11,
+      "cleared": 11,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 4250.921341860722,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 26,
+      "sources": 10,
+      "cleared": 10,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 4537.450891729869,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 27,
+      "sources": 13,
+      "cleared": 13,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 5104.367945809474,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 28,
+      "sources": 15,
+      "cleared": 15,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 4182.691754380954,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 29,
+      "sources": 13,
+      "cleared": 13,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 4787.086521873447,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 30,
+      "sources": 11,
+      "cleared": 11,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 4245.547702552444,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 31,
+      "sources": 14,
+      "cleared": 14,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 4960.711545395784,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 32,
+      "sources": 15,
+      "cleared": 15,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 4297.76390698298,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 33,
+      "sources": 15,
+      "cleared": 15,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 4831.938438245695,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 34,
+      "sources": 16,
+      "cleared": 16,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 4309.835890809893,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 35,
+      "sources": 12,
+      "cleared": 12,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 4223.21036839743,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 36,
+      "sources": 13,
+      "cleared": 13,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 4474.090762284507,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 37,
+      "sources": 13,
+      "cleared": 13,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 4605.568106402299,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 38,
+      "sources": 14,
+      "cleared": 14,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 4762.969787534544,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 39,
+      "sources": 13,
+      "cleared": 13,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 4183.169195312427,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 40,
+      "sources": 16,
+      "cleared": 16,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 4558.708532251508,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 41,
+      "sources": 12,
+      "cleared": 12,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 4512.955917535336,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 42,
+      "sources": 11,
+      "cleared": 11,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 3749.1874687909285,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 43,
+      "sources": 10,
+      "cleared": 10,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 4126.1620983491575,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 44,
+      "sources": 15,
+      "cleared": 15,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 4252.09921985051,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 45,
+      "sources": 16,
+      "cleared": 16,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 4790.445724556691,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 46,
+      "sources": 14,
+      "cleared": 14,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 4392.435609577916,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 47,
+      "sources": 15,
+      "cleared": 15,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 4413.170214427274,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 48,
+      "sources": 13,
+      "cleared": 13,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 4525.855272518162,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 49,
+      "sources": 11,
+      "cleared": 11,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 4453.064507654152,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 50,
+      "sources": 15,
+      "cleared": 15,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 4686.274016991399,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 51,
+      "sources": 12,
+      "cleared": 12,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 4575.507738360742,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 52,
+      "sources": 10,
+      "cleared": 10,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 3977.1354185442724,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 53,
+      "sources": 14,
+      "cleared": 14,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 4703.59543309394,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 54,
+      "sources": 12,
+      "cleared": 12,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 4653.297590099242,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 55,
+      "sources": 13,
+      "cleared": 13,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 4560.640712024692,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 56,
+      "sources": 15,
+      "cleared": 15,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 4808.570314086137,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 57,
+      "sources": 15,
+      "cleared": 15,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 4724.960068979992,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 58,
+      "sources": 16,
+      "cleared": 16,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 4378.777301855287,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 59,
+      "sources": 13,
+      "cleared": 13,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 3903.998983212913,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 60,
+      "sources": 11,
+      "cleared": 11,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 4207.361717182612,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 61,
+      "sources": 14,
+      "cleared": 14,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 4888.407868550802,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 62,
+      "sources": 11,
+      "cleared": 11,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 4516.823356839317,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 63,
+      "sources": 13,
+      "cleared": 13,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 4680.320163290276,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 64,
+      "sources": 16,
+      "cleared": 16,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 4207.962690313517,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 65,
+      "sources": 10,
+      "cleared": 10,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 4819.228155411657,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 66,
+      "sources": 11,
+      "cleared": 11,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 4249.80635793154,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 67,
+      "sources": 10,
+      "cleared": 10,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 4875.723408237146,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 68,
+      "sources": 15,
+      "cleared": 15,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 4588.209673112515,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 69,
+      "sources": 13,
+      "cleared": 13,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 4496.687615454858,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 70,
+      "sources": 16,
+      "cleared": 16,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 4765.093302140577,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 71,
+      "sources": 11,
+      "cleared": 11,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 4495.821401548327,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 72,
+      "sources": 10,
+      "cleared": 10,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 4404.12331301149,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 73,
+      "sources": 11,
+      "cleared": 11,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 4012.5439345567074,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 74,
+      "sources": 10,
+      "cleared": 10,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 3906.429798906487,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 75,
+      "sources": 10,
+      "cleared": 10,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 4379.8255396540735,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 76,
+      "sources": 12,
+      "cleared": 12,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 4098.129764923435,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 77,
+      "sources": 13,
+      "cleared": 13,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 4349.086922900486,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 78,
+      "sources": 11,
+      "cleared": 11,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 4581.037734480468,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 79,
+      "sources": 13,
+      "cleared": 13,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 4039.430312474472,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 80,
+      "sources": 10,
+      "cleared": 10,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 4091.9660627489193,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 81,
+      "sources": 11,
+      "cleared": 11,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 3897.3256312464737,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 82,
+      "sources": 10,
+      "cleared": 10,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 4299.218274664181,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 83,
+      "sources": 10,
+      "cleared": 10,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 4337.937101045426,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 84,
+      "sources": 10,
+      "cleared": 10,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 4342.856303160634,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 85,
+      "sources": 12,
+      "cleared": 12,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 4756.19392898601,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 86,
+      "sources": 15,
+      "cleared": 15,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 4504.087538064669,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 87,
+      "sources": 15,
+      "cleared": 15,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 3851.5850830914515,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 88,
+      "sources": 10,
+      "cleared": 10,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 4040.7684578493136,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 89,
+      "sources": 11,
+      "cleared": 11,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 4138.960711822559,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 90,
+      "sources": 15,
+      "cleared": 15,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 3831.180116908052,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 91,
+      "sources": 16,
+      "cleared": 16,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 5386.462575418784,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 92,
+      "sources": 15,
+      "cleared": 15,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 4365.241771287808,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 93,
+      "sources": 12,
+      "cleared": 12,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 4272.555067130729,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 94,
+      "sources": 16,
+      "cleared": 16,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 4577.051931218917,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 95,
+      "sources": 12,
+      "cleared": 12,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 4652.0964220342175,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 96,
+      "sources": 15,
+      "cleared": 15,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 4306.82952264293,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 97,
+      "sources": 10,
+      "cleared": 10,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 4119.516702798949,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 98,
+      "sources": 10,
+      "cleared": 10,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 4838.321585187264,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 99,
+      "sources": 11,
+      "cleared": 11,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 4199.436005460242,
+      "unresolved_at_end": 0
+    },
+    {
+      "case": 100,
+      "sources": 15,
+      "cleared": 15,
+      "aborted": false,
+      "error": null,
+      "rejected": [],
+      "virtual_time_s": 4765.498388850488,
+      "unresolved_at_end": 0
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "summary": {
+    "正常分布": {
+      "cases": 100,
+      "mean_sources": 12.74,
+      "clear_rate": 1.0,
+      "cases_with_unresolved": 0,
+      "mean_unresolved": 0,
+      "mean_exhausted": 0,
+      "mean_none_point": 0,
+      "mean_iterations": 15.95,
+      "max_iterations": 26,
+      "mean_virtual_time_s": 3747.82013
+    },
+    "贴边重压": {
+      "cases": 100,
+      "mean_sources": 13.25,
+      "clear_rate": 1.0,
+      "cases_with_unresolved": 0,
+      "mean_unresolved": 0,
+      "mean_exhausted": 0,
+      "mean_none_point": 0,
+      "mean_iterations": 23.38,
+      "max_iterations": 35,
+      "mean_virtual_time_s": 4365.02011
+    }
+  },
+  "events_sample": []
+}

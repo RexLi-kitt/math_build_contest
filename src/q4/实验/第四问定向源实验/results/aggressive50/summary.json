@@ -1,0 +1,114 @@
+{
+  "config": {
+    "cases": 50,
+    "seed": 20260914,
+    "sources": null,
+    "directional_fraction": 0.5,
+    "min_success": 0.95,
+    "strategies": "L950_C1,L950_C2,L1000_C1,L1000_C2,L1050_C1,L1050_C2,L1100_C1,L1100_C2,L1200_C1,L1200_C2",
+    "output": "results\\aggressive50"
+  },
+  "best_feasible": "L1100_C2",
+  "summaries": [
+    {
+      "strategy": "L1100_C2",
+      "search_sites": 19,
+      "success_rate": 1.0,
+      "feasible": true,
+      "mean_time_per_source_s": 589.3538463305028,
+      "p95_time_per_source_s": 773.9874,
+      "mean_measure_actions": 262.44,
+      "mean_cleared": 13.24
+    },
+    {
+      "strategy": "L1200_C2",
+      "search_sites": 19,
+      "success_rate": 0.98,
+      "feasible": true,
+      "mean_time_per_source_s": 647.7642450538629,
+      "p95_time_per_source_s": 889.351,
+      "mean_measure_actions": 289.16,
+      "mean_cleared": 13.22
+    },
+    {
+      "strategy": "L1100_C1",
+      "search_sites": 19,
+      "success_rate": 1.0,
+      "feasible": true,
+      "mean_time_per_source_s": 689.1354904900099,
+      "p95_time_per_source_s": 898.2674000000001,
+      "mean_measure_actions": 225.86,
+      "mean_cleared": 13.24
+    },
+    {
+      "strategy": "L1200_C1",
+      "search_sites": 19,
+      "success_rate": 0.98,
+      "feasible": true,
+      "mean_time_per_source_s": 724.6801457853813,
+      "p95_time_per_source_s": 968.0319,
+      "mean_measure_actions": 226.16,
+      "mean_cleared": 13.22
+    },
+    {
+      "strategy": "L950_C2",
+      "search_sites": 31,
+      "success_rate": 1.0,
+      "feasible": true,
+      "mean_time_per_source_s": 770.5657661681652,
+      "p95_time_per_source_s": 1062.2448,
+      "mean_measure_actions": 324.9,
+      "mean_cleared": 13.24
+    },
+    {
+      "strategy": "L1050_C2",
+      "search_sites": 31,
+      "success_rate": 1.0,
+      "feasible": true,
+      "mean_time_per_source_s": 823.7331685417915,
+      "p95_time_per_source_s": 1152.7733,
+      "mean_measure_actions": 332.42,
+      "mean_cleared": 13.24
+    },
+    {
+      "strategy": "L1000_C2",
+      "search_sites": 31,
+      "success_rate": 1.0,
+      "feasible": true,
+      "mean_time_per_source_s": 826.6943480007493,
+      "p95_time_per_source_s": 1153.5265,
+      "mean_measure_actions": 333.88,
+      "mean_cleared": 13.24
+    },
+    {
+      "strategy": "L950_C1",
+      "search_sites": 31,
+      "success_rate": 0.98,
+      "feasible": true,
+      "mean_time_per_source_s": 899.9195512564935,
+      "p95_time_per_source_s": 1235.3923,
+      "mean_measure_actions": 303.6,
+      "mean_cleared": 13.22
+    },
+    {
+      "strategy": "L1050_C1",
+      "search_sites": 31,
+      "success_rate": 1.0,
+      "feasible": true,
+      "mean_time_per_source_s": 931.8852163485681,
+      "p95_time_per_source_s": 1283.6295,
+      "mean_measure_actions": 297.78,
+      "mean_cleared": 13.24
+    },
+    {
+      "strategy": "L1000_C1",
+      "search_sites": 31,
+      "success_rate": 1.0,
+      "feasible": true,
+      "mean_time_per_source_s": 952.700506726024,
+      "p95_time_per_source_s": 1247.9325999999999,
+      "mean_measure_actions": 305.08,
+      "mean_cleared": 13.24
+    }
+  ]
+}

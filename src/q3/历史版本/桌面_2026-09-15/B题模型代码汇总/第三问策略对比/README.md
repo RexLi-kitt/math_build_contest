@@ -1,0 +1,53 @@
+# B题第三问策略对比
+
+该目录把第三问的定位与第二检测点决策拆开，在完全相同的随机案例、接收半径和测向误差下比较：
+
+- `A_current_ls_dopt`：现有最小二乘交点定位和 D-opt 选点；
+- `B_region_dopt`：第二问可行域、最小包围圆和现有 D-opt 选点；
+- `C_region_q2`：第二问可行域、最小包围圆和四指标选点。
+- `Cplus_completion_coobserve`：保持四指标结构，将移动项改为预计完成时间，并在主动检测点顺便检测其他高价值频道。
+- `D_hybrid_belief_rolling`：集合—概率混合信念地图、主动感知和风险约束滚动调度的总体模型实验组。
+- `F_coverage_integrated`：论文主线候选。在 C+ 上动态安排剩余覆盖点，把第二问推荐检测点作为低绕路任务插入覆盖路径，并限制每个停靠点的附加频道测量数。
+- `G_rolling_coverage`：在 F 的覆盖协同基础上，把清除阶段改为逐动作滚动重规划（执行一个测量或清除动作后即重排剩余目标）。发现与插入阶段与 F 完全相同，增益全部来自清除调度。含两个负消融类 `Ablation_marginal_insertion`、`Ablation_marginal_rolling`。
+- `H_task_scheduling`：滚动任务调度（动作点路由 + 近终态不抢占）。两条修正在 20 局配对中均未通过验证，保留为负消融，详见 `reports/第六轮任务调度模型.md`。
+- `I_ring_optimized`：在 G 上把七点覆盖环半径由 1250 m 缩到 1150 m（最坏覆盖 988.5 m < 1000 m，巡回缩短 600 m）。统一第二问口径后 1000 局配对：I vs G 797/1000 胜、平均每局 −129.4 s，I 达到 306.2 s/源。含负消融 `Ablation_ring_rotation`，详见 `reports/第七轮覆盖环半径优化.md` 与 `reports/第八轮第二问口径统一.md`。
+
+本目录中 `reports/` 存放各轮实验报告，`results/` 存放逐局结果与汇总。
+
+运行：
+
+```powershell
+python run_compare.py --cases 30 --seed 2026 --output results/seed2026_30
+```
+
+大样本可用 `--jobs` 多进程并行（结果与顺序执行逐位一致）：
+
+```powershell
+python run_compare.py --cases 1000 --seed 55021 --strategies I_ring_optimized --output results/i_1000 --jobs 16
+```
+
+几何内核已做两级加速：可行域更新与最小包围圆洗牌顺序均按输入缓存，单局决策耗时相比最初下降一个量级；并行只影响耗时，不影响数值。
+
+可行域采用浮点多边形加速实现。方向观测加入 ±1° 角度带和 1500 m 距离上界；任务区域用外接 72 边形保守表示。`no_signal` 的 1000 m 排除圆会造成非凸孔洞，因此当前只从信念样本中删除该圆内样本，清除判定仍使用保守外包络。几何内核缓存 72 面切向法向量、内联外圆裁剪并对可行域更新做记忆化，数值不变而决策耗时约降 5 倍。
+
+B、C 仅当最小包围圆半径不超过 19.75 m 时前往圆心清除。C 到 I 的选点内核统一为第二问正式口径：候选集采用“粗网格（200–1800 m、60° 步长）→ 前二名距离 ±100 m、方位 ±10° 加密 → 只在加密集上重新归一化评分”，预测半径取保证接收样本均值。当前 C 用第二问示例权重 `(0.35, 0.30, 0.15, 0.20)`，C+ 及后续用第三问多源在线目标筛选的 `(0.25, 0.25, 0.35, 0.15)`，两套权重服务于不同目标函数。
+
+`case_results.csv` 保存逐局配对结果，`summary.json` 保存成功率、均值、中位数、P90、P95、最大值、移动时间、测量次数、失败清除次数和程序计算耗时。
+
+只比较原始 C、C+ 和覆盖协同搜索：
+
+```powershell
+python run_compare.py --cases 30 --seed 2026 --strategies C_region_q2,Cplus_completion_coobserve,F_coverage_integrated --output results/coverage_compare
+```
+
+覆盖协同搜索保留七个覆盖点，将第二问推荐点以不超过140 m额外绕路的条件插入覆盖路径，每局最多8次；每个停靠点的附加频道测量预算随未清除源数从3次增加到最多6次。
+
+模型 G 沿用 F 的发现与插入阶段，仅将清除阶段改为逐动作滚动：每执行一次测量或清除即用 2-opt/Or-opt 重排剩余目标。统一口径 1000 局：G vs F 为 623/1000 胜、平均每局 −60.7 s，详见 `reports/第五轮滚动覆盖报告.md`。
+
+权重小范围训练筛选：
+
+```powershell
+python tune_cplus_weights.py --cases 20 --seed 41001 --output results/weight_screen.json
+```
+
+筛选目标为 `0.7×平均每源耗时 + 0.3×最慢10%案例平均每源耗时`，未全清除的组合另加大额惩罚。筛选集只用于选参数，最终效果必须换随机种子验证。

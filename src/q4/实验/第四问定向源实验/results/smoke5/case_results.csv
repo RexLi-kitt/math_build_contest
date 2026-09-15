@@ -1,0 +1,11 @@
+﻿seed,case,strategy,source_count,directional_count,detected_channels,cleared_channels,total_virtual_time_s,measure_actions,clear_actions,cleared_directional,all_cleared,search_sites,decision_wall_time_s
+20260912,1,Q3_Jplus_direct,10,5,10,9,3240.806,141,9,4,0,8,0.11924
+20260912,1,Q4_triangular_900,10,5,10,9,10988.396,429,9,4,0,37,0.063727
+20260912,2,Q3_Jplus_direct,11,6,9,9,4122.25,156,9,4,0,8,0.166527
+20260912,2,Q4_triangular_900,11,6,11,11,11092.293,423,11,6,1,37,0.045962
+20260912,3,Q3_Jplus_direct,14,7,12,10,4677.66,165,10,3,0,8,0.189448
+20260912,3,Q4_triangular_900,14,7,14,14,10728.75,316,14,7,1,37,0.058457
+20260912,4,Q3_Jplus_direct,13,6,11,11,4074.53,122,11,4,0,8,0.108296
+20260912,4,Q4_triangular_900,13,6,13,13,10536.957,364,13,6,1,37,0.014091
+20260912,5,Q3_Jplus_direct,15,8,12,12,3981.426,130,12,5,0,8,0.10562
+20260912,5,Q4_triangular_900,15,8,15,14,10663.409,315,14,7,0,37,0.129137

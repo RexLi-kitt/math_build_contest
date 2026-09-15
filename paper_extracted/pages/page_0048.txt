@@ -1,0 +1,47 @@
+for item in seeds:
+distance = math.dist(station, item.position)
+base = bearing(station, item.position)
+for dd in (max(50.0, distance - 100.0), distance, min(1800.0, distance +
+100.0)):
+for da in (-10.0, 0.0, 10.0):
+point = add(station, dd, base + da)
+key = (round(point[0], 9), round(point[1], 9))
+if key not in seen:
+seen.add(key)
+refined_points.append(point)
+refined = score_pool(refined_points, weights, metrics_fn) or coarse
+return select_from_scored(refined)
+q4_exact_verify.py
+核对 Q4 最终 D 模型的 B/C 路线资产与距离门边界不变量
+from __future__ import annotations
+import json
+import math
+from pathlib import Path
+from q4_solver import select_route, should_coobserve
+HERE = Path(__file__).resolve().parent
+ASSETS = HERE.parent / "assets" / "d_model"
+def load_route(filename: str) -> list[tuple[float, float]]:
+payload = json.loads((ASSETS / filename).read_text(encoding="utf-8"))
+sites = [tuple(map(float, point)) for point in payload["sites"]]
+return [sites[index] for index in payload["order"]]
+def verify() -> dict[str, object]:
+routes = {
+"B": load_route("b_winner_design.json"),
+"C": load_route("c_winner_design.json"),
+}
+assert len(routes["B"]) == 27 and len(routes["C"]) == 29
+assert all(route[0] == (0.0, 0.0) for route in routes.values())
+assert all(len(set(route)) == len(route) for route in routes.values())
+assert select_route(0) == "B" and all(select_route(n) == "C" for n in (1, 2,
+3))
+region = ((-1.0, -1.0), (1.0, -1.0), (1.0, 1.0), (-1.0, 1.0))
+assert should_coobserve((1501.0, 0.0), region)
+assert not should_coobserve((1501.1, 0.0), region)
+return {
+name: {
+"stations": len(route),
+"max_radius_m": round(max(math.hypot(*point) for point in route), 3),
+}
+for name, route in routes.items()
+}
+48

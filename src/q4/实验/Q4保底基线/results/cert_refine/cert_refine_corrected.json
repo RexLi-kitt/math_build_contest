@@ -1,0 +1,45 @@
+{
+  "note": "修正版: 局部加密已限制在可行域 r<=1800 内。此前一次运行的 181.689 系域外假警报。",
+  "config": { "step": 1.0, "half": 20.0, "fine_step": 0.1 },
+  "results": [
+    {
+      "name": "rand1800",
+      "n": 25,
+      "claimed_ultra": 174.10782918269882,
+      "polar": { "10.0/0.5": 173.558, "5.0/0.25": 174.108, "2.0/0.1": 174.879 },
+      "cartesian": { "step": 1.0, "worst": 175.669, "at": [355.0, -1107.0] },
+      "reach_boundary": { "worst": 176.299, "at": [355.48, -1107.28] },
+      "local_refine": { "worst": 176.437, "at": [355.543, -1107.038] },
+      "overall_worst_gap": 176.437,
+      "margin_to_180": 3.563,
+      "verdict": "PASS",
+      "converged": false
+    },
+    {
+      "name": "rand2548_variantA",
+      "n": 29,
+      "claimed_ultra": 173.91991707346165,
+      "polar": { "10.0/0.5": 173.92, "5.0/0.25": 173.92, "2.0/0.1": 173.92 },
+      "cartesian": { "step": 1.0, "worst": 173.913, "at": [-910.0, 1553.0] },
+      "reach_boundary": { "worst": 173.916, "at": [1310.07, 1234.37] },
+      "local_refine": { "worst": 173.92, "at": [-145.62, 1794.1] },
+      "overall_worst_gap": 173.92,
+      "margin_to_180": 6.08,
+      "verdict": "PASS",
+      "converged": true
+    },
+    {
+      "name": "rand2548_variantB",
+      "n": 29,
+      "claimed_ultra": 174.8939486925598,
+      "polar": { "10.0/0.5": 173.92, "5.0/0.25": 174.894, "2.0/0.1": 174.543 },
+      "cartesian": { "step": 1.0, "worst": 175.133, "at": [-340.0, 1711.0] },
+      "reach_boundary": { "worst": 175.178, "at": [-340.3, 1710.8] },
+      "local_refine": { "worst": 175.192, "at": [-340.252, 1710.778] },
+      "overall_worst_gap": 175.192,
+      "margin_to_180": 4.808,
+      "verdict": "PASS",
+      "converged": false
+    }
+  ]
+}

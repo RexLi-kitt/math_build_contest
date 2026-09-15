@@ -1,0 +1,68 @@
+[
+  {
+    "name": "仅 ch16 (1442,-260) R=1000",
+    "sources": 1,
+    "detected": 1,
+    "cleared": 1,
+    "virtual_time_s": 2374.679,
+    "leftovers": [],
+    "none_point": 0,
+    "none_clear": 14,
+    "events": []
+  },
+  {
+    "name": "仅 ch16 R=1400",
+    "sources": 1,
+    "detected": 1,
+    "cleared": 1,
+    "virtual_time_s": 2374.679,
+    "leftovers": [],
+    "none_point": 0,
+    "none_clear": 14,
+    "events": []
+  },
+  {
+    "name": "仅 ch15 (1264,1041) R=1100",
+    "sources": 1,
+    "detected": 1,
+    "cleared": 1,
+    "virtual_time_s": 2318.991,
+    "leftovers": [],
+    "none_point": 0,
+    "none_clear": 13,
+    "events": []
+  },
+  {
+    "name": "仅 ch15 R=1600",
+    "sources": 1,
+    "detected": 1,
+    "cleared": 1,
+    "virtual_time_s": 2318.991,
+    "leftovers": [],
+    "none_point": 0,
+    "none_clear": 13,
+    "events": []
+  },
+  {
+    "name": "ch15+ch16",
+    "sources": 2,
+    "detected": 2,
+    "cleared": 2,
+    "virtual_time_s": 2564.379,
+    "leftovers": [],
+    "none_point": 0,
+    "none_clear": 29,
+    "events": []
+  },
+  {
+    "name": "ch15+ch16+中心源",
+    "sources": 4,
+    "detected": 4,
+    "cleared": 4,
+    "virtual_time_s": 2945.432,
+    "leftovers": [],
+    "none_point": 0,
+    "none_clear": 33,
+    "events": []
+  }
+]

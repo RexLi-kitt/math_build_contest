@@ -1,0 +1,35 @@
+{
+  "config": {
+    "cases": 100,
+    "seed": 20260916,
+    "sources": null,
+    "directional_fraction": 0.5,
+    "min_success": 1.0,
+    "strategies": "L950_C2",
+    "jobs": 8,
+    "output": "results\\movement_phase100"
+  },
+  "elapsed_wall_time_s": 5.151630899985321,
+  "best_feasible": "L950_C2",
+  "summaries": [
+    {
+      "strategy": "L950_C2",
+      "search_sites": 31,
+      "success_rate": 1.0,
+      "feasible": true,
+      "mean_time_per_source_s": 820.015018515651,
+      "p95_time_per_source_s": 1073.4146,
+      "mean_measure_actions": 335.19,
+      "mean_cleared": 12.97,
+      "mean_movement_per_source_s": 653.6460745074602,
+      "mean_search_movement_per_source_s": 480.67286669686297,
+      "mean_post_search_movement_per_source_s": 172.97320781059722,
+      "mean_detection_per_source_s": 135.07057005494505,
+      "mean_switching_per_source_s": 26.131495754245755,
+      "mean_clearing_per_source_s": 5.166875,
+      "mean_failed_clear_actions": 0.89,
+      "mean_search_phase_per_source_s": 631.7786854198067,
+      "mean_post_search_per_source_s": 188.2363330958443
+    }
+  ]
+}

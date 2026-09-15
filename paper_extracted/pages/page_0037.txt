@@ -1,0 +1,52 @@
+return (angle_deg + 180.0) % 360.0 - 180.0
+def replay_second_measurement(g_true: tuple[float, float], receive_radius_m:
+float,
+first_bearing_deg: float, second_error_deg: float,
+s2: tuple[float, float]) -> dict:
+"""未接收时不能假装定位成功；接收时才以 A2 的实际 MEC 评价清除条件。"""
+distance = math.dist(s2, g_true)
+if distance > receive_radius_m:
+return {"return_type": "no_signal", "received": False, "mec_m":
+FAILURE_MEC,
+"can_clear": False}
+if distance <= 5.0:
+return {"return_type": "near", "received": True, "mec_m": 0.0,
+"can_clear": True}
+second_bearing = wrap(bearing(s2, g_true) + second_error_deg)
+region = evaluate_a2(S1, first_bearing_deg, s2, second_bearing)
+mec = region.mec_radius_m
+return {"return_type": "direction", "received": True, "mec_m": mec,
+"can_clear": math.isfinite(mec) and mec <= 20.0}
+q2_solver.py
+以四指标评分完成“全局粗搜索—局部加密—高分区执行点”选择
+from __future__ import annotations
+import math
+from typing import Callable
+S1 = (-750.0, -450.0)
+ETA = 0.10
+def normalize_and_score(rows: list[dict], weights: tuple[float, float, float,
+float]) -> list[dict]:
+"""对 q_geo、p_rec、travel_s、r_pred_m 分别归一化后计算 J。"""
+valid = [r for r in rows if r["p_rec"] > 0 and math.isfinite(r["r_pred_m"])]
+if not valid:
+raise RuntimeError("没有保证接收的候选点")
+for source, target in (("q_geo", "q_n"), ("p_rec", "p_n"),
+("travel_s", "t_n"), ("r_pred_m", "r_n")):
+lo, hi = min(r[source] for r in valid), max(r[source] for r in valid)
+for row in rows:
+row[target] = (row[source] - lo) / (hi - lo) if row in valid and hi >
+lo else 0.0
+for row in rows:
+if row not in valid:
+row["J"] = -math.inf
+else:
+# +w3+w4 是不改变排序的常数平移，使 J>=0 后可直接采用 90% 阈值。
+row["J"] = (weights[0] * row["q_n"] + weights[1] * row["p_n"]
+- weights[2] * row["t_n"] - weights[3] * row["r_n"]
++ weights[2] + weights[3])
+return rows
+def polar_point(bearing_deg: float, distance_m: float, offset_deg: float) ->
+tuple[float, float]:
+angle = math.radians(bearing_deg + offset_deg)
+return S1[0] + distance_m * math.cos(angle), S1[1] + distance_m *
+37

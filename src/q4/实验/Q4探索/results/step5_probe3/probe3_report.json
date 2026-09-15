@@ -1,0 +1,35 @@
+{
+  "normal": {
+    "cases": 300,
+    "third_attempts_per_case": 74.79,
+    "total_attempts": 22437,
+    "blind": 18720,
+    "too_far": 17174,
+    "wrong_beam": 5259,
+    "both": 3713,
+    "blind_dist_mean": 2140.859535411662,
+    "success_dist_mean": 752.1749712245625
+  },
+  "min_radius": {
+    "cases": 200,
+    "third_attempts_per_case": 100.255,
+    "total_attempts": 20051,
+    "blind": 17810,
+    "too_far": 16513,
+    "wrong_beam": 5594,
+    "both": 4297,
+    "blind_dist_mean": 1982.3852094095348,
+    "success_dist_mean": 593.2605453579059
+  },
+  "mixed": {
+    "cases": 200,
+    "third_attempts_per_case": 83.81,
+    "total_attempts": 16762,
+    "blind": 14608,
+    "too_far": 12821,
+    "wrong_beam": 9830,
+    "both": 8043,
+    "blind_dist_mean": 2119.6343271433275,
+    "success_dist_mean": 562.1626309321234
+  }
+}

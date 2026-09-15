@@ -1,0 +1,33 @@
+{
+  "config": {
+    "design": "C:\\Users\\李\\Desktop\\第四问路线压缩\\best_design.json",
+    "tag": null,
+    "cases": 2,
+    "seed": 20260923,
+    "sources": 10,
+    "directional_fraction": 0.5,
+    "jobs": 1,
+    "output": "results/ship_smoke",
+    "re_certify": false
+  },
+  "summaries": [
+    {
+      "design": "rand1800",
+      "sites": 25,
+      "tour_m": 18828.22137248389,
+      "gap_fine": null,
+      "gap_ultra": null,
+      "success_rate": 1.0,
+      "mean_time_per_source_s": 762.8634,
+      "p95_time_per_source_s": 764.4251,
+      "mean_search_per_source_s": 591.7055341280097,
+      "mean_post_search_per_source_s": 171.15786587199034,
+      "mean_movement_per_source_s": 539.5133612906272,
+      "mean_search_movement_per_source_s": 381.0055341280097,
+      "mean_post_search_movement_per_source_s": 158.50782716261756,
+      "mean_detection_per_source_s": 182.75,
+      "mean_failed_clear_actions": 0
+    }
+  ],
+  "failures": []
+}

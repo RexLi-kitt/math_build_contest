@@ -1,0 +1,5 @@
+"1499m": should_coobserve((1500.0, 0.0), square),
+"1500m": should_coobserve((1501.0, 0.0), square),
+"1500.1m": should_coobserve((1501.1, 0.0), square),
+})
+50

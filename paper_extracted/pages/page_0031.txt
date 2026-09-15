@@ -1,0 +1,9 @@
+[6] 姚胤博, 许睿, 徐悦, 等. 卫星导航干扰源无人机定位观测路径规划方法[J]. 全球定位
+系统, 2024, 49(6): 72-83. DOI: 10.12265/j.gnss.2024097.
+[7] SHEN Z, WILSON J P, GUPTA S. C*: A coverage path planning algorithm for
+unknown environments using rapidly covering graphs[J]. IEEE Transactions on Robotics,
+2026, 42: 1233-1253. DOI: 10.1109/TRO.2026.3661719.
+[8] LIU S, ZHANG Y, LI G, et al. A hierarchical adaptive navigation planner for UAVs in
+3D complex environments based on deep reinforcement learning[J]. Applied Soft
+Computing, 2026, 190: 114614. DOI: 10.1016/j.asoc.2026.114614.
+31

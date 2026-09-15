@@ -1,0 +1,60 @@
+{
+  "config": {
+    "cases": 30,
+    "seed": 61903,
+    "sources": null,
+    "strategies": "Cplus_completion_coobserve,D_hybrid_belief_rolling,E_hybrid_belief_route",
+    "output": ".q3_compare_staging\\results\\hybrid_scheduler_screen30"
+  },
+  "elapsed_wall_time_s": 61.815703900007065,
+  "summaries": [
+    {
+      "strategy": "Cplus_completion_coobserve",
+      "all_cleared_rate": 1.0,
+      "mean_virtual_time_s": 4270.4561,
+      "median_virtual_time_s": 4227.199500000001,
+      "p90_virtual_time_s": 4707.221,
+      "p95_virtual_time_s": 4730.557,
+      "max_virtual_time_s": 4747.028,
+      "mean_time_per_source_s": 339.50466572802196,
+      "mean_movement_time_s": 3351.7560672,
+      "mean_measure_actions": 143,
+      "mean_active_measurements": 16.866666666666667,
+      "mean_co_measurements": 7.5,
+      "mean_failed_clear_actions": 0,
+      "wall_time_s": 22.686443
+    },
+    {
+      "strategy": "D_hybrid_belief_rolling",
+      "all_cleared_rate": 1.0,
+      "mean_virtual_time_s": 4213.958766666667,
+      "median_virtual_time_s": 4160.0025000000005,
+      "p90_virtual_time_s": 4594.474,
+      "p95_virtual_time_s": 4702.073,
+      "max_virtual_time_s": 4747.637,
+      "mean_time_per_source_s": 334.59931383380507,
+      "mean_movement_time_s": 3284.4921614,
+      "mean_measure_actions": 145.03333333333333,
+      "mean_active_measurements": 18.9,
+      "mean_co_measurements": 12.566666666666666,
+      "mean_failed_clear_actions": 0,
+      "wall_time_s": 17.516715
+    },
+    {
+      "strategy": "E_hybrid_belief_route",
+      "all_cleared_rate": 1.0,
+      "mean_virtual_time_s": 4273.0663,
+      "median_virtual_time_s": 4220.406,
+      "p90_virtual_time_s": 4703.161,
+      "p95_virtual_time_s": 4730.557,
+      "max_virtual_time_s": 4761.421,
+      "mean_time_per_source_s": 339.55341242174495,
+      "mean_movement_time_s": 3351.5663726666667,
+      "mean_measure_actions": 143.43333333333334,
+      "mean_active_measurements": 17.3,
+      "mean_co_measurements": 8.333333333333334,
+      "mean_failed_clear_actions": 0,
+      "wall_time_s": 21.608765
+    }
+  ]
+}

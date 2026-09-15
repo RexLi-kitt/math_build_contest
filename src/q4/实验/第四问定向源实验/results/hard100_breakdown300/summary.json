@@ -1,0 +1,31 @@
+{
+  "config": {
+    "cases": 300,
+    "seed": 20260916,
+    "sources": null,
+    "directional_fraction": 0.5,
+    "min_success": 1.0,
+    "strategies": "L950_C2",
+    "jobs": 8,
+    "output": "results\\hard100_breakdown300"
+  },
+  "elapsed_wall_time_s": 15.760516900016228,
+  "best_feasible": "L950_C2",
+  "summaries": [
+    {
+      "strategy": "L950_C2",
+      "search_sites": 31,
+      "success_rate": 1.0,
+      "feasible": true,
+      "mean_time_per_source_s": 792.6053163849762,
+      "p95_time_per_source_s": 1073.4146,
+      "mean_measure_actions": 329.46,
+      "mean_cleared": 13.223333333333333,
+      "mean_movement_per_source_s": 632.065478979312,
+      "mean_detection_per_source_s": 130.25063388000888,
+      "mean_switching_per_source_s": 25.162328393828393,
+      "mean_clearing_per_source_s": 5.126875,
+      "mean_failed_clear_actions": 0.6766666666666666
+    }
+  ]
+}

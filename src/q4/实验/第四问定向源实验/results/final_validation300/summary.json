@@ -1,0 +1,34 @@
+{
+  "config": {
+    "cases": 300,
+    "seed": 20260916,
+    "sources": null,
+    "directional_fraction": 0.5,
+    "min_success": 0.95,
+    "strategies": "L950_C2,L1100_C2",
+    "output": "results\\final_validation300"
+  },
+  "best_feasible": "L1100_C2",
+  "summaries": [
+    {
+      "strategy": "L1100_C2",
+      "search_sites": 19,
+      "success_rate": 0.9933333333333333,
+      "feasible": true,
+      "mean_time_per_source_s": 600.037973102786,
+      "p95_time_per_source_s": 780.6456363636364,
+      "mean_measure_actions": 267.99333333333334,
+      "mean_cleared": 13.216666666666667
+    },
+    {
+      "strategy": "L950_C2",
+      "search_sites": 31,
+      "success_rate": 0.9933333333333333,
+      "feasible": true,
+      "mean_time_per_source_s": 792.1572015933094,
+      "p95_time_per_source_s": 1073.4146,
+      "mean_measure_actions": 329.46,
+      "mean_cleared": 13.216666666666667
+    }
+  ]
+}

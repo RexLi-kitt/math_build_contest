@@ -1,0 +1,3 @@
+﻿case,strategy,source_count,detected_channels,cleared_channels,total_virtual_time_s,measure_actions,clear_actions,all_cleared,search_sites,search_end_time_s,wall_time_s,movement_time_s,search_movement_time_s,post_search_movement_time_s,detection_time_s,switching_time_s,clearing_time_s,failed_clear_actions
+1,rand1800,10,10,10,7644.251,356,10,1,25,5780.644274496778,0.19688949998817407,5471.250684999994,3765.644274496778,1705.6064105032149,1780.0,343.0,50.0,0
+2,rand1800,10,10,10,7613.017,375,10,1,25,6053.466408063416,0.14693729998543859,5319.01654081255,3854.466408063416,1464.5501327491365,1875.0,369.0,50.0,0

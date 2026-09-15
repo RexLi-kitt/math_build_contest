@@ -1,0 +1,35 @@
+（3）结构清晰且易扩展，参数可按场景快速重标定。
+6.2 模型局限
+（1）传播条件较理想化，未显式考虑遮挡、多径和短时场强波动。
+（2）部分参数依赖模拟场景。极端边界聚集时模型 I 比 J+ 快 19.9 s/源，说明固定
+覆盖结构并非始终最优。
+6.3 模型改进
+（1）细化传播建模。引入距离—方位联合接收概率模型，并用贝叶斯更新在线修
+正信念区域。
+（2）挖掘速度余量。以多情景鲁棒优化替代单一分布标定，依据早期观测动态选
+择覆盖半径、环点数和调度参数。
+7 AI 工具使用声明
+本参赛队在竞赛过程中使用了 AI 工具，主要用于赛题理解与问题分析、符号梳理、
+算法设计辅助。
+同时，AI 工具还用于求解代码编写与调试、离线仿真与鲁棒性试验脚本生成、统
+计结果整理，以及部分图表说明。
+AI 生成的建模建议、代码及文字均经队员结合题意修改。模型结构、参数设置、
+结果分析及核心结论均由本队主导完成，详细使用情况见支撑材料。
+8 参考文献
+[1] TOKEKAR P, VANDER HOOK J, ISLER V. Active target localization for bearing
+based robotic telemetry[C]//2011 IEEE/RSJ International Conference on Intelligent
+Robots and Systems. San Francisco, CA, USA: IEEE, 2011. DOI:
+10.1109/IROS.2011.6095177.
+[2] ZHAO S, CHEN B M, LEE T H. Optimal placement of bearing-only sensors for target
+localization[C]//Proceedings of the 2012 American Control Conference. Montreal, QC,
+Canada: IEEE, 2012: 5108-5113. DOI: 10.1109/ACC.2012.6314884.
+[3] 罗双喜. 多站交叉定位相对 GDOP 及其测向站分布问题研究[J]. 指挥控制与仿真,
+2020, 42(2): 7-11. DOI: 10.3969/j.issn.1673-3819.2020.02.002.
+[4] VANDER HOOK J, TOKEKAR P, ISLER V. Cautious greedy strategy for bearing-only
+active localization: analysis and field experiments[J]. Journal of Field Robotics, 2014,
+31(2): 296-318. DOI: 10.1002/rob.21499.
+[5] VANDER HOOK J, TOKEKAR P, BRANSON E, et al. Local-search strategy for active
+localization of multiple invasive fish[C]//DESAI J P, DUDEK G, KHATIB O, et al.
+Experimental Robotics: The 13th International Symposium on Experimental Robotics.
+Heidelberg: Springer, 2013: 859-873. DOI: 10.1007/978-3-319-00065-7_57.
+30

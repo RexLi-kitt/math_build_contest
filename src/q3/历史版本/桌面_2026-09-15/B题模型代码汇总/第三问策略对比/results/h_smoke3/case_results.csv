@@ -1,0 +1,7 @@
+﻿seed,case,strategy,source_count,detected_channels,cleared_channels,total_virtual_time_s,measure_actions,clear_actions,all_cleared,movement_time_s,active_measurements,co_measurements,coverage_insertions,search_end_time_s,no_signal_actions,failed_clear_actions,decision_wall_time_s
+999,1,G_rolling_coverage,16,16,16,4356.968,107,16,1,3642.967983,37,22,8,1965.813152997289,54,0,0.530914
+999,1,H_task_scheduling,16,16,16,4397.322,108,16,1,3676.322035,38,24,8,1965.813152997289,54,0,1.433447
+999,2,G_rolling_coverage,10,10,10,3983.981,110,10,1,3277.980523,21,11,7,2226.6509893638067,79,0,0.641799
+999,2,H_task_scheduling,10,10,10,3983.981,110,10,1,3277.980523,21,11,7,2226.6509893638067,79,0,1.495292
+999,3,G_rolling_coverage,16,16,16,4313.098,102,16,1,3625.097833,36,23,8,2183.8843864631344,50,0,1.973566
+999,3,H_task_scheduling,16,16,16,4325.622,100,16,1,3648.622474,34,24,8,2183.8843864631344,50,0,4.394951

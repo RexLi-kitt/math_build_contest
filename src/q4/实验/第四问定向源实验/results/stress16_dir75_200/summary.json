@@ -1,0 +1,24 @@
+{
+  "config": {
+    "cases": 200,
+    "seed": 20260917,
+    "sources": 16,
+    "directional_fraction": 0.75,
+    "min_success": 0.95,
+    "strategies": "L1100_C2",
+    "output": "results\\stress16_dir75_200"
+  },
+  "best_feasible": "L1100_C2",
+  "summaries": [
+    {
+      "strategy": "L1100_C2",
+      "search_sites": 19,
+      "success_rate": 0.99,
+      "feasible": true,
+      "mean_time_per_source_s": 487.3363471875,
+      "p95_time_per_source_s": 581.2186875,
+      "mean_measure_actions": 297.6,
+      "mean_cleared": 15.99
+    }
+  ]
+}
